@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang=zh>
-<head>
+<html lang=zh-CN>
+  <head>
     <!-- so meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,17 +32,15 @@
       
     
     <!-- title -->
-    <title>运维少年</title>
-    <!-- async scripts -->
-    <!-- Google Analytics -->
-
-
-    <!-- Umami Analytics -->
-
-
-    <!-- styles -->
     
-<link rel="stylesheet" href="/css/style.css">
+      <title>运维少年</title>
+    
+    
+    <!-- styles -->
+
+    <!-- 默认CSS引入方法 -->
+    
+<link rel="stylesheet" href="/css/layout.css">
 
     <!-- persian styles -->
     
@@ -51,185 +49,342 @@
     
 	<!-- mathjax -->
 	
+
+
+  
+  <!-- L2Dwidget -->
+  
+<script src="/lib/live2d/L2Dwidget.min.js"></script>
+
+
+  <script>
+  // 猫
+  L2Dwidget.init({
+    model: {
+      jsonPath: "/lib/live2d/tororo/assets/tororo.model.json",
+    },
+    display: {
+      superSample: 2,
+      width: 60,
+      height: 80,
+      position: 'right',
+      hOffset: 0,
+      vOffset: 20,
+    },
+    mobile: {
+      show: true,
+      scale: 1,
+      motion: true,
+    },
+    react: {
+      opacityDefault: 1,
+      opacityOnHover: 1,
+    }
+  })
+  //百度搜索爬虫
+
+
+
+var _hmt = _hmt || [];
+(function () {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7e9a19e5e700f1a2607b47c7bd6b35e8";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+
+  </script>
+  <meta name="baidu-site-verification" content="code-dIan6MAmy5" />
+  
+
+  <!-- styles -->
+
+
+ 
+  <link
+    rel="preload"
+    href="/lib/font-awesome/css/all.min.css"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript
+    ><link
+      rel="stylesheet"
+      href="/lib/font-awesome/css/all.min.css"
+  /></noscript>
+
+
+
 <meta name="generator" content="Hexo 7.0.0"></head>
 
-<body class="max-width mx-auto px3 ltr">
-    
-    <div class="content index py4 h-card">
+
+    <body class="max-width mx-auto">
+     <div class="home">
+        <!-- //actions_desktop 右上角导航栏 -->
+      <aside id="#aside" class="hubzy_left">
         
-          <header id="header">
-  <a class="u-url u-uid" href="/">
+      </aside>
+      <div id="header-post" class="hubzy_right">
+        
+      </div>
+       
+      <div class="content  hubzy_center">
+        
+          <header id="header" class="hubzy_center_title">
+  <!-- <a href="/"> -->
+
+    <a href="/">
+      
+        
+                  <div id="logo" style="background-image: url(/images/logo.png);"></div>
+                  
+                    
+    </a>
+    <div class="nav_right">
+      <div id="title">
+        <a href="/">
+          <h1>
+            运维少年
+          </h1>
+        </a>
+      </div>
   
-    
-      <img id="logo" alt class="u-logo" src="/images/logo.png" />
-    
-  
-    <div id="title">
-      <h1 class="p-name">运维少年</h1>
-    </div>
-  </a>
-  <div id="nav">
-    <ul>
-      <li class="icon">
-        <a href="#" aria-label="目录"><i class="fa-solid fa-bars fa-2x"></i></a>
-      </li>
-      <!--
-     --><li><a href="/">首页</a></li><!--
-   --><!--
-     --><li><a href="/about/">关于</a></li><!--
-   --><!--
-     --><li><a href="/search/">搜索</a></li><!--
-   --><!--
-     --><li><a href="/archives/">归档</a></li><!--
-   --><!--
-     --><li><a target="_blank" rel="noopener" href="http://github.com/probberechts">项目</a></li><!--
-   -->
-    </ul>
-  </div>
+      <div id="nav">
+        <ul>
+          <li class="icon">
+            <a href="#" aria-label="Menu"><i class="fas fa-bars fa-2x"></i></a>
+          </li>
+          
+            <li><a href="/">
+                首页
+              </a></li>
+            
+            <li><a href="/categories/%E9%A1%B9%E7%9B%AE/">
+                项目
+              </a></li>
+            
+            <li><a href="/archives/">
+                归档
+              </a></li>
+            
+            <li><a href="/about/">
+                关于
+              </a></li>
+            
+        </ul>
+      </div>
+    </div>    
 </header>
-
         
-        <section id="about" class="p-note">
+          <!-- //body 引入首页和md编译后的页面 -->
+          <!-- 首页  -->
+<section id="about">
   
+  
+  <!-- icon列表 -->
+    <p class="iconlist">
+      <!-- # > index.find_me_on -->
+      
+      
+      
+      
+        
+          <a class="icon" target="_blank" rel="noopener" href="https://github.com/hubzy" aria-label="github">
+            <i class="fab fa-github"></i></a>
+            
+      
+        
+      
+        
+          <a class="icon" target="_blank" rel="noopener" href="https://gitee.com/hubzyy">
+            <i><svg class='diyIcon'  viewBox="0 0 1024 1024" ><path d="M512 1024C229.248 1024 0 794.752 0 512S229.248 0 512 0s512 229.248 512 512-229.248 512-512 512z m259.168-568.896h-290.752a25.28 25.28 0 0 0-25.28 25.28l-0.032 63.232c0 13.952 11.296 25.28 25.28 25.28h177.024a25.28 25.28 0 0 1 25.28 25.28v12.64a75.84 75.84 0 0 1-75.84 75.84h-240.224a25.28 25.28 0 0 1-25.28-25.28v-240.192a75.84 75.84 0 0 1 75.84-75.84h353.92a25.28 25.28 0 0 0 25.28-25.28l0.064-63.2a25.312 25.312 0 0 0-25.28-25.312H417.184a189.632 189.632 0 0 0-189.632 189.6v353.952c0 13.952 11.328 25.28 25.28 25.28h372.928a170.656 170.656 0 0 0 170.656-170.656v-145.376a25.28 25.28 0 0 0-25.28-25.28z"></path></svg></i>
+          </a>
+        
+      
+        
+      
+        
+          <a class="icon" target="_blank" rel="noopener" href="https://www.notion.so/hubzy/Personal-Home-6304eddb4645475cb79cf5a94426b6f4">
+            <i><svg class="diyIcon" viewBox="0 0 1024 1024"><path d="M190.3619 179.479263c31.818329 25.847061 43.760866 23.885073 103.558852 19.875793l563.645073-33.822969c11.942537 0 2.00464-11.942537-1.961988-13.904525L761.940229 83.938971c-17.913805-13.904525-41.84153-29.856341-87.649688-25.889713L128.559273 97.886148c-19.875793 1.961988-23.885073 11.942537-15.951816 19.875793z m33.822969 131.367902v593.032243c0 31.860981 15.909165 43.803518 51.779427 41.798878l619.433779-35.827609c35.870262-1.961988 39.879542-23.885073 39.879541-49.774787V271.010276c0-25.847061-9.937896-39.794238-31.903633-37.83225l-647.328132 37.83225c-23.885073 2.00464-31.860981 13.947177-31.860982 39.794237z m611.500523 31.775678c3.966628 17.913805 0 35.82761-17.913805 37.874902l-29.856341 5.971268v437.779268c-25.932365 13.947177-49.817438 21.923085-69.735883 21.923085-31.903633 0-39.879542-9.980548-63.764615-39.794238l-195.21782-306.49667v296.516122L520.956902 810.386408s0 35.82761-49.817438 35.82761l-137.424474 7.933256c-3.966628-7.933256 0-27.851701 13.947177-31.818329l35.827609-9.937897V420.291982L333.800294 416.282702c-4.00928-17.913805 5.971268-43.760866 33.82297-45.765506l147.405022-9.937896 203.193729 310.463298v-274.678341l-51.822078-5.928616c-3.966628-21.923085 11.942537-37.83225 31.860981-39.794238zM82.751115 44.144733l567.697005-41.798878c69.693231-5.971268 87.649688-2.00464 131.453206 29.856342l181.227992 127.358622c29.856341 21.880433 39.83689 27.851701 39.83689 51.736774v698.553084c0 43.760866-15.909165 69.693231-71.65522 73.617207l-659.313321 39.83689c-41.798878 2.00464-61.759975-3.966628-83.683059-31.860982l-133.457846-173.166779c-23.885073-31.860981-33.82297-55.703403-33.82297-83.597756V113.752661c0-35.784958 15.951817-65.683951 61.717323-69.607928z"></path></svg></i>
+          </a>
+        
+       
+        
+      
+        
+          <a class="icon" target="_blank" rel="noopener" href="mailto:zbaba.y@foxmail.com" aria-label="mail">
+            <i class="fas fa-envelope"></i>
+          </a>
+        
+    
+        
+      
+    </p>
   
 </section>
-
+<!-- 文章列表 -->
 <section id="writing">
-  <span class="h1"><a href="/archives/">文章</a></span>
-  
-  <ul class="post-list">
+    <span class="h1"><a href="/archives/">文章</a></span>
     
-    
+    <ul class="post-list">
       
-    
-    
-      <li class="post-item">
+      
+      
+      
         
+        
+        
+        
+          <li class="post-year"><h2>2023</h2></li>
+        
+        <li class="post-item">
+          <span class="title">
+            
+    
+        <a class="" href="/2023/12/28/Github-Page-Hexo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%97%AE%E9%A2%98%E5%B0%8F%E8%AE%B0/"> <span> Github Page + Hexo 搭建个人博客问题小记 </span></a>
+    
+
+
+
+          <span class="slug"></span>
+        </span>
+         <!-- 文章时间和首页时间 -->
+
     <div class="meta">
       
         
-          <time datetime="2023-12-28T01:08:08.000Z" class="dt-published" itemprop="datePublished">2023-12-28</time>
+          <time datetime="2023-12-28T01:08:08.000Z" itemprop="datePublished">2023-12-28</time>
         
       
     </div>
 
 
-        <span>
-    
-        <a class="" href="/2023/12/28/Github-Page-Hexo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%97%AE%E9%A2%98%E5%B0%8F%E8%AE%B0/">Github Page + Hexo 搭建个人博客问题小记</a>
-    
-
-
-</span>
-      </li>
-    
-      <li class="post-item">
+          </li>
+      
         
+        
+        
+        
+        <li class="post-item">
+          <span class="title">
+            
+    
+        <a class="" href="/2023/12/27/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/"> <span> 测试文章 </span></a>
+    
+
+
+
+          <span class="slug"></span>
+        </span>
+         <!-- 文章时间和首页时间 -->
+
     <div class="meta">
       
         
-          <time datetime="2023-12-27T08:58:43.000Z" class="dt-published" itemprop="datePublished">2023-12-27</time>
+          <time datetime="2023-12-27T08:58:43.000Z" itemprop="datePublished">2023-12-27</time>
         
       
     </div>
 
 
-        <span>
-    
-        <a class="" href="/2023/12/27/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/">测试文章</a>
-    
-
-
-</span>
-      </li>
-    
-      <li class="post-item">
+          </li>
+      
         
+        
+        
+        
+        <li class="post-item">
+          <span class="title">
+            
+    
+        <a class="" href="/2023/12/27/hello-world/"> <span> Hello World </span></a>
+    
+
+
+
+          <span class="slug"></span>
+        </span>
+         <!-- 文章时间和首页时间 -->
+
     <div class="meta">
       
         
-          <time datetime="2023-12-27T08:04:07.935Z" class="dt-published" itemprop="datePublished">2023-12-27</time>
+          <time datetime="2023-12-27T08:04:07.935Z" itemprop="datePublished">2023-12-27</time>
         
       
     </div>
 
 
-        <span>
+          </li>
+      
+    </ul>
     
-        <a class="" href="/2023/12/27/hello-world/">Hello World</a>
+      
+
     
-
-
-</span>
-      </li>
-    
-  </ul>
-  
-</section>
+  </section>
 
 
 
-        
-        <footer id="footer">
+
+          
+
+          <footer id="footer">
   <div class="footer-left">
     Copyright &copy;
     
     
-    2016-2023
+    2020-2023
     运维少年
   </div>
   <div class="footer-right">
     <nav>
       <ul>
-        <!--
-      --><li><a href="/">首页</a></li><!--
-    --><!--
-      --><li><a href="/about/">关于</a></li><!--
-    --><!--
-      --><li><a href="/search/">搜索</a></li><!--
-    --><!--
-      --><li><a href="/archives/">归档</a></li><!--
-    --><!--
-      --><li><a target="_blank" rel="noopener" href="http://github.com/probberechts">项目</a></li><!--
-    -->
-      </ul>
-      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/categories/%E9%A1%B9%E7%9B%AE/">项目</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="/about/">关于</a></li>
         
       </ul>
     </nav>
   </div>
-  
 </footer>
 
-    </div>
-    <!-- styles -->
+          <!-- jquery -->
+ 
+  
+<script src="/lib/jquery/jquery.min.js"></script>
 
 
 
-  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
-
-
-    <!-- jquery -->
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
-
+<script src="/lib/jquery/jquery.pjax.js"></script>
 
 
 
 <!-- clipboard -->
 
 
-<script src="/js/main.js"></script>
 
-<!-- search -->
+<!-- Google Analytics -->
 
 <!-- Baidu Analytics -->
 
 <!-- Cloudflare Analytics -->
 
+<!-- Umami Analytics -->
+
 <!-- Disqus Comments -->
 
-<!-- utterances Comments -->
+     
+      </div>   
+    </div>
+      
+    
+<script src="/js/main.js"></script>
 
-</body>
-</html>
+    </body>
+    </html>
