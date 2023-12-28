@@ -14,7 +14,7 @@
 <meta property="og:description" content="在使用Github Page + Hexo搭建个人博客的时候遇到了一些问题，现记录如下  问题1 hexo-deployer-git 提示输入用户名&#x2F;密码 在deploy中配置了token后，使用hexo g -d部署到Github，提示输入用户名密码，但是现在Github已经不支持命令行使用用户名密码登录了，所以需要改为SSH的方式，将deploy的token去掉，repo配置为git@git">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-12-28T01:08:08.000Z">
-<meta property="article:modified_time" content="2023-12-28T02:53:53.844Z">
+<meta property="article:modified_time" content="2023-12-28T03:40:24.211Z">
 <meta property="article:author" content="运维少年">
 <meta property="article:tag" content="博客搭建">
 <meta name="twitter:card" content="summary">
@@ -339,7 +339,7 @@ var _hmt = _hmt || [];
       
         <time datetime="2023-12-28T01:08:08.000Z" itemprop="datePublished">2023-12-28</time>
         
-        <!-- (Updated: <time datetime="2023-12-28T02:53:53.844Z" itemprop="dateModified">2023-12-28</time>) -->
+        <!-- (Updated: <time datetime="2023-12-28T03:40:24.211Z" itemprop="dateModified">2023-12-28</time>) -->
         
       
     </div>
@@ -370,9 +370,9 @@ var _hmt = _hmt || [];
 <p>这是因为部署hexo后，原来的CNAME文件被清除了，需要重新设置一下自定义域名。然后在hexo的<code>public</code>文件夹下，新建一个CNAME文件，内容为自定义的域名。如果不写这个文件的话，后面使用<code>hexo g -d</code>，有得重新设置一下自定义域名了。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> public/CNAME</span><br><span class="line">www.51yunwei.top</span><br></pre></td></tr></table></figure>
 <h1>问题3 修改cactus主题样式不生效</h1>
-<p>按照官方文档修改了<code>_config.yml</code>文件中的<code>colorscheme</code>参数不生效，需要重新执行以下命令，执行完之后自定义域名又不能访问了，按照问题1进行处理。只要修改了配置文件，都要执行以下命令生成新的新的静态文件: - [x]</p>
+<p>按照官方文档修改了<code>_config.yml</code>文件中的<code>colorscheme</code>参数不生效，需要重新执行以下命令，执行完之后自定义域名又不能访问了，按照问题1进行处理。</p>
+<p>只要修改了配置文件，都要执行以下命令生成新的新的静态文件</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo deploy</span><br></pre></td></tr></table></figure>
-<p>H<sub>2</sub>O</p>
 
   </div>
 </article>
