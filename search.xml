@@ -11,6 +11,12 @@
         <content type="html"><![CDATA[<blockquote><p>在使用Github Page + Hexo搭建个人博客的时候遇到了一些问题，现记录如下</p></blockquote><h1>问题1 hexo-deployer-git 提示输入用户名/密码</h1><p>在<code>deploy</code>中配置了<code>token</code>后，使用<code>hexo g -d</code>部署到<code>Github</code>，提示输入用户名密码，但是现在<code>Github</code>已经不支持命令行使用用户名密码登录了，所以需要改为<code>SSH</code>的方式，将<code>deploy</code>的<code>token</code>去掉，<code>repo</code>配置为<code>git@github.com/用户名/仓库名</code>在Github仓库下，选择<code>Settings &gt; Deploy keys &gt;添加一个Deploy key</code>，将系统的<code>~/.ssh/xxxx.pub</code>文件的内容布置上去，然后在GitHub界面勾选<code>Allow write access</code>即可。</p><h1>问题2 部署hexo后用自定义域名访问显示404，使用用户名.github.io访问正常</h1><p>这是因为部署hexo后，原来的CNAME文件被清除了，需要重新设置一下自定义域名。然后在hexo的<code>public</code>文件夹下，新建一个CNAME文件，内容为自定义的域名。如果不写这个文件的话，后面使用<code>hexo g -d</code>，有得重新设置一下自定义域名了。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> public/CNAME</span><br><span class="line">www.51yunwei.top</span><br></pre></td></tr></table></figure><h1>问题3 修改cactus主题样式不生效</h1><p>按照官方文档修改了<code>_config.yml</code>文件中的<code>colorscheme</code>参数不生效，需要重新执行以下命令，执行完之后自定义域名又不能访问了，按照问题1进行处理。</p><p>只要修改了配置文件，都要执行以下命令生成新的新的静态文件</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo deploy</span><br></pre></td></tr></table></figure>]]></content>
       
       
+      <categories>
+          
+          <category> 博客搭建 </category>
+          
+      </categories>
+      
       
         <tags>
             
