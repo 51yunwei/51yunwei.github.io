@@ -14,7 +14,7 @@
 <meta property="og:description" content="在使用Github Page + Hexo搭建个人博客的时候遇到了一些问题，现记录如下  hexo-deployer-git 提示输入用户名&#x2F;密码在deploy中配置了token后，使用hexo g -d部署到Github，提示输入用户名密码，但是现在Github已经不支持命令行使用用户名密码登录了，所以需要改为SSH的方式，将deploy的token去掉，repo配置为git@git">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-12-28T01:08:08.000Z">
-<meta property="article:modified_time" content="2023-12-28T01:17:57.676Z">
+<meta property="article:modified_time" content="2023-12-28T02:06:36.096Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="博客搭建">
 <meta name="twitter:card" content="summary">
@@ -164,7 +164,7 @@
 <p>在使用Github Page + Hexo搭建个人博客的时候遇到了一些问题，现记录如下</p>
 </blockquote>
 <h1 id="hexo-deployer-git-提示输入用户名-密码"><a href="#hexo-deployer-git-提示输入用户名-密码" class="headerlink" title="hexo-deployer-git 提示输入用户名&#x2F;密码"></a>hexo-deployer-git 提示输入用户名&#x2F;密码</h1><p>在<code>deploy</code>中配置了<code>token</code>后，使用<code>hexo g -d</code>部署到<code>Github</code>，提示输入用户名密码，但是现在<code>Github</code>已经不支持命令行使用用户名密码登录了，所以需要改为<code>SSH</code>的方式，将<code>deploy</code>的<code>token</code>去掉，<code>repo</code>配置为<code>git@github.com/用户名/仓库名</code><br>在Github仓库下，选择<code>Settings &gt; Deploy keys &gt;添加一个Deploy key</code>，将系统的<code>~/.ssh/xxxx.pub</code>文件的内容布置上去，然后在GitHub界面勾选<code>Allow write access</code>即可。</p>
-<h1 id="部署hexo后用自定义域名访问显示404，使用用户名-github-io访问正常"><a href="#部署hexo后用自定义域名访问显示404，使用用户名-github-io访问正常" class="headerlink" title="部署hexo后用自定义域名访问显示404，使用用户名.github.io访问正常"></a>部署hexo后用自定义域名访问显示404，使用用户名.github.io访问正常</h1><p>这是因为部署hexo后，原来的CNAME文件被清除了，可以重新设置一下自定义域名，或者在hexo目录的public子目录下，新建一个<code>CNAME</code>文件，内容为自定义域名，比如<code>www.51yunwei.com</code>。</p>
+<h1 id="部署hexo后用自定义域名访问显示404，使用用户名-github-io访问正常"><a href="#部署hexo后用自定义域名访问显示404，使用用户名-github-io访问正常" class="headerlink" title="部署hexo后用自定义域名访问显示404，使用用户名.github.io访问正常"></a>部署hexo后用自定义域名访问显示404，使用用户名.github.io访问正常</h1><p>这是因为部署hexo后，原来的CNAME文件被清除了，需要重新设置一下自定义域名。</p>
 
   </div>
 </article>
