@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="在使用Github Page + Hexo搭建个人博客的时候遇到了一些问题，现记录如下  hexo-deployer-git 提示输入用户名&#x2F;密码在deploy中配置了token后，使用hexo g -d部署到Github，提示输入用户名密码，但是现在Github已经不支持命令行使用用户名密码登录了，所以需要改为SSH的方式，将deploy的token去掉，repo配置为git@git">
+    <meta name="description" content="在使用Github Page + Hexo搭建个人博客的时候遇到了一些问题，现记录如下  问题1 hexo-deployer-git 提示输入用户名&#x2F;密码在deploy中配置了token后，使用hexo g -d部署到Github，提示输入用户名密码，但是现在Github已经不支持命令行使用用户名密码登录了，所以需要改为SSH的方式，将deploy的token去掉，repo配置为git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Github Page + Hexo 搭建个人博客问题小记">
 <meta property="og:url" content="http://example.com/2023/12/28/Github-Page-Hexo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%97%AE%E9%A2%98%E5%B0%8F%E8%AE%B0/index.html">
 <meta property="og:site_name" content="运维少年">
-<meta property="og:description" content="在使用Github Page + Hexo搭建个人博客的时候遇到了一些问题，现记录如下  hexo-deployer-git 提示输入用户名&#x2F;密码在deploy中配置了token后，使用hexo g -d部署到Github，提示输入用户名密码，但是现在Github已经不支持命令行使用用户名密码登录了，所以需要改为SSH的方式，将deploy的token去掉，repo配置为git@git">
+<meta property="og:description" content="在使用Github Page + Hexo搭建个人博客的时候遇到了一些问题，现记录如下  问题1 hexo-deployer-git 提示输入用户名&#x2F;密码在deploy中配置了token后，使用hexo g -d部署到Github，提示输入用户名密码，但是现在Github已经不支持命令行使用用户名密码登录了，所以需要改为SSH的方式，将deploy的token去掉，repo配置为git">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-12-28T01:08:08.000Z">
-<meta property="article:modified_time" content="2023-12-28T02:06:36.096Z">
+<meta property="article:modified_time" content="2023-12-28T02:10:50.058Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="博客搭建">
 <meta name="twitter:card" content="summary">
@@ -115,7 +115,7 @@
     
     
       <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo-deployer-git-%E6%8F%90%E7%A4%BA%E8%BE%93%E5%85%A5%E7%94%A8%E6%88%B7%E5%90%8D-%E5%AF%86%E7%A0%81"><span class="toc-number">1.</span> <span class="toc-text">hexo-deployer-git 提示输入用户名&#x2F;密码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2hexo%E5%90%8E%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AE%E6%98%BE%E7%A4%BA404%EF%BC%8C%E4%BD%BF%E7%94%A8%E7%94%A8%E6%88%B7%E5%90%8D-github-io%E8%AE%BF%E9%97%AE%E6%AD%A3%E5%B8%B8"><span class="toc-number">2.</span> <span class="toc-text">部署hexo后用自定义域名访问显示404，使用用户名.github.io访问正常</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%97%AE%E9%A2%981-hexo-deployer-git-%E6%8F%90%E7%A4%BA%E8%BE%93%E5%85%A5%E7%94%A8%E6%88%B7%E5%90%8D-%E5%AF%86%E7%A0%81"><span class="toc-number">1.</span> <span class="toc-text">问题1 hexo-deployer-git 提示输入用户名&#x2F;密码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%97%AE%E9%A2%982-%E9%83%A8%E7%BD%B2hexo%E5%90%8E%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AE%E6%98%BE%E7%A4%BA404%EF%BC%8C%E4%BD%BF%E7%94%A8%E7%94%A8%E6%88%B7%E5%90%8D-github-io%E8%AE%BF%E9%97%AE%E6%AD%A3%E5%B8%B8"><span class="toc-number">2.</span> <span class="toc-text">问题2 部署hexo后用自定义域名访问显示404，使用用户名.github.io访问正常</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%97%AE%E9%A2%983-%E4%BF%AE%E6%94%B9cactus%E4%B8%BB%E9%A2%98%E6%A0%B7%E5%BC%8F%E4%B8%8D%E7%94%9F%E6%95%88"><span class="toc-number">3.</span> <span class="toc-text">问题3 修改cactus主题样式不生效</span></a></li></ol>
       </div>
     
   </span>
@@ -163,8 +163,10 @@
     <blockquote>
 <p>在使用Github Page + Hexo搭建个人博客的时候遇到了一些问题，现记录如下</p>
 </blockquote>
-<h1 id="hexo-deployer-git-提示输入用户名-密码"><a href="#hexo-deployer-git-提示输入用户名-密码" class="headerlink" title="hexo-deployer-git 提示输入用户名&#x2F;密码"></a>hexo-deployer-git 提示输入用户名&#x2F;密码</h1><p>在<code>deploy</code>中配置了<code>token</code>后，使用<code>hexo g -d</code>部署到<code>Github</code>，提示输入用户名密码，但是现在<code>Github</code>已经不支持命令行使用用户名密码登录了，所以需要改为<code>SSH</code>的方式，将<code>deploy</code>的<code>token</code>去掉，<code>repo</code>配置为<code>git@github.com/用户名/仓库名</code><br>在Github仓库下，选择<code>Settings &gt; Deploy keys &gt;添加一个Deploy key</code>，将系统的<code>~/.ssh/xxxx.pub</code>文件的内容布置上去，然后在GitHub界面勾选<code>Allow write access</code>即可。</p>
-<h1 id="部署hexo后用自定义域名访问显示404，使用用户名-github-io访问正常"><a href="#部署hexo后用自定义域名访问显示404，使用用户名-github-io访问正常" class="headerlink" title="部署hexo后用自定义域名访问显示404，使用用户名.github.io访问正常"></a>部署hexo后用自定义域名访问显示404，使用用户名.github.io访问正常</h1><p>这是因为部署hexo后，原来的CNAME文件被清除了，需要重新设置一下自定义域名。</p>
+<h1 id="问题1-hexo-deployer-git-提示输入用户名-密码"><a href="#问题1-hexo-deployer-git-提示输入用户名-密码" class="headerlink" title="问题1 hexo-deployer-git 提示输入用户名&#x2F;密码"></a>问题1 hexo-deployer-git 提示输入用户名&#x2F;密码</h1><p>在<code>deploy</code>中配置了<code>token</code>后，使用<code>hexo g -d</code>部署到<code>Github</code>，提示输入用户名密码，但是现在<code>Github</code>已经不支持命令行使用用户名密码登录了，所以需要改为<code>SSH</code>的方式，将<code>deploy</code>的<code>token</code>去掉，<code>repo</code>配置为<code>git@github.com/用户名/仓库名</code><br>在Github仓库下，选择<code>Settings &gt; Deploy keys &gt;添加一个Deploy key</code>，将系统的<code>~/.ssh/xxxx.pub</code>文件的内容布置上去，然后在GitHub界面勾选<code>Allow write access</code>即可。</p>
+<h1 id="问题2-部署hexo后用自定义域名访问显示404，使用用户名-github-io访问正常"><a href="#问题2-部署hexo后用自定义域名访问显示404，使用用户名-github-io访问正常" class="headerlink" title="问题2 部署hexo后用自定义域名访问显示404，使用用户名.github.io访问正常"></a>问题2 部署hexo后用自定义域名访问显示404，使用用户名.github.io访问正常</h1><p>这是因为部署hexo后，原来的CNAME文件被清除了，需要重新设置一下自定义域名。</p>
+<h1 id="问题3-修改cactus主题样式不生效"><a href="#问题3-修改cactus主题样式不生效" class="headerlink" title="问题3 修改cactus主题样式不生效"></a>问题3 修改cactus主题样式不生效</h1><p>按照官方文档修改了<code>_config.yml</code>文件中的<code>colorscheme</code>参数不生效，需要重新执行以下命令，执行完之后自定义域名又不能访问了，按照问题1进行处理。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo deploy</span><br></pre></td></tr></table></figure>
 
   </div>
 </article>
@@ -194,7 +196,7 @@
     
     
       <div id="toc-footer" style="display: none">
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo-deployer-git-%E6%8F%90%E7%A4%BA%E8%BE%93%E5%85%A5%E7%94%A8%E6%88%B7%E5%90%8D-%E5%AF%86%E7%A0%81"><span class="toc-number">1.</span> <span class="toc-text">hexo-deployer-git 提示输入用户名&#x2F;密码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2hexo%E5%90%8E%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AE%E6%98%BE%E7%A4%BA404%EF%BC%8C%E4%BD%BF%E7%94%A8%E7%94%A8%E6%88%B7%E5%90%8D-github-io%E8%AE%BF%E9%97%AE%E6%AD%A3%E5%B8%B8"><span class="toc-number">2.</span> <span class="toc-text">部署hexo后用自定义域名访问显示404，使用用户名.github.io访问正常</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%97%AE%E9%A2%981-hexo-deployer-git-%E6%8F%90%E7%A4%BA%E8%BE%93%E5%85%A5%E7%94%A8%E6%88%B7%E5%90%8D-%E5%AF%86%E7%A0%81"><span class="toc-number">1.</span> <span class="toc-text">问题1 hexo-deployer-git 提示输入用户名&#x2F;密码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%97%AE%E9%A2%982-%E9%83%A8%E7%BD%B2hexo%E5%90%8E%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AE%E6%98%BE%E7%A4%BA404%EF%BC%8C%E4%BD%BF%E7%94%A8%E7%94%A8%E6%88%B7%E5%90%8D-github-io%E8%AE%BF%E9%97%AE%E6%AD%A3%E5%B8%B8"><span class="toc-number">2.</span> <span class="toc-text">问题2 部署hexo后用自定义域名访问显示404，使用用户名.github.io访问正常</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%97%AE%E9%A2%983-%E4%BF%AE%E6%94%B9cactus%E4%B8%BB%E9%A2%98%E6%A0%B7%E5%BC%8F%E4%B8%8D%E7%94%9F%E6%95%88"><span class="toc-number">3.</span> <span class="toc-text">问题3 修改cactus主题样式不生效</span></a></li></ol>
       </div>
     
 
