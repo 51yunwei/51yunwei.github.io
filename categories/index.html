@@ -7,12 +7,12 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
     <meta property="og:type" content="website">
-<meta property="og:title" content="文章分类">
+<meta property="og:title" content="运维少年">
 <meta property="og:url" content="https://www.51yunwei.top/categories/index.html">
 <meta property="og:site_name" content="运维少年">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-12-28T06:26:51.000Z">
-<meta property="article:modified_time" content="2023-12-30T09:38:28.142Z">
+<meta property="article:published_time" content="2023-12-30T09:42:02.302Z">
+<meta property="article:modified_time" content="2023-12-30T09:42:02.302Z">
 <meta property="article:author" content="运维少年">
 <meta name="twitter:card" content="summary">
     
@@ -35,7 +35,7 @@
     
     <!-- title -->
     
-      <title>运维少年·文章分类</title>
+      <title>运维少年</title>
     
     
     <!-- styles -->
@@ -177,7 +177,7 @@ var _hmt = _hmt || [];
   <header class="hubzy_center_title">
     
     <h1 class="posttitle" itemprop="name headline">
-        文章分类
+        
     </h1>
 
 
@@ -191,7 +191,7 @@ var _hmt = _hmt || [];
     <div class="postdate">
       
         
-          <time datetime="2023-12-28T06:26:51.000Z" itemprop="datePublished">2023-12-28</time>
+          <time datetime="2023-12-30T09:42:02.302Z" itemprop="datePublished">2023-12-30</time>
         
       
     </div>
@@ -208,10 +208,20 @@ var _hmt = _hmt || [];
   <div class="content conterDiy"  id="article" itemprop="articleBody">
     <em class="nubScript">
     </em>
-    <div class="categories">
-
-</div>
-
+    
+<ul>
+<% categories = site.categories; %>
+<% for(var key in categories){ %>
+  <li><strong><%= key %></strong>
+    <ul>
+      <% var items = categories[key]; %>
+      <% for(var i in items){ %>
+        <li><%= items[i].title %></li>
+      <% } %>
+    </ul>
+  </li>
+<% } %>
+</ul>
     <p style="text-align: center;"> 感谢浏览，如对您有帮助或需联系我，欢迎关注我的微信公众号~</p>
     <!-- <img src="https://image-1252069448.cos.ap-hongkong.myqcloud.com/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7/51yunwei-soso-2.png?q-sign-algorithm=sha1&q-ak=AKIDDHSiQEb3eaHx6oT2Ny0Bc7fWh1BKGWBKbqueidX3Nxe9u7gl0djZ217iW9nLlXDp&q-sign-time=1703923089;1703926689&q-key-time=1703923089;1703926689&q-header-list=host&q-url-param-list=ci-process&q-signature=7e425acf4632075fccd0912053362b7ff4390369&x-cos-security-token=6TpczuzaTL1cW0Be8tUv6fhVUSoAOYIa2ae3c671fe63fb51145fb4f34c07a84ezeMhuLR-Clxwx4f9NzVPxn4lAkTdEpIkTELYQSj2Rmh4zChWNo50yDmZ2omOvwl-BXSEHz14KAUH-t4Q4bFWdAl5omz7jV1Nf8gWlBR4_Db9UvnfehAGkiugHAmyFbHwo9U8OUmyCPqzm9nS11lpCuI9kha0ESy5vavzB8GLbEFgHTCf66G_MtAghCSbbxzI&ci-process=originImage"> -->
     <img src="/images/51yunwei-soso-2.png">
