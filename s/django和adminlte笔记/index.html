@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang=zh-CN>
+  <head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="django 新增环境 123apt install python3-venvpython3 -m venv django4source django4&#x2F;bin&#x2F;active 安装Django 1pip install django  -i http:&#x2F;&#x2F;pypi.douban.com&#x2F;simple&#x2F; --trusted-host&#x3D;pypi.douban.com&#x2F;simple  创建和初始化项目">
+<meta property="og:type" content="article">
+<meta property="og:title" content="django和adminlte笔记">
+<meta property="og:url" content="https://www.51yunwei.top/s/django%E5%92%8Cadminlte%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="运维少年">
+<meta property="og:description" content="django 新增环境 123apt install python3-venvpython3 -m venv django4source django4&#x2F;bin&#x2F;active 安装Django 1pip install django  -i http:&#x2F;&#x2F;pypi.douban.com&#x2F;simple&#x2F; --trusted-host&#x3D;pypi.douban.com&#x2F;simple  创建和初始化项目">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-01-03T01:26:27.000Z">
+<meta property="article:modified_time" content="2024-01-03T02:10:38.660Z">
+<meta property="article:author" content="运维少年">
+<meta property="article:tag" content="django">
+<meta property="article:tag" content="adminlte">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    
+      <title>运维少年·django和adminlte笔记</title>
+    
+    
+    <!-- styles -->
+
+    <!-- 默认CSS引入方法 -->
+    
+<link rel="stylesheet" href="/css/layout.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+
+
+  
+  <!-- L2Dwidget -->
+  
+<script src="/lib/live2d/L2Dwidget.min.js"></script>
+
+
+  <script>
+  // 猫
+  L2Dwidget.init({
+    model: {
+      jsonPath: "/lib/live2d/tororo/assets/tororo.model.json",
+    },
+    display: {
+      superSample: 2,
+      width: 60,
+      height: 80,
+      position: 'right',
+      hOffset: 0,
+      vOffset: 20,
+    },
+    mobile: {
+      show: true,
+      scale: 1,
+      motion: true,
+    },
+    react: {
+      opacityDefault: 1,
+      opacityOnHover: 1,
+    }
+  })
+  //百度搜索爬虫
+
+
+
+var _hmt = _hmt || [];
+(function () {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7e9a19e5e700f1a2607b47c7bd6b35e8";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+
+  </script>
+  <meta name="baidu-site-verification" content="code-dIan6MAmy5" />
+  
+
+  <!-- styles -->
+
+
+ 
+  <link
+    rel="preload"
+    href="/lib/font-awesome/css/all.min.css"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript
+    ><link
+      rel="stylesheet"
+      href="/lib/font-awesome/css/all.min.css"
+  /></noscript>
+
+
+
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+
+    <body class="max-width mx-auto">
+     <div class="home">
+        <!-- //actions_desktop 右上角导航栏 -->
+      <aside id="#aside" class="hubzy_left">
+        
+          <div class="hubzy_logo">
+	<a href="/">
+		
+		  
+					<div id="logo" style="background-image: url(/images/logo.png);"></div>
+					
+					  
+	  </a>
+	  <div id="title">
+		<a href="/">
+		  <h1>
+			运维少年
+		  </h1>
+		</a>
+		
+			<!-- icon列表 -->
+			  <p class="iconlist">
+				<!-- # > index.find_me_on -->
+				
+				
+				
+				
+				  
+					<a class="icon" target="_blank" rel="noopener" href="https://github.com/51yunwei/" aria-label="github">
+					  <i class="fab fa-github"></i></a>
+					  
+			  
+				  
+				
+			  </p>
+			
+	  </div>
+</div>
+<!-- 搜索栏 -->
+<div id="search">
+	<input class="search-input" type="text" placeholder="search">
+	<span id="search-icon" class="fa fa-bars" title="展开目录"></span>
+</div>
+
+<!-- 侧边目录栏 -->
+<div id="tree">
+	
+
+	
+					<ul>
+						<li class="file">
+							<a href="/s/Github-Page-Hexo-搭建个人博客问题小记/">
+								<i class="fa fa-file"></i>
+								Github-Page-Hexo-搭建个人博客问题小记
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file active">
+							<a href="/s/django和adminlte笔记/">
+								<i class="fa fa-file"></i>
+								django和adminlte笔记
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/s/hello-world/">
+								<i class="fa fa-file"></i>
+								hello-world
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/s/测试图片/">
+								<i class="fa fa-file"></i>
+								测试图片
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/s/测试文章/">
+								<i class="fa fa-file"></i>
+								测试文章
+							</a>
+						</li>
+					</ul>
+	
+</div>
+
+        
+      </aside>
+      <div id="header-post" class="hubzy_right">
+        
+          
+  <!-- <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a> -->
+  <!-- <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a> -->
+  <!-- <a id="top-icon-tablet" href="#" "Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+    style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a> -->
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        
+          <li><a href="/">
+              首页
+            </a></li>
+          
+          <li><a href="/categories/">
+              文章分类
+            </a></li>
+          
+      </ul>
+    </span>
+    <br />
+    <div id="toc">
+      
+    </div>
+    <br />
+    <span id="actions">
+      <ul>
+        <!--// 
+            
+              <li><a class="icon" aria-label="下一篇 " href="/s/%E6%B5%8B%E8%AF%95%E5%9B%BE%E7%89%87/"><i
+                    class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();"
+                    onmouseout="$('#i-next').toggle();"></i></a></li>
+              // -->
+                <li><a class="icon" aria-label="返回顶部 " href="#"
+                    onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up"
+                      aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a>
+                </li>
+                <li><a class="icon" aria-label="分享文章 " href="#"><i class="fas fa-share-alt"
+                      aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();"
+                      onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">
+        上一篇
+      </span>
+      <span id="i-next" class="info" style="display:none;">
+        下一篇
+      </span>
+      <span id="i-top" class="info" style="display:none;">
+        返回顶部
+      </span>
+      <span id="i-share" class="info" style="display:none;">
+        分享文章
+      </span>
+    </span>
+    <br />
+    <div id="share" style="display: none">
+      <ul>
+  <li> 开发中. </li>
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://www.51yunwei.top/s/django%E5%92%8Cadminlte%E7%AC%94%E8%AE%B0/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://www.51yunwei.top/s/django%E5%92%8Cadminlte%E7%AC%94%E8%AE%B0/&text=django和adminlte笔记"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://www.51yunwei.top/s/django%E5%92%8Cadminlte%E7%AC%94%E8%AE%B0/&title=django和adminlte笔记"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://www.51yunwei.top/s/django%E5%92%8Cadminlte%E7%AC%94%E8%AE%B0/&is_video=false&description=django和adminlte笔记"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=django和adminlte笔记&body=Check out this article: https://www.51yunwei.top/s/django%E5%92%8Cadminlte%E7%AC%94%E8%AE%B0/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://www.51yunwei.top/s/django%E5%92%8Cadminlte%E7%AC%94%E8%AE%B0/&title=django和adminlte笔记"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://www.51yunwei.top/s/django%E5%92%8Cadminlte%E7%AC%94%E8%AE%B0/&title=django和adminlte笔记"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://www.51yunwei.top/s/django%E5%92%8Cadminlte%E7%AC%94%E8%AE%B0/&title=django和adminlte笔记"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://www.51yunwei.top/s/django%E5%92%8Cadminlte%E7%AC%94%E8%AE%B0/&title=django和adminlte笔记"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://www.51yunwei.top/s/django%E5%92%8Cadminlte%E7%AC%94%E8%AE%B0/&name=django和adminlte笔记&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://www.51yunwei.top/s/django%E5%92%8Cadminlte%E7%AC%94%E8%AE%B0/&t=django和adminlte笔记"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li> -->
+
+</ul>
+
+    </div>
+
+  </span>
+
+        
+      </div>
+       
+      <div class="content  hubzy_center">
+        
+          <!-- //body 引入首页和md编译后的页面 -->
+          <!-- md 编译成 html 后的文件模板 -->
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="hubzy_center_title">
+    
+    <h1 class="posttitle" itemprop="name headline">
+        django和adminlte笔记
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">运维少年</span>
+      </span>
+      <!-- 文章时间和首页时间 -->
+
+    <div class="postdate">
+      
+        <time datetime="2024-01-03T01:26:27.000Z" itemprop="datePublished">2024-01-03</time>
+        
+        <!-- (Updated: <time datetime="2024-01-03T02:10:38.660Z" itemprop="dateModified">2024-01-03</time>) -->
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/django/">django</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/adminlte/" rel="tag">adminlte</a>, <a class="tag-link-link" href="/tags/django/" rel="tag">django</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content conterDiy"  id="article" itemprop="articleBody">
+    <em class="nubScript">
+    </em>
+    <h1>django</h1>
+<h2 id="新增环境">新增环境</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">apt install python3-venv</span><br><span class="line">python3 -m venv django4</span><br><span class="line"><span class="built_in">source</span> django4/bin/active</span><br></pre></td></tr></table></figure>
+<h2 id="安装Django">安装Django</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install django  -i http://pypi.douban.com/simple/ --trusted-host=pypi.douban.com/simple </span><br></pre></td></tr></table></figure>
+<h2 id="创建和初始化项目">创建和初始化项目</h2>
+<p>创建</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">django-admin startproject mysite</span><br></pre></td></tr></table></figure>
+<p>修改settings文件</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os <span class="comment"># 新增</span></span><br><span class="line">ALLOWED_HOSTS = [<span class="string">&#x27;*&#x27;</span>] <span class="comment">#修改</span></span><br><span class="line"><span class="comment"># 修改</span></span><br><span class="line">TEMPLATES = [</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&#x27;BACKEND&#x27;</span>: <span class="string">&#x27;django.template.backends.django.DjangoTemplates&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;DIRS&#x27;</span>: [os.path.join(BASE_DIR,<span class="string">&#x27;templates&#x27;</span>)], <span class="comment">#修改</span></span><br><span class="line">        <span class="string">&#x27;APP_DIRS&#x27;</span>: <span class="literal">True</span>,</span><br><span class="line">        <span class="string">&#x27;OPTIONS&#x27;</span>: &#123;</span><br><span class="line">            <span class="string">&#x27;context_processors&#x27;</span>: [</span><br><span class="line">                <span class="string">&#x27;django.template.context_processors.debug&#x27;</span>,</span><br><span class="line">                <span class="string">&#x27;django.template.context_processors.request&#x27;</span>,</span><br><span class="line">                <span class="string">&#x27;django.contrib.auth.context_processors.auth&#x27;</span>,</span><br><span class="line">                <span class="string">&#x27;django.contrib.messages.context_processors.messages&#x27;</span>,</span><br><span class="line">            ],</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">]</span><br><span class="line"><span class="comment"># 以下为修改</span></span><br><span class="line">LANGUAGE_CODE = <span class="string">&#x27;zh-hans&#x27;</span></span><br><span class="line">TIME_ZONE = <span class="string">&#x27;Asia/Shanghai&#x27;</span></span><br><span class="line">USE_TZ = <span class="literal">False</span></span><br><span class="line"><span class="comment"># 新增static</span></span><br><span class="line">STATICFILES_DIRS = [</span><br><span class="line">    os.path.join(BASE_DIR, <span class="string">&quot;static&quot;</span>),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>新增文件夹</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> 项目目录/templates 项目目录/static</span><br></pre></td></tr></table></figure>
+<h2 id="自定义用户模型">自定义用户模型</h2>
+<p>新建一个app</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py startapp manager</span><br></pre></td></tr></table></figure>
+<p>注册到settings.py中</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">INSTALLED_APPS = [</span><br><span class="line">    <span class="string">&#x27;django.contrib.admin&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;django.contrib.auth&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;django.contrib.contenttypes&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;django.contrib.sessions&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;django.contrib.messages&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;django.contrib.staticfiles&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;manager&#x27;</span>, <span class="comment">#新增</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>修改manager/models.py，根据自己的需要修改</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> models</span><br><span class="line"><span class="keyword">from</span> django.contrib.auth.models <span class="keyword">import</span> BaseUserManager,AbstractUser</span><br><span class="line"><span class="keyword">import</span> uuid</span><br><span class="line"><span class="comment"># Create your models here.</span></span><br><span class="line"><span class="comment"># 自定义user，还需要在setting文件中配置AUTH_USER_MODELS</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">UserDB</span>(<span class="title class_ inherited__">AbstractUser</span>):</span><br><span class="line">    uid = models.UUIDField(primary_key=<span class="literal">True</span>,default=uuid.uuid4)</span><br><span class="line">    username = models.CharField(max_length=<span class="number">15</span>,verbose_name=<span class="string">&quot;用户名&quot;</span>, unique=<span class="literal">True</span>)</span><br><span class="line">    phone = models.CharField(max_length=<span class="number">11</span>,verbose_name=<span class="string">&quot;手机号码&quot;</span>, null=<span class="literal">True</span>,blank=<span class="literal">True</span>)</span><br><span class="line">    email = models.EmailField(verbose_name=<span class="string">&#x27;邮箱&#x27;</span>, null=<span class="literal">True</span>,blank=<span class="literal">True</span>)</span><br><span class="line">    create_time = models.DateTimeField(<span class="string">&#x27;创建时间&#x27;</span>,auto_now_add=<span class="literal">True</span>)</span><br><span class="line">    update_time = models.DateTimeField(<span class="string">&#x27;更新时间&#x27;</span>,auto_now=<span class="literal">True</span>)</span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">Meta</span>:</span><br><span class="line">        verbose_name = <span class="string">&#x27;用户信息&#x27;</span></span><br><span class="line">        verbose_name_plural = verbose_name</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__str__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> self.username</span><br></pre></td></tr></table></figure>
+<p>编辑settings.py文件</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 新增自定义用户模型</span></span><br><span class="line">AUTH_USER_MODEL = <span class="string">&#x27;manager.UserDB&#x27;</span></span><br></pre></td></tr></table></figure>
+<h2 id="数据库迁移">数据库迁移</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#生成迁移文件</span></span><br><span class="line">python manage.py makemigrations</span><br><span class="line"><span class="comment">#应用迁移文件</span></span><br><span class="line">python manage.py migrate</span><br></pre></td></tr></table></figure>
+<h2 id="创建用户">创建用户</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>管理员用户</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py createsuperuser</span><br></pre></td></tr></table></figure>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>普通用户进入项目shell</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py shell</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.contrib.auth.models <span class="keyword">import</span> User(用户数据库，默认为User，如果自定义了这里需要修改)</span><br><span class="line">User.objects.create_user(<span class="string">&#x27;username&#x27;</span>, <span class="string">&#x27;email@example.com&#x27;</span>, <span class="string">&#x27;password&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="站点验证和登录">站点验证和登录</h2>
+<p>除了指定界面，用户访问其他界面时，如果没有登录就跳到登录界面，登录完成后跳转到需要访问的界面比如用户访问：<a target="_blank" rel="noopener" href="https://51yunwei.top/system/">https://51yunwei.top/system/</a> ，会跳转为 <a target="_blank" rel="noopener" href="https://51yunwei.top/login/?next=/system/%EF%BC%8C%E5%AE%8C%E6%88%90%E7%99%BB%E5%BD%95%E5%90%8E%EF%BC%8C%E8%B7%B3%E8%BD%AC%E5%9B%9Ehttps://51yunwei.top/system/">https://51yunwei.top/login/?next=/system/，完成登录后，跳转回https://51yunwei.top/system/</a><br>
+此处代码来自运维咖啡吧，通过中间件的方式进行处理</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>新建一个目录</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> system/middleware -p</span><br><span class="line"><span class="built_in">cd</span> system/middleware</span><br><span class="line"><span class="built_in">touch</span> __init__.py</span><br><span class="line"><span class="built_in">touch</span> loginrequired.py</span><br></pre></td></tr></table></figure>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>编辑loginrequired.py文件</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> redirect</span><br><span class="line"><span class="keyword">from</span> django.conf <span class="keyword">import</span> settings</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">LoginRequiredMiddleware</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, get_response</span>): <span class="comment"># 启动django的时候会执行init，用get_resonpse来获取下一个中间件或视图函数的响应</span></span><br><span class="line">        self.get_response = get_response </span><br><span class="line">        self.login_url = settings.LOGIN_URL</span><br><span class="line">        self.open_urls = [self.login_url] + <span class="built_in">getattr</span>(settings, <span class="string">&#x27;OPEN_URLS&#x27;</span>, []) <span class="comment"># 登录界面和OPEN_URLS里面的路径都是开放的</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__call__</span>(<span class="params">self, request</span>): <span class="comment"># 每次有请求到达时，Django都会调用这个方法。</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> request.user.is_authenticated <span class="keyword">and</span> request.path_info <span class="keyword">not</span> <span class="keyword">in</span> self.open_urls:</span><br><span class="line">            <span class="keyword">return</span> redirect(self.login_url + <span class="string">&#x27;?next=&#x27;</span> + request.path)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> self.get_response(request) <span class="comment"># 每个中间件都有一个get_response函数，这个函数会返回下一个中间件或视图函数的响应。</span></span><br></pre></td></tr></table></figure>
+<p>OPEN_URLS：不需要验证就能访问到的界面<br>
+LOGIN_URL：需要验证才能访问到的界面通过在settings中配置变量实现</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>编辑settings文件</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">MIDDLEWARE = [</span><br><span class="line">    <span class="string">&#x27;django.middleware.security.SecurityMiddleware&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;django.contrib.sessions.middleware.SessionMiddleware&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;django.middleware.common.CommonMiddleware&#x27;</span>,</span><br><span class="line">    <span class="comment"># &#x27;django.middleware.csrf.CsrfViewMiddleware&#x27;,</span></span><br><span class="line">    <span class="string">&#x27;django.contrib.auth.middleware.AuthenticationMiddleware&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;django.contrib.messages.middleware.MessageMiddleware&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;django.middleware.clickjacking.XFrameOptionsMiddleware&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;system.middleware.loginrequired.LoginRequiredMiddleware&#x27;</span>, <span class="comment"># 新增，根据自己的路径进行修改</span></span><br><span class="line">]</span><br><span class="line">&gt; 注意：验证的中间件要放最后面，因为最后一个中间件是第一个执行的。</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新增全局登录地址</span></span><br><span class="line">LOGIN_URL=<span class="string">&#x27;/login/&#x27;</span></span><br><span class="line">OPEN_URLS=[]</span><br></pre></td></tr></table></figure>
+<h1>adminlte</h1>
+<h2 id="点击菜单加载页面后，菜单没有高亮">点击菜单加载页面后，菜单没有高亮</h2>
+<p>在base.html添加以下代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="comment">// 选择所有class为&#x27;nav-sidebar&#x27;的ul元素下的li元素</span></span><br><span class="line">  $(<span class="string">&#x27;ul.nav-sidebar li&#x27;</span>).<span class="title function_">each</span>(<span class="keyword">function</span>(<span class="params">i</span>)&#123;</span><br><span class="line">    <span class="comment">// 检查当前li元素的第一个子元素（即a标签）的href属性值是否为当前路径</span></span><br><span class="line">    <span class="keyword">if</span>($(<span class="variable language_">this</span>).<span class="title function_">find</span>(<span class="string">&#x27;a&#x27;</span>).<span class="title function_">attr</span>(<span class="string">&#x27;href&#x27;</span>)===<span class="string">&#x27;&#123;&#123; request.path &#125;&#125;&#x27;</span>)&#123;</span><br><span class="line">        <span class="comment">// 如果条件满足，则为当前li元素的第一个子元素（即a标签）添加&#x27;active&#x27;类</span></span><br><span class="line">        $(<span class="variable language_">this</span>).<span class="title function_">find</span>(<span class="string">&#x27;a&#x27;</span>).<span class="title function_">addClass</span>(<span class="string">&#x27;active&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+    <p style="text-align: center;"> 感谢浏览，如对您有帮助或需联系我，欢迎关注我的微信公众号~</p>
+    <!-- <img src="https://image-1252069448.cos.ap-hongkong.myqcloud.com/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7/51yunwei-soso-2.png?q-sign-algorithm=sha1&q-ak=AKIDDHSiQEb3eaHx6oT2Ny0Bc7fWh1BKGWBKbqueidX3Nxe9u7gl0djZ217iW9nLlXDp&q-sign-time=1703923089;1703926689&q-key-time=1703923089;1703926689&q-header-list=host&q-url-param-list=ci-process&q-signature=7e425acf4632075fccd0912053362b7ff4390369&x-cos-security-token=6TpczuzaTL1cW0Be8tUv6fhVUSoAOYIa2ae3c671fe63fb51145fb4f34c07a84ezeMhuLR-Clxwx4f9NzVPxn4lAkTdEpIkTELYQSj2Rmh4zChWNo50yDmZ2omOvwl-BXSEHz14KAUH-t4Q4bFWdAl5omz7jV1Nf8gWlBR4_Db9UvnfehAGkiugHAmyFbHwo9U8OUmyCPqzm9nS11lpCuI9kha0ESy5vavzB8GLbEFgHTCf66G_MtAghCSbbxzI&ci-process=originImage"> -->
+    <img src="/images/51yunwei-soso-2.png">
+  </div>
+</article>
+
+
+
+
+          
+          <!-- //actions_mobile 移动端导航栏 -->
+            <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" class="Popup" style="display: none">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/categories/">文章分类</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer"  class="Popup" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">django</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E5%A2%9E%E7%8E%AF%E5%A2%83"><span class="toc-number">1.1.</span> <span class="toc-text">新增环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Django"><span class="toc-number">1.2.</span> <span class="toc-text">安装Django</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%92%8C%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%B9%E7%9B%AE"><span class="toc-number">1.3.</span> <span class="toc-text">创建和初始化项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%94%A8%E6%88%B7%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.4.</span> <span class="toc-text">自定义用户模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%81%E7%A7%BB"><span class="toc-number">1.5.</span> <span class="toc-text">数据库迁移</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7"><span class="toc-number">1.6.</span> <span class="toc-text">创建用户</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AB%99%E7%82%B9%E9%AA%8C%E8%AF%81%E5%92%8C%E7%99%BB%E5%BD%95"><span class="toc-number">1.7.</span> <span class="toc-text">站点验证和登录</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">adminlte</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%82%B9%E5%87%BB%E8%8F%9C%E5%8D%95%E5%8A%A0%E8%BD%BD%E9%A1%B5%E9%9D%A2%E5%90%8E%EF%BC%8C%E8%8F%9C%E5%8D%95%E6%B2%A1%E6%9C%89%E9%AB%98%E4%BA%AE"><span class="toc-number">2.1.</span> <span class="toc-text">点击菜单加载页面后，菜单没有高亮</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer"  class="Popup" style="display: none">
+      <ul>
+  <li> 开发中. </li>
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://www.51yunwei.top/s/django%E5%92%8Cadminlte%E7%AC%94%E8%AE%B0/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://www.51yunwei.top/s/django%E5%92%8Cadminlte%E7%AC%94%E8%AE%B0/&text=django和adminlte笔记"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://www.51yunwei.top/s/django%E5%92%8Cadminlte%E7%AC%94%E8%AE%B0/&title=django和adminlte笔记"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://www.51yunwei.top/s/django%E5%92%8Cadminlte%E7%AC%94%E8%AE%B0/&is_video=false&description=django和adminlte笔记"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=django和adminlte笔记&body=Check out this article: https://www.51yunwei.top/s/django%E5%92%8Cadminlte%E7%AC%94%E8%AE%B0/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://www.51yunwei.top/s/django%E5%92%8Cadminlte%E7%AC%94%E8%AE%B0/&title=django和adminlte笔记"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://www.51yunwei.top/s/django%E5%92%8Cadminlte%E7%AC%94%E8%AE%B0/&title=django和adminlte笔记"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://www.51yunwei.top/s/django%E5%92%8Cadminlte%E7%AC%94%E8%AE%B0/&title=django和adminlte笔记"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://www.51yunwei.top/s/django%E5%92%8Cadminlte%E7%AC%94%E8%AE%B0/&title=django和adminlte笔记"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://www.51yunwei.top/s/django%E5%92%8Cadminlte%E7%AC%94%E8%AE%B0/&name=django和adminlte笔记&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://www.51yunwei.top/s/django%E5%92%8Cadminlte%E7%AC%94%E8%AE%B0/&t=django和adminlte笔记"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li> -->
+
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <span id="menu" Popup="#nav-footer" class="icon"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</span>
+        <span id="toc" Popup="#toc-footer" class="icon"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</span>
+        <span id="share" Popup="#share-footer" class="icon"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</span>
+        <span id="top" Popup="" style="display:none" class="icon" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</span>
+    </div>
+
+  </div>
+</div>
+
+            <!-- 图片弹窗 -->
+            <div class="img-pup" style="display: none;">
+              <img>
+            </div>
+          
+
+          <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2020-2024
+    运维少年
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/categories/">文章分类</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+          <!-- jquery -->
+ 
+  
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+
+<script src="/lib/jquery/jquery.pjax.js"></script>
+
+
+
+<!-- clipboard -->
+
+   
+    
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功!");
+      e.clearSelection();
+      setTimeout(()=>{
+        e.trigger.setAttribute('aria-label', "复制到粘贴板!");
+      },1500)
+    })
+  })
+  </script>
+
+
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+     
+      </div>   
+    </div>
+      
+    
+<script src="/js/main.js"></script>
+
+    </body>
+    </html>
