@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="感谢浏览我的博客，欢迎关注微信公众号“运维少年” 获取最新资讯哦~">
+    <meta name="description" content="创建证书请求文件CSR 123456789101112131415161718openssl req -new -nodes -sha256 -newkey rsa:2048 -keyout [$Key_File] -out [$OpenSSL_CSR]说明new：指定生成一个新的 CSR 文件。nodes：指定密钥文件不被加密。sha256：指定摘要算法。newkey rsa:2048：指定密钥">
 <meta property="og:type" content="article">
-<meta property="og:title" content="测试图片">
-<meta property="og:url" content="https://www.51yunwei.top/s/%E6%B5%8B%E8%AF%95%E5%9B%BE%E7%89%87/index.html">
+<meta property="og:title" content="Linux创建证书">
+<meta property="og:url" content="https://www.51yunwei.top/s/Linux%E5%88%9B%E5%BB%BA%E8%AF%81%E4%B9%A6/index.html">
 <meta property="og:site_name" content="运维少年">
-<meta property="og:description" content="感谢浏览我的博客，欢迎关注微信公众号“运维少年” 获取最新资讯哦~">
+<meta property="og:description" content="创建证书请求文件CSR 123456789101112131415161718openssl req -new -nodes -sha256 -newkey rsa:2048 -keyout [$Key_File] -out [$OpenSSL_CSR]说明new：指定生成一个新的 CSR 文件。nodes：指定密钥文件不被加密。sha256：指定摘要算法。newkey rsa:2048：指定密钥">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-12-30T04:42:20.000Z">
-<meta property="article:modified_time" content="2023-12-30T04:42:20.953Z">
+<meta property="article:published_time" content="2024-02-01T01:04:40.000Z">
+<meta property="article:modified_time" content="2024-02-01T01:05:10.078Z">
 <meta property="article:author" content="运维少年">
 <meta name="twitter:card" content="summary">
     
@@ -37,7 +37,7 @@
     
     <!-- title -->
     
-      <title>运维少年·测试图片</title>
+      <title>运维少年·Linux创建证书</title>
     
     
     <!-- styles -->
@@ -181,7 +181,7 @@ var _hmt = _hmt || [];
 					</ul>
 	
 					<ul>
-						<li class="file">
+						<li class="file active">
 							<a href="/s/Linux创建证书/">
 								<i class="fa fa-file"></i>
 								Linux创建证书
@@ -208,7 +208,7 @@ var _hmt = _hmt || [];
 					</ul>
 	
 					<ul>
-						<li class="file active">
+						<li class="file">
 							<a href="/s/测试图片/">
 								<i class="fa fa-file"></i>
 								测试图片
@@ -258,12 +258,8 @@ var _hmt = _hmt || [];
     <span id="actions">
       <ul>
         <!--// 
-          <li><a class="icon" aria-label="上一篇 " href="/s/django%E5%92%8Cadminlte%E7%AC%94%E8%AE%B0/"><i
-                class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();"
-                onmouseout="$('#i-prev').toggle();"></i></a></li>
-          
             
-              <li><a class="icon" aria-label="下一篇 " href="/s/hello-world/"><i
+              <li><a class="icon" aria-label="下一篇 " href="/s/django%E5%92%8Cadminlte%E7%AC%94%E8%AE%B0/"><i
                     class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();"
                     onmouseout="$('#i-next').toggle();"></i></a></li>
               // -->
@@ -292,17 +288,17 @@ var _hmt = _hmt || [];
     <div id="share" style="display: none">
       <ul>
   <li> 开发中. </li>
-  <!-- <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://www.51yunwei.top/s/%E6%B5%8B%E8%AF%95%E5%9B%BE%E7%89%87/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://www.51yunwei.top/s/%E6%B5%8B%E8%AF%95%E5%9B%BE%E7%89%87/&text=测试图片"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://www.51yunwei.top/s/%E6%B5%8B%E8%AF%95%E5%9B%BE%E7%89%87/&title=测试图片"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://www.51yunwei.top/s/%E6%B5%8B%E8%AF%95%E5%9B%BE%E7%89%87/&is_video=false&description=测试图片"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=测试图片&body=Check out this article: https://www.51yunwei.top/s/%E6%B5%8B%E8%AF%95%E5%9B%BE%E7%89%87/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://www.51yunwei.top/s/%E6%B5%8B%E8%AF%95%E5%9B%BE%E7%89%87/&title=测试图片"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://www.51yunwei.top/s/%E6%B5%8B%E8%AF%95%E5%9B%BE%E7%89%87/&title=测试图片"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://www.51yunwei.top/s/%E6%B5%8B%E8%AF%95%E5%9B%BE%E7%89%87/&title=测试图片"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://www.51yunwei.top/s/%E6%B5%8B%E8%AF%95%E5%9B%BE%E7%89%87/&title=测试图片"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://www.51yunwei.top/s/%E6%B5%8B%E8%AF%95%E5%9B%BE%E7%89%87/&name=测试图片&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://www.51yunwei.top/s/%E6%B5%8B%E8%AF%95%E5%9B%BE%E7%89%87/&t=测试图片"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li> -->
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://www.51yunwei.top/s/Linux%E5%88%9B%E5%BB%BA%E8%AF%81%E4%B9%A6/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://www.51yunwei.top/s/Linux%E5%88%9B%E5%BB%BA%E8%AF%81%E4%B9%A6/&text=Linux创建证书"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://www.51yunwei.top/s/Linux%E5%88%9B%E5%BB%BA%E8%AF%81%E4%B9%A6/&title=Linux创建证书"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://www.51yunwei.top/s/Linux%E5%88%9B%E5%BB%BA%E8%AF%81%E4%B9%A6/&is_video=false&description=Linux创建证书"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Linux创建证书&body=Check out this article: https://www.51yunwei.top/s/Linux%E5%88%9B%E5%BB%BA%E8%AF%81%E4%B9%A6/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://www.51yunwei.top/s/Linux%E5%88%9B%E5%BB%BA%E8%AF%81%E4%B9%A6/&title=Linux创建证书"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://www.51yunwei.top/s/Linux%E5%88%9B%E5%BB%BA%E8%AF%81%E4%B9%A6/&title=Linux创建证书"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://www.51yunwei.top/s/Linux%E5%88%9B%E5%BB%BA%E8%AF%81%E4%B9%A6/&title=Linux创建证书"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://www.51yunwei.top/s/Linux%E5%88%9B%E5%BB%BA%E8%AF%81%E4%B9%A6/&title=Linux创建证书"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://www.51yunwei.top/s/Linux%E5%88%9B%E5%BB%BA%E8%AF%81%E4%B9%A6/&name=Linux创建证书&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://www.51yunwei.top/s/Linux%E5%88%9B%E5%BB%BA%E8%AF%81%E4%B9%A6/&t=Linux创建证书"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li> -->
 
 </ul>
 
@@ -322,7 +318,7 @@ var _hmt = _hmt || [];
   <header class="hubzy_center_title">
     
     <h1 class="posttitle" itemprop="name headline">
-        测试图片
+        Linux创建证书
     </h1>
 
 
@@ -335,9 +331,9 @@ var _hmt = _hmt || [];
 
     <div class="postdate">
       
-        <time datetime="2023-12-30T04:42:20.000Z" itemprop="datePublished">2023-12-30</time>
+        <time datetime="2024-02-01T01:04:40.000Z" itemprop="datePublished">2024-02-01</time>
         
-        <!-- (Updated: <time datetime="2023-12-30T04:42:20.953Z" itemprop="dateModified">2023-12-30</time>) -->
+        <!-- (Updated: <time datetime="2024-02-01T01:05:10.078Z" itemprop="dateModified">2024-02-01</time>) -->
         
       
     </div>
@@ -354,7 +350,8 @@ var _hmt = _hmt || [];
   <div class="content conterDiy"  id="article" itemprop="articleBody">
     <em class="nubScript">
     </em>
-    
+    <p>创建证书请求文件CSR</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">openssl req -new -nodes -sha256 -newkey rsa:2048 -keyout [$Key_File] -out [$OpenSSL_CSR]</span><br><span class="line">说明</span><br><span class="line">new：指定生成一个新的 CSR 文件。</span><br><span class="line">nodes：指定密钥文件不被加密。</span><br><span class="line">sha256：指定摘要算法。</span><br><span class="line">newkey rsa:2048：指定密钥类型和长度。</span><br><span class="line">[$Key_File]：密钥文件名称。</span><br><span class="line">[$OpenSSL_CSR]：加密后文件的存放路径。new：指定生成一个新的 CSR 文件。</span><br><span class="line">4. 根据系统返回的提示，输入生成 CSR 文件所需的信息。以下是关于提示的说明：</span><br><span class="line">Organization Name：公司名称，可以是中文或英文。</span><br><span class="line">Organizational Unit Name：部门名称，可以是中文或英文。</span><br><span class="line">Country Code：申请单位所属国家，只能是两个字母的国家码。例如，中国填写为 CN。</span><br><span class="line">State or Province Name：州名或省份名称，可以是中文或英文。</span><br><span class="line">Locality Name：城市名称，可以是中文或英文。</span><br><span class="line">Common Name：申请 SSL 证书的具体网站域名。</span><br><span class="line">Email Address：可选择不输入。</span><br><span class="line">Challenge Password：可选择不输入。</span><br><span class="line">5. 按照命令提示输入相应内容后，即可在当前目录下获取密钥文件和 CSR 文件。</span><br></pre></td></tr></table></figure>
     <p style="text-align: center;"> 感谢浏览，如对您有帮助或需联系我，欢迎关注我的微信公众号~</p>
     <!-- <img src="https://image-1252069448.cos.ap-hongkong.myqcloud.com/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7/51yunwei-soso-2.png?q-sign-algorithm=sha1&q-ak=AKIDDHSiQEb3eaHx6oT2Ny0Bc7fWh1BKGWBKbqueidX3Nxe9u7gl0djZ217iW9nLlXDp&q-sign-time=1703923089;1703926689&q-key-time=1703923089;1703926689&q-header-list=host&q-url-param-list=ci-process&q-signature=7e425acf4632075fccd0912053362b7ff4390369&x-cos-security-token=6TpczuzaTL1cW0Be8tUv6fhVUSoAOYIa2ae3c671fe63fb51145fb4f34c07a84ezeMhuLR-Clxwx4f9NzVPxn4lAkTdEpIkTELYQSj2Rmh4zChWNo50yDmZ2omOvwl-BXSEHz14KAUH-t4Q4bFWdAl5omz7jV1Nf8gWlBR4_Db9UvnfehAGkiugHAmyFbHwo9U8OUmyCPqzm9nS11lpCuI9kha0ESy5vavzB8GLbEFgHTCf66G_MtAghCSbbxzI&ci-process=originImage"> -->
     <img src="/images/51yunwei-soso-2.png">
@@ -386,17 +383,17 @@ var _hmt = _hmt || [];
     <div id="share-footer"  class="Popup" style="display: none">
       <ul>
   <li> 开发中. </li>
-  <!-- <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://www.51yunwei.top/s/%E6%B5%8B%E8%AF%95%E5%9B%BE%E7%89%87/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://www.51yunwei.top/s/%E6%B5%8B%E8%AF%95%E5%9B%BE%E7%89%87/&text=测试图片"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://www.51yunwei.top/s/%E6%B5%8B%E8%AF%95%E5%9B%BE%E7%89%87/&title=测试图片"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://www.51yunwei.top/s/%E6%B5%8B%E8%AF%95%E5%9B%BE%E7%89%87/&is_video=false&description=测试图片"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=测试图片&body=Check out this article: https://www.51yunwei.top/s/%E6%B5%8B%E8%AF%95%E5%9B%BE%E7%89%87/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://www.51yunwei.top/s/%E6%B5%8B%E8%AF%95%E5%9B%BE%E7%89%87/&title=测试图片"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://www.51yunwei.top/s/%E6%B5%8B%E8%AF%95%E5%9B%BE%E7%89%87/&title=测试图片"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://www.51yunwei.top/s/%E6%B5%8B%E8%AF%95%E5%9B%BE%E7%89%87/&title=测试图片"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://www.51yunwei.top/s/%E6%B5%8B%E8%AF%95%E5%9B%BE%E7%89%87/&title=测试图片"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://www.51yunwei.top/s/%E6%B5%8B%E8%AF%95%E5%9B%BE%E7%89%87/&name=测试图片&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://www.51yunwei.top/s/%E6%B5%8B%E8%AF%95%E5%9B%BE%E7%89%87/&t=测试图片"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li> -->
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://www.51yunwei.top/s/Linux%E5%88%9B%E5%BB%BA%E8%AF%81%E4%B9%A6/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://www.51yunwei.top/s/Linux%E5%88%9B%E5%BB%BA%E8%AF%81%E4%B9%A6/&text=Linux创建证书"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://www.51yunwei.top/s/Linux%E5%88%9B%E5%BB%BA%E8%AF%81%E4%B9%A6/&title=Linux创建证书"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://www.51yunwei.top/s/Linux%E5%88%9B%E5%BB%BA%E8%AF%81%E4%B9%A6/&is_video=false&description=Linux创建证书"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Linux创建证书&body=Check out this article: https://www.51yunwei.top/s/Linux%E5%88%9B%E5%BB%BA%E8%AF%81%E4%B9%A6/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://www.51yunwei.top/s/Linux%E5%88%9B%E5%BB%BA%E8%AF%81%E4%B9%A6/&title=Linux创建证书"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://www.51yunwei.top/s/Linux%E5%88%9B%E5%BB%BA%E8%AF%81%E4%B9%A6/&title=Linux创建证书"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://www.51yunwei.top/s/Linux%E5%88%9B%E5%BB%BA%E8%AF%81%E4%B9%A6/&title=Linux创建证书"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://www.51yunwei.top/s/Linux%E5%88%9B%E5%BB%BA%E8%AF%81%E4%B9%A6/&title=Linux创建证书"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://www.51yunwei.top/s/Linux%E5%88%9B%E5%BB%BA%E8%AF%81%E4%B9%A6/&name=Linux创建证书&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://www.51yunwei.top/s/Linux%E5%88%9B%E5%BB%BA%E8%AF%81%E4%B9%A6/&t=Linux创建证书"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li> -->
 
 </ul>
 
