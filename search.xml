@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>django在windows上开机自启动和打开网页</title>
+      <link href="/s/django%E5%9C%A8windows%E4%B8%8A%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8%E5%92%8C%E6%89%93%E5%BC%80%E7%BD%91%E9%A1%B5/"/>
+      <url>/s/django%E5%9C%A8windows%E4%B8%8A%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8%E5%92%8C%E6%89%93%E5%BC%80%E7%BD%91%E9%A1%B5/</url>
+      
+        <content type="html"><![CDATA[<ul class="lvl-0"><li class="lvl-2"><p>bat文件</p></li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line"># 使用虚拟环境，如果不用虚拟环境，这句去掉</span><br><span class="line">call D:\python\testing\.venv\Scripts\activate.bat</span><br><span class="line"># 执行</span><br><span class="line">python d:python\django-adminlte-template-master\django-adminlte-template-master\manage.py runserver 127.0.0.1:18888</span><br></pre></td></tr></table></figure><ul class="lvl-0"><li class="lvl-2">进入下面这个目录，新建一个vbs文件</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp</span><br></pre></td></tr></table></figure><ul class="lvl-0"><li class="lvl-2"><p>vbs文件内容，后面的路径是上面bat文件的路径，网址自定义</p></li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CreateObject(&quot;WScript.Shell&quot;).Run&quot;cmd /c D:\python\django-adminlte-template-master\startDjango.bat&quot;,0</span><br><span class="line">CreateObject(&quot;WScript.Shell&quot;).Run&quot;http://127.0.0.1:18888&quot;, 3</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>django将查询结果转换为字典</title>
       <link href="/s/django%E5%B0%86%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C%E8%BD%AC%E6%8D%A2%E4%B8%BA%E5%AD%97%E5%85%B8/"/>
       <url>/s/django%E5%B0%86%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C%E8%BD%AC%E6%8D%A2%E4%B8%BA%E5%AD%97%E5%85%B8/</url>
