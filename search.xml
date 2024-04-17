@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>django将查询结果转换为字典</title>
+      <link href="/s/django%E5%B0%86%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C%E8%BD%AC%E6%8D%A2%E4%B8%BA%E5%AD%97%E5%85%B8/"/>
+      <url>/s/django%E5%B0%86%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C%E8%BD%AC%E6%8D%A2%E4%B8%BA%E5%AD%97%E5%85%B8/</url>
+      
+        <content type="html"><![CDATA[<p>查询的结果默认是只读的，不能直接修改，如下面这样</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">event = event.objects.get(<span class="built_in">id</span>=<span class="number">1</span>)</span><br><span class="line">event[<span class="string">&#x27;name&#x27;</span>] = <span class="number">123</span></span><br></pre></td></tr></table></figure><p>有时候可能需要把数据获取到，然后添加一个字段传给前端，这时候就可以用以下的办法</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.forms.models <span class="keyword">import</span> model_to_dict</span><br><span class="line">event = model_to_dict(EventDB.objects.get(<span class="built_in">id</span>=event_id))</span><br><span class="line">event[<span class="string">&#x27;name&#x27;</span>] = <span class="number">123</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>在adminlte中使用datatable</title>
       <link href="/s/%E5%9C%A8adminlte%E4%B8%AD%E4%BD%BF%E7%94%A8datatable/"/>
       <url>/s/%E5%9C%A8adminlte%E4%B8%AD%E4%BD%BF%E7%94%A8datatable/</url>
