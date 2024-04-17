@@ -9,7 +9,7 @@
     <meta name="description" content="感谢浏览我的博客，欢迎关注微信公众号“运维少年” 获取最新资讯哦~">
 <meta property="og:type" content="website">
 <meta property="og:title" content="运维少年">
-<meta property="og:url" content="https://www.51yunwei.top/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/index.html">
+<meta property="og:url" content="https://www.51yunwei.top/page/2/index.html">
 <meta property="og:site_name" content="运维少年">
 <meta property="og:description" content="感谢浏览我的博客，欢迎关注微信公众号“运维少年” 获取最新资讯哦~">
 <meta property="og:locale" content="zh_CN">
@@ -35,7 +35,7 @@
     
     <!-- title -->
     
-      <title>运维少年·分类: 博客搭建</title>
+      <title>运维少年</title>
     
     
     <!-- styles -->
@@ -171,48 +171,109 @@ var _hmt = _hmt || [];
 </header>
         
           <!-- //body 引入首页和md编译后的页面 -->
-          <!-- 归档列表 -->
+          <!-- 首页  -->
+<section id="about">
+  
+    <p>感谢浏览我的博客，欢迎关注微信公众号“运维少年” 获取最新资讯哦~</p>
 
-<div id="archive">
-  <ul class="post-list">
+    <script>
     
-    
-    
-    
+            (function () {
+              // 获取容器
+              let container = document.getElementById('about')
+               container = container.firstElementChild
+              // 把需要展示的全部文字进行切割
+              const data = container.innerHTML.split('')
+              // 需要追加到容器中的文字下标
+              let index = 0
+              container.innerHTML = ''
+              function writing() {
+                if (index < data.length) {
+                  // 追加文字
+                  container.innerHTML += data[index++]
+                  let timer = setTimeout(writing,120)
+                  // console.log(timer) // 这里会依次打印 1 2 3 4 5 6 7 8 9 10
+                }
+              }
+              writing()
+            })();
+            
+              
+    </script>
+  
+  
+  <!-- icon列表 -->
+    <p class="iconlist">
+      <!-- # > index.find_me_on -->
       
       
       
       
-        <li class="post-year"><h2>2023</h2></li>
-      
-      <li class="post-item">
-        <span class="title">
-          
+        
+          <a class="icon" target="_blank" rel="noopener" href="https://github.com/51yunwei/" aria-label="github">
+            <i class="fab fa-github"></i></a>
+            
     
-        <a class="" href="/s/Github-Page-Hexo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%97%AE%E9%A2%98%E5%B0%8F%E8%AE%B0/"> <span> Github Page + Hexo 搭建个人博客问题小记 </span></a>
+        
+      
+    </p>
+  
+</section>
+<!-- 文章列表 -->
+<section id="writing">
+    <span class="h1"><a href="/">文章</a></span>
+    
+    <ul class="post-list">
+      
+      
+      
+      
+        
+        
+        
+        
+          <li class="post-year"><h2>2023</h2></li>
+        
+        <li class="post-item">
+          <span class="title">
+            
+    
+        <a class="" href="/s/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/"> <span> 测试文章 </span></a>
     
 
 
 
-        <span class="slug"></span>
-      </span>
-       <!-- 文章时间和首页时间 -->
+          <span class="slug"></span>
+        </span>
+         <!-- 文章时间和首页时间 -->
 
     <div class="meta">
       
         
-          <time datetime="2023-12-28T01:08:08.000Z" itemprop="datePublished">2023-12-28</time>
+          <time datetime="2023-12-27T08:58:43.000Z" itemprop="datePublished">2023-12-27</time>
         
       
     </div>
 
 
-        </li>
+          </li>
+      
+    </ul>
     
-  </ul>
-  
+      
+    <div class="pagination">
+        
+            <a href="/"><i class="fas fa-angle-left"></i></a>
+        
+        <span class="page-number">第 2 页，共 2 页</span>
+        
+    </div>
 
-</div>
+
+    
+  </section>
+
+
 
 
           
