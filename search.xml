@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>清除模态框form的内容</title>
+      <link href="/s/%E6%B8%85%E9%99%A4%E6%A8%A1%E6%80%81%E6%A1%86form%E7%9A%84%E5%86%85%E5%AE%B9/"/>
+      <url>/s/%E6%B8%85%E9%99%A4%E6%A8%A1%E6%80%81%E6%A1%86form%E7%9A%84%E5%86%85%E5%AE%B9/</url>
+      
+        <content type="html"><![CDATA[<p>在模态框提交数据后，页面不刷新的情况下，再次点击模态框，上次输入的内容还保留着，可以通过下面的方式清除模态框内容</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在ajax返回成功时可以执行</span></span><br><span class="line">$(<span class="string">&#x27;.modal-body&#x27;</span>).<span class="title function_">find</span>(<span class="string">&#x27;form&#x27;</span>).<span class="title function_">trigger</span>(<span class="string">&#x27;reset&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果在用户点击关闭时也要执行，可以在show.bs.modal事件里设置</span></span><br><span class="line"> $(<span class="string">&#x27;#updatemodal&#x27;</span>).<span class="title function_">on</span>(<span class="string">&#x27;show.bs.modal&#x27;</span>, <span class="keyword">function</span> (<span class="params">event</span>) &#123;</span><br><span class="line">    $(<span class="string">&#x27;.modal-body&#x27;</span>).<span class="title function_">find</span>(<span class="string">&#x27;form&#x27;</span>).<span class="title function_">trigger</span>(<span class="string">&#x27;reset&#x27;</span>);</span><br><span class="line">    <span class="comment">// 其他内容</span></span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>modal中使用form</title>
       <link href="/s/modal%E4%B8%AD%E4%BD%BF%E7%94%A8form/"/>
       <url>/s/modal%E4%B8%AD%E4%BD%BF%E7%94%A8form/</url>
