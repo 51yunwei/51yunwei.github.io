@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.51yunwei.top/wiki/%E6%B5%8B%E8%AF%95%E5%9B%BE%E7%89%87/</loc>
+    
+    <lastmod>2024-05-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.51yunwei.top/wiki/django%E5%9C%A8windows%E4%B8%8A%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8%E5%92%8C%E6%89%93%E5%BC%80%E7%BD%91%E9%A1%B5/</loc>
     
     <lastmod>2024-05-29</lastmod>
@@ -129,15 +138,6 @@
   
   <url>
     <loc>https://www.51yunwei.top/wiki/Github-Page-Hexo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%97%AE%E9%A2%98%E5%B0%8F%E8%AE%B0/</loc>
-    
-    <lastmod>2023-12-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.51yunwei.top/wiki/%E6%B5%8B%E8%AF%95%E5%9B%BE%E7%89%87/</loc>
     
     <lastmod>2023-12-30</lastmod>
     
