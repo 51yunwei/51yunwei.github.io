@@ -18,8 +18,8 @@
   
   <entry>
     <title>给hexo主题添加代码块复制功能</title>
-    <link href="https://www.51yunwei.top/wiki/%E7%BB%99hexo%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E4%BB%A3%E7%A0%81%E5%9D%97%E5%A4%8D%E5%88%B6%E5%8A%9F%E8%83%BD/"/>
-    <id>https://www.51yunwei.top/wiki/%E7%BB%99hexo%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E4%BB%A3%E7%A0%81%E5%9D%97%E5%A4%8D%E5%88%B6%E5%8A%9F%E8%83%BD/</id>
+    <link href="https://www.51yunwei.top/posts/undefined/"/>
+    <id>https://www.51yunwei.top/posts/undefined/</id>
     <published>2024-05-29T07:32:02.000Z</published>
     <updated>2024-05-29T07:50:14.023Z</updated>
     
@@ -46,8 +46,8 @@
   
   <entry>
     <title>当前博客使用主题及部署方式</title>
-    <link href="https://www.51yunwei.top/wiki/%E5%BD%93%E5%89%8D%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E4%B8%BB%E9%A2%98%E5%8F%8A%E9%83%A8%E7%BD%B2%E6%96%B9%E5%BC%8F/"/>
-    <id>https://www.51yunwei.top/wiki/%E5%BD%93%E5%89%8D%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E4%B8%BB%E9%A2%98%E5%8F%8A%E9%83%A8%E7%BD%B2%E6%96%B9%E5%BC%8F/</id>
+    <link href="https://www.51yunwei.top/posts/undefined/"/>
+    <id>https://www.51yunwei.top/posts/undefined/</id>
     <published>2024-05-29T03:39:06.000Z</published>
     <updated>2024-05-29T03:40:54.822Z</updated>
     
@@ -70,8 +70,8 @@
   
   <entry>
     <title>清除模态框form的内容</title>
-    <link href="https://www.51yunwei.top/wiki/%E6%B8%85%E9%99%A4%E6%A8%A1%E6%80%81%E6%A1%86form%E7%9A%84%E5%86%85%E5%AE%B9/"/>
-    <id>https://www.51yunwei.top/wiki/%E6%B8%85%E9%99%A4%E6%A8%A1%E6%80%81%E6%A1%86form%E7%9A%84%E5%86%85%E5%AE%B9/</id>
+    <link href="https://www.51yunwei.top/posts/undefined/"/>
+    <id>https://www.51yunwei.top/posts/undefined/</id>
     <published>2024-04-19T00:38:14.000Z</published>
     <updated>2024-05-29T03:29:07.614Z</updated>
     
@@ -95,8 +95,8 @@
   
   <entry>
     <title>modal中使用form</title>
-    <link href="https://www.51yunwei.top/wiki/modal%E4%B8%AD%E4%BD%BF%E7%94%A8form/"/>
-    <id>https://www.51yunwei.top/wiki/modal%E4%B8%AD%E4%BD%BF%E7%94%A8form/</id>
+    <link href="https://www.51yunwei.top/posts/undefined/"/>
+    <id>https://www.51yunwei.top/posts/undefined/</id>
     <published>2024-04-18T02:14:04.000Z</published>
     <updated>2024-05-29T03:28:47.149Z</updated>
     
@@ -124,8 +124,8 @@
   
   <entry>
     <title>adminlte中使用时间插件</title>
-    <link href="https://www.51yunwei.top/wiki/adminlte%E4%B8%AD%E4%BD%BF%E7%94%A8%E6%97%B6%E9%97%B4%E6%8F%92%E4%BB%B6/"/>
-    <id>https://www.51yunwei.top/wiki/adminlte%E4%B8%AD%E4%BD%BF%E7%94%A8%E6%97%B6%E9%97%B4%E6%8F%92%E4%BB%B6/</id>
+    <link href="https://www.51yunwei.top/posts/undefined/"/>
+    <id>https://www.51yunwei.top/posts/undefined/</id>
     <published>2024-04-17T09:29:02.000Z</published>
     <updated>2024-05-29T03:30:42.078Z</updated>
     
@@ -152,8 +152,8 @@
   
   <entry>
     <title>django在windows上开机自启动和打开网页</title>
-    <link href="https://www.51yunwei.top/wiki/django%E5%9C%A8windows%E4%B8%8A%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8%E5%92%8C%E6%89%93%E5%BC%80%E7%BD%91%E9%A1%B5/"/>
-    <id>https://www.51yunwei.top/wiki/django%E5%9C%A8windows%E4%B8%8A%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8%E5%92%8C%E6%89%93%E5%BC%80%E7%BD%91%E9%A1%B5/</id>
+    <link href="https://www.51yunwei.top/posts/undefined/"/>
+    <id>https://www.51yunwei.top/posts/undefined/</id>
     <published>2024-04-17T08:55:08.000Z</published>
     <updated>2024-05-29T03:31:15.277Z</updated>
     
@@ -181,8 +181,8 @@
   
   <entry>
     <title>django将查询结果转换为字典</title>
-    <link href="https://www.51yunwei.top/wiki/django%E5%B0%86%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C%E8%BD%AC%E6%8D%A2%E4%B8%BA%E5%AD%97%E5%85%B8/"/>
-    <id>https://www.51yunwei.top/wiki/django%E5%B0%86%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C%E8%BD%AC%E6%8D%A2%E4%B8%BA%E5%AD%97%E5%85%B8/</id>
+    <link href="https://www.51yunwei.top/posts/undefined/"/>
+    <id>https://www.51yunwei.top/posts/undefined/</id>
     <published>2024-04-17T07:07:26.000Z</published>
     <updated>2024-05-29T03:28:10.086Z</updated>
     
@@ -206,8 +206,8 @@
   
   <entry>
     <title>在adminlte中使用datatable</title>
-    <link href="https://www.51yunwei.top/wiki/%E5%9C%A8adminlte%E4%B8%AD%E4%BD%BF%E7%94%A8datatable/"/>
-    <id>https://www.51yunwei.top/wiki/%E5%9C%A8adminlte%E4%B8%AD%E4%BD%BF%E7%94%A8datatable/</id>
+    <link href="https://www.51yunwei.top/posts/undefined/"/>
+    <id>https://www.51yunwei.top/posts/undefined/</id>
     <published>2024-04-17T06:40:21.000Z</published>
     <updated>2024-05-29T03:27:01.479Z</updated>
     
@@ -234,8 +234,8 @@
   
   <entry>
     <title>在adminlte中使用select2</title>
-    <link href="https://www.51yunwei.top/wiki/%E5%9C%A8adminlte%E4%B8%AD%E4%BD%BF%E7%94%A8select2/"/>
-    <id>https://www.51yunwei.top/wiki/%E5%9C%A8adminlte%E4%B8%AD%E4%BD%BF%E7%94%A8select2/</id>
+    <link href="https://www.51yunwei.top/posts/undefined/"/>
+    <id>https://www.51yunwei.top/posts/undefined/</id>
     <published>2024-04-17T06:40:10.000Z</published>
     <updated>2024-05-29T03:26:31.886Z</updated>
     
@@ -259,8 +259,8 @@
   
   <entry>
     <title>Linux创建证书</title>
-    <link href="https://www.51yunwei.top/wiki/Linux%E5%88%9B%E5%BB%BA%E8%AF%81%E4%B9%A6/"/>
-    <id>https://www.51yunwei.top/wiki/Linux%E5%88%9B%E5%BB%BA%E8%AF%81%E4%B9%A6/</id>
+    <link href="https://www.51yunwei.top/posts/undefined/"/>
+    <id>https://www.51yunwei.top/posts/undefined/</id>
     <published>2024-02-01T01:04:40.000Z</published>
     <updated>2024-05-29T03:25:34.912Z</updated>
     
@@ -284,8 +284,8 @@
   
   <entry>
     <title>django和adminlte笔记</title>
-    <link href="https://www.51yunwei.top/wiki/django%E5%92%8Cadminlte%E7%AC%94%E8%AE%B0/"/>
-    <id>https://www.51yunwei.top/wiki/django%E5%92%8Cadminlte%E7%AC%94%E8%AE%B0/</id>
+    <link href="https://www.51yunwei.top/posts/undefined/"/>
+    <id>https://www.51yunwei.top/posts/undefined/</id>
     <published>2024-01-03T01:26:27.000Z</published>
     <updated>2024-01-23T18:35:49.254Z</updated>
     
@@ -312,8 +312,8 @@
   
   <entry>
     <title>测试图片</title>
-    <link href="https://www.51yunwei.top/wiki/%E6%B5%8B%E8%AF%95%E5%9B%BE%E7%89%87/"/>
-    <id>https://www.51yunwei.top/wiki/%E6%B5%8B%E8%AF%95%E5%9B%BE%E7%89%87/</id>
+    <link href="https://www.51yunwei.top/posts/undefined/"/>
+    <id>https://www.51yunwei.top/posts/undefined/</id>
     <published>2023-12-30T04:42:20.000Z</published>
     <updated>2024-05-29T03:38:11.471Z</updated>
     
@@ -327,8 +327,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="https://www.51yunwei.top/wiki/hello-world/"/>
-    <id>https://www.51yunwei.top/wiki/hello-world/</id>
+    <link href="https://www.51yunwei.top/posts/undefined/"/>
+    <id>https://www.51yunwei.top/posts/undefined/</id>
     <published>2023-12-30T03:31:33.884Z</published>
     <updated>2023-12-30T03:31:33.884Z</updated>
     
@@ -349,8 +349,8 @@
   
   <entry>
     <title>Github Page + Hexo 搭建个人博客问题小记</title>
-    <link href="https://www.51yunwei.top/wiki/Github-Page-Hexo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%97%AE%E9%A2%98%E5%B0%8F%E8%AE%B0/"/>
-    <id>https://www.51yunwei.top/wiki/Github-Page-Hexo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%97%AE%E9%A2%98%E5%B0%8F%E8%AE%B0/</id>
+    <link href="https://www.51yunwei.top/posts/undefined/"/>
+    <id>https://www.51yunwei.top/posts/undefined/</id>
     <published>2023-12-28T01:08:08.000Z</published>
     <updated>2023-12-30T08:45:06.914Z</updated>
     
@@ -377,8 +377,8 @@
   
   <entry>
     <title>测试文章</title>
-    <link href="https://www.51yunwei.top/wiki/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/"/>
-    <id>https://www.51yunwei.top/wiki/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</id>
+    <link href="https://www.51yunwei.top/posts/undefined/"/>
+    <id>https://www.51yunwei.top/posts/undefined/</id>
     <published>2023-12-27T08:58:43.000Z</published>
     <updated>2023-12-31T03:29:11.361Z</updated>
     
