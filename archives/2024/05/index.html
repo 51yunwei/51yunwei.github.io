@@ -3,23 +3,20 @@
 <head>
     <meta charset="utf-8">
     
-    <title>django将查询结果转换为字典 | 运维少年</title>
+    <title>归档: 2024/5 | 运维少年</title>
     
     
-        <meta name="keywords" content="django">
+        <meta name="keywords" content="运维少年">
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="查询的结果默认是只读的，不能直接修改，如下面这样 12event &#x3D; event.objects.get(id&#x3D;1)event[&#x27;name&#x27;] &#x3D; 123 有时候可能需要把数据获取到，然后添加一个字段传给前端，这时候就可以用以下的办法 123from django.forms.models import model_to_dictevent &#x3D; model_to_dict(Ev">
-<meta property="og:type" content="article">
-<meta property="og:title" content="django将查询结果转换为字典">
-<meta property="og:url" content="https://www.51yunwei.top/wiki/django%E5%B0%86%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C%E8%BD%AC%E6%8D%A2%E4%B8%BA%E5%AD%97%E5%85%B8/index.html">
+    <meta name="description" content="感谢浏览我的博客，欢迎关注微信公众号“运维少年” 获取最新资讯哦~">
+<meta property="og:type" content="website">
+<meta property="og:title" content="运维少年">
+<meta property="og:url" content="https://www.51yunwei.top/archives/2024/05/index.html">
 <meta property="og:site_name" content="运维少年">
-<meta property="og:description" content="查询的结果默认是只读的，不能直接修改，如下面这样 12event &#x3D; event.objects.get(id&#x3D;1)event[&#x27;name&#x27;] &#x3D; 123 有时候可能需要把数据获取到，然后添加一个字段传给前端，这时候就可以用以下的办法 123from django.forms.models import model_to_dictevent &#x3D; model_to_dict(Ev">
+<meta property="og:description" content="感谢浏览我的博客，欢迎关注微信公众号“运维少年” 获取最新资讯哦~">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-04-17T07:07:26.000Z">
-<meta property="article:modified_time" content="2024-05-29T03:28:10.086Z">
 <meta property="article:author" content="运维少年">
-<meta property="article:tag" content="django">
 <meta name="twitter:card" content="summary">
     
 
@@ -188,13 +185,13 @@
                          <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/Linux%E5%88%9B%E5%BB%BA%E8%AF%81%E4%B9%A6/">Linux创建证书</a></li>  </ul> 
                     </li> 
                     
-                    <li class="directory open">
+                    <li class="directory">
                         <a href="#" data-role="directory">
-                            <i class="fa fa-folder-open"></i>
+                            <i class="fa fa-folder"></i>
                             &nbsp;
                             django
                         </a>
-                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/django%E5%92%8Cadminlte%E7%AC%94%E8%AE%B0/">django和adminlte笔记</a></li>  <li class="file"><a href="/wiki/%E5%9C%A8adminlte%E4%B8%AD%E4%BD%BF%E7%94%A8select2/">在adminlte中使用select2</a></li>  <li class="file"><a href="/wiki/%E5%9C%A8adminlte%E4%B8%AD%E4%BD%BF%E7%94%A8datatable/">在adminlte中使用datatable</a></li>  <li class="file active"><a href="/wiki/django%E5%B0%86%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C%E8%BD%AC%E6%8D%A2%E4%B8%BA%E5%AD%97%E5%85%B8/">django将查询结果转换为字典</a></li>  <li class="file"><a href="/wiki/django%E5%9C%A8windows%E4%B8%8A%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8%E5%92%8C%E6%89%93%E5%BC%80%E7%BD%91%E9%A1%B5/">django在windows上开机自启动和打开网页</a></li>  </ul> 
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/django%E5%92%8Cadminlte%E7%AC%94%E8%AE%B0/">django和adminlte笔记</a></li>  <li class="file"><a href="/wiki/%E5%9C%A8adminlte%E4%B8%AD%E4%BD%BF%E7%94%A8select2/">在adminlte中使用select2</a></li>  <li class="file"><a href="/wiki/%E5%9C%A8adminlte%E4%B8%AD%E4%BD%BF%E7%94%A8datatable/">在adminlte中使用datatable</a></li>  <li class="file"><a href="/wiki/django%E5%B0%86%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C%E8%BD%AC%E6%8D%A2%E4%B8%BA%E5%AD%97%E5%85%B8/">django将查询结果转换为字典</a></li>  <li class="file"><a href="/wiki/django%E5%9C%A8windows%E4%B8%8A%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8%E5%92%8C%E6%89%93%E5%BC%80%E7%BD%91%E9%A1%B5/">django在windows上开机自启动和打开网页</a></li>  </ul> 
                     </li> 
                     
                     <li class="directory">
@@ -303,114 +300,52 @@
     <div id="toTop" class="fa fa-angle-up"></div>
 </aside>
             
-            <section id="main"><article id="post-django将查询结果转换为字典" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-                    <div class="article-meta">
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/django/">django</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link-link" href="/tags/django/" rel="tag">django</a>
-    </div>
-
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/wiki/django%E5%B0%86%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C%E8%BD%AC%E6%8D%A2%E4%B8%BA%E5%AD%97%E5%85%B8/">
-            <time datetime="2024-04-17T07:07:26.000Z" itemprop="datePublished">2024-04-17</time>
-        </a>
-    </div>
-
-
-                        
-                            <i class="fa fa-bar-chart"></i>
-                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
-                        
-                        
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/raw/writing/source/_posts/django将查询结果转换为字典.md"> Source </a>
-                            </div>
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/edit/writing/source/_posts/django将查询结果转换为字典.md"> Edit </a>
-                            </div>
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/commits/writing/source/_posts/django将查询结果转换为字典.md"> History </a>
-                            </div>
-                        
-                    </div>
-                
+            <section id="main"><div class="timeline timeline-wrap">
+    
+            <div class="timeline-row timeline-row-major">
+                <span class="node"><i class="fa fa-calendar-o"></i></span>
+                <h1 class="title"><a href="/archives/2024/">2024</a></h1>
+            </div>
+    
+            <div class="timeline-row timeline-row-major">
+                <span class="node"><i class="fa fa-calendar"></i></span>
+                <h1 class="title"><a href="/archives/2024/05/">2024-05</a><span class="archive-list-count">1</span></h1>
+            </div>
+    
+        <div class="timeline-row">
+            <span class="node"></span>
+            <div class="content">
                 
     
-        <h1 class="article-title" itemprop="name">
-            django将查询结果转换为字典
+        <h1 itemprop="name">
+            <a class="timeline-article-title" href="/wiki/%E5%BD%93%E5%89%8D%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E4%B8%BB%E9%A2%98%E5%8F%8A%E9%83%A8%E7%BD%B2%E6%96%B9%E5%BC%8F/">当前博客使用主题及部署方式</a>
         </h1>
     
 
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-        
-            
-        
-        
-            <p>查询的结果默认是只读的，不能直接修改，如下面这样</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">event = event.objects.get(<span class="built_in">id</span>=<span class="number">1</span>)</span><br><span class="line">event[<span class="string">&#x27;name&#x27;</span>] = <span class="number">123</span></span><br></pre></td></tr></table></figure>
-<p>有时候可能需要把数据获取到，然后添加一个字段传给前端，这时候就可以用以下的办法</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.forms.models <span class="keyword">import</span> model_to_dict</span><br><span class="line">event = model_to_dict(EventDB.objects.get(<span class="built_in">id</span>=event_id))</span><br><span class="line">event[<span class="string">&#x27;name&#x27;</span>] = <span class="number">123</span></span><br></pre></td></tr></table></figure>
-
-            </div>
-        
-        <footer class="article-footer">
-        </footer>
+                
+                <div class="article-meta">
+                    
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/wiki/%E5%BD%93%E5%89%8D%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E4%B8%BB%E9%A2%98%E5%8F%8A%E9%83%A8%E7%BD%B2%E6%96%B9%E5%BC%8F/">
+            <time datetime="2024-05-29T03:39:06.000Z" itemprop="datePublished">2024-05-29</time>
+        </a>
     </div>
-</article>
 
 
-    
-<nav id="article-nav">
-    
-        <a href="/wiki/django%E5%9C%A8windows%E4%B8%8A%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8%E5%92%8C%E6%89%93%E5%BC%80%E7%BD%91%E9%A1%B5/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">上一篇</strong>
-            <div class="article-nav-title">
-                
-                    django在windows上开机自启动和打开网页
+                    
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建</a>
+    </div>
+
+                    
+                </div>
                 
             </div>
-        </a>
+        </div>
     
-    
-        <a href="/wiki/%E5%9C%A8adminlte%E4%B8%AD%E4%BD%BF%E7%94%A8datatable/" id="article-nav-older" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">在adminlte中使用datatable</div>
-        </a>
-    
-</nav>
-
-
-
-
-
-    
-    
-
-
-
-
-<!-- baidu url auto push script -->
-<script type="text/javascript">
-    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
-</script>     
+</div>
 </section>
         </div>
         <footer id="footer">

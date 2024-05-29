@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>当前博客使用主题及部署方式</title>
+      <link href="/wiki/%E5%BD%93%E5%89%8D%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E4%B8%BB%E9%A2%98%E5%8F%8A%E9%83%A8%E7%BD%B2%E6%96%B9%E5%BC%8F/"/>
+      <url>/wiki/%E5%BD%93%E5%89%8D%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E4%B8%BB%E9%A2%98%E5%8F%8A%E9%83%A8%E7%BD%B2%E6%96%B9%E5%BC%8F/</url>
+      
+        <content type="html"><![CDATA[<p>当前使用的主题是<code>Wikitten</code></p><p>部署文档链接如下：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/zthxxx/hexo-theme-Wikitten/blob/master/README_zh-CN.md</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 博客搭建 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>清除模态框form的内容</title>
       <link href="/wiki/%E6%B8%85%E9%99%A4%E6%A8%A1%E6%80%81%E6%A1%86form%E7%9A%84%E5%86%85%E5%AE%B9/"/>
       <url>/wiki/%E6%B8%85%E9%99%A4%E6%A8%A1%E6%80%81%E6%A1%86form%E7%9A%84%E5%86%85%E5%AE%B9/</url>
