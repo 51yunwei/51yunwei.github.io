@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>openEuler中奇怪的网络管理服务</title>
+      <link href="/posts/4cf37030/"/>
+      <url>/posts/4cf37030/</url>
+      
+        <content type="html"><![CDATA[<p>openEuler中的网络服务</p><p>openEuler没有network服务，当我修改了网卡配置文件之后，使用以下命令进行重启，报错<code>Failed to restart network.service: Unit network.service not found.</code></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost sshuser]<span class="comment"># systemctl restart network</span></span><br><span class="line">Failed to restart network.service: Unit network.service not found.</span><br><span class="line">[root@localhost sshuser]<span class="comment"># </span></span><br></pre></td></tr></table></figure><p>经过查询才知道，<code>EulerOS</code>没有<code>network</code>服务，而是使用<code>NetworkManager</code>管理网络服务，所以直接重启这个服务即可。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost sshuser]<span class="comment"># systemctl restart NetworkManager</span></span><br></pre></td></tr></table></figure><p>让我感觉到奇怪的点是，在系统中是可以查到<code>network</code>服务的，但用<code>systemctl</code>和<code>service</code>命令却管理不了它。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost sshuser]<span class="comment"># systemctl | grep network</span></span><br><span class="line">  sys-devices-pci0000:00-0000:00:12.0-virtio1-net-ens18.device                                             loaded active plugged   Virtio network device</span><br><span class="line">  sys-subsystem-net-devices-ens18.device                                                                   loaded active plugged   Virtio network device</span><br><span class="line">  network-online.target                                                                                    loaded active active    Network is Online</span><br><span class="line">  network-pre.target                                                                                       loaded active active    Preparation <span class="keyword">for</span> Network</span><br><span class="line">  network.target                                                                                           loaded active active    Network</span><br><span class="line">[root@localhost sshuser]<span class="comment"># </span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> openEuler </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>给hexo主题添加代码块复制功能</title>
       <link href="/posts/undefined/"/>
       <url>/posts/undefined/</url>

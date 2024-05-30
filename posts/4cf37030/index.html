@@ -3,20 +3,23 @@
 <head>
     <meta charset="utf-8">
     
-    <title>运维少年</title>
+    <title>openEuler中奇怪的网络管理服务 | 运维少年</title>
     
     
-        <meta name="keywords" content="运维少年">
+        <meta name="keywords" content="openEuler">
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta property="og:type" content="website">
-<meta property="og:title" content="运维少年">
-<meta property="og:url" content="https://www.51yunwei.top/categories/index.html">
+    <meta name="description" content="openEuler中的网络服务 openEuler没有network服务，当我修改了网卡配置文件之后，使用以下命令进行重启，报错Failed to restart network.service: Unit network.service not found. 123[root@localhost sshuser]# systemctl restart networkFailed to resta">
+<meta property="og:type" content="article">
+<meta property="og:title" content="openEuler中奇怪的网络管理服务">
+<meta property="og:url" content="https://www.51yunwei.top/posts/4cf37030/index.html">
 <meta property="og:site_name" content="运维少年">
+<meta property="og:description" content="openEuler中的网络服务 openEuler没有network服务，当我修改了网卡配置文件之后，使用以下命令进行重启，报错Failed to restart network.service: Unit network.service not found. 123[root@localhost sshuser]# systemctl restart networkFailed to resta">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-12-30T09:42:02.302Z">
-<meta property="article:modified_time" content="2023-12-30T09:42:02.302Z">
+<meta property="article:published_time" content="2024-05-30T09:11:31.000Z">
+<meta property="article:modified_time" content="2024-05-30T09:12:34.457Z">
 <meta property="article:author" content="运维少年">
+<meta property="article:tag" content="openEuler">
 <meta name="twitter:card" content="summary">
     
 
@@ -178,13 +181,13 @@
         
         
          <ul class="unstyled" id="tree"> 
-                    <li class="directory">
+                    <li class="directory open">
                         <a href="#" data-role="directory">
-                            <i class="fa fa-folder"></i>
+                            <i class="fa fa-folder-open"></i>
                             &nbsp;
                             Linux
                         </a>
-                         <ul class="unstyled" id="tree">  <li class="file"><a href="/posts/4cf37030/">openEuler中奇怪的网络管理服务</a></li>  </ul> 
+                         <ul class="unstyled" id="tree">  <li class="file active"><a href="/posts/4cf37030/">openEuler中奇怪的网络管理服务</a></li>  </ul> 
                     </li> 
                     
                     <li class="directory">
@@ -312,31 +315,80 @@
 </aside>
             
             <section id="main">
-            <article id="default-" class="article article-type-default" itemscope itemprop="blogPost">
+            <article id="post-openEuler中奇怪的网络管理服务" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Linux/">Linux</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/openEuler/" rel="tag">openEuler</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/posts/4cf37030/">
+            <time datetime="2024-05-30T09:11:31.000Z" itemprop="datePublished">2024-05-30</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/raw/writing/source/_posts/openEuler中奇怪的网络管理服务.md"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/edit/writing/source/_posts/openEuler中奇怪的网络管理服务.md"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/commits/writing/source/_posts/openEuler中奇怪的网络管理服务.md"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            openEuler中奇怪的网络管理服务
+        </h1>
+    
+
+            </header>
         
         
         <div class="article-entry" itemprop="articleBody">
         
         
             
-        
-        
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">文章目录</strong>
+                    
+                </div>
             
-<ul>
-<% categories="site.categories;" %>
-<% for(var key in categories){ %>
-  <li><strong><%= key %></%=></strong>
-    <ul>
-      <% var items="categories[key];" %>
-      <% for(var i in items){ %>
-        <li><%= items[i].title %></%=></li>
-      <% } %>
-    </%></%></%></ul>
-  </li>
-<% } %>
-</%></%></%></ul>
+        
+        
+            <p>openEuler中的网络服务</p>
+<p>openEuler没有network服务，当我修改了网卡配置文件之后，使用以下命令进行重启，报错<code>Failed to restart network.service: Unit network.service not found.</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost sshuser]<span class="comment"># systemctl restart network</span></span><br><span class="line">Failed to restart network.service: Unit network.service not found.</span><br><span class="line">[root@localhost sshuser]<span class="comment"># </span></span><br></pre></td></tr></table></figure>
+<p>经过查询才知道，<code>EulerOS</code>没有<code>network</code>服务，而是使用<code>NetworkManager</code>管理网络服务，所以直接重启这个服务即可。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost sshuser]<span class="comment"># systemctl restart NetworkManager</span></span><br></pre></td></tr></table></figure>
+<p>让我感觉到奇怪的点是，在系统中是可以查到<code>network</code>服务的，但用<code>systemctl</code>和<code>service</code>命令却管理不了它。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost sshuser]<span class="comment"># systemctl | grep network</span></span><br><span class="line">  sys-devices-pci0000:00-0000:00:12.0-virtio1-net-ens18.device                                             loaded active plugged   Virtio network device</span><br><span class="line">  sys-subsystem-net-devices-ens18.device                                                                   loaded active plugged   Virtio network device</span><br><span class="line">  network-online.target                                                                                    loaded active active    Network is Online</span><br><span class="line">  network-pre.target                                                                                       loaded active active    Preparation <span class="keyword">for</span> Network</span><br><span class="line">  network.target                                                                                           loaded active active    Network</span><br><span class="line">[root@localhost sshuser]<span class="comment"># </span></span><br></pre></td></tr></table></figure>
+
             </div>
         
         <footer class="article-footer">
@@ -346,6 +398,16 @@
 
 
     
+<nav id="article-nav">
+    
+    
+        <a href="/posts/undefined/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">给hexo主题添加代码块复制功能</div>
+        </a>
+    
+</nav>
+
 
 
 
