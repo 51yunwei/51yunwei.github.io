@@ -392,10 +392,10 @@
                 
                     
                     <p></p><p>openEuler中的网络服务</p>
+<h1>管理网络服务</h1>
 <p>openEuler没有network服务，当我修改了网卡配置文件之后，使用以下命令进行重启，报错<code>Failed to restart network.service: Unit network.service not found.</code></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost sshuser]<span class="comment"># systemctl restart network</span></span><br><span class="line">Failed to restart network.service: Unit network.service not found.</span><br><span class="line">[root@localhost sshuser]<span class="comment"># </span></span><br></pre></td></tr></table></figure>
 <p>经过查询才知道，<code>EulerOS</code>没有<code>network</code>服务，而是使用<code>NetworkManager</code>管理网络服务，所以直接重启这个服务即可。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost sshuser]<span class="comment"># systemctl restart NetworkManager</span></span><br></pre></td></tr></table></figure>
 <p>
                 
             
