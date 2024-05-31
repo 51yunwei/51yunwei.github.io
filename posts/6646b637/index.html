@@ -3,20 +3,23 @@
 <head>
     <meta charset="utf-8">
     
-    <title>分类: Linux系统 | 运维少年</title>
+    <title>Linux创建证书 | 运维少年</title>
     
     
-        <meta name="keywords" content="运维少年">
+        <meta name="keywords" content="Linux基础">
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="感谢浏览我的博客，欢迎关注微信公众号“运维少年” 获取最新资讯哦~">
-<meta property="og:type" content="website">
-<meta property="og:title" content="运维少年">
-<meta property="og:url" content="https://www.51yunwei.top/categories/Linux%E7%B3%BB%E7%BB%9F/index.html">
+    <meta name="description" content="创建证书请求文件CSR和私钥 123456789101112131415161718openssl req -new -nodes -sha256 -newkey rsa:2048 -keyout [$Key_File] -out [$OpenSSL_CSR]说明new：指定生成一个新的 CSR 文件。nodes：指定密钥文件不被加密。sha256：指定摘要算法。newkey rsa:2048：指">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux创建证书">
+<meta property="og:url" content="https://www.51yunwei.top/posts/6646b637/index.html">
 <meta property="og:site_name" content="运维少年">
-<meta property="og:description" content="感谢浏览我的博客，欢迎关注微信公众号“运维少年” 获取最新资讯哦~">
+<meta property="og:description" content="创建证书请求文件CSR和私钥 123456789101112131415161718openssl req -new -nodes -sha256 -newkey rsa:2048 -keyout [$Key_File] -out [$OpenSSL_CSR]说明new：指定生成一个新的 CSR 文件。nodes：指定密钥文件不被加密。sha256：指定摘要算法。newkey rsa:2048：指">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-02-01T01:04:40.000Z">
+<meta property="article:modified_time" content="2024-05-31T08:28:20.776Z">
 <meta property="article:author" content="运维少年">
+<meta property="article:tag" content="Linux基础">
 <meta name="twitter:card" content="summary">
     
 
@@ -178,22 +181,13 @@
         
         
          <ul class="unstyled" id="tree"> 
-                    <li class="directory">
+                    <li class="directory open">
                         <a href="#" data-role="directory">
-                            <i class="fa fa-folder"></i>
+                            <i class="fa fa-folder-open"></i>
                             &nbsp;
                             Linux
                         </a>
-                         <ul class="unstyled" id="tree">  <li class="file"><a href="/posts/4cf37030/">openEuler中奇怪的网络管理服务</a></li>  <li class="file"><a href="/posts/83a68e5f/">Linux中的软链接和硬链接</a></li>  </ul> 
-                    </li> 
-                    
-                    <li class="directory">
-                        <a href="#" data-role="directory">
-                            <i class="fa fa-folder"></i>
-                            &nbsp;
-                            Linux系统
-                        </a>
-                         <ul class="unstyled" id="tree">  <li class="file"><a href="/posts/undefined/">Linux创建证书</a></li>  </ul> 
+                         <ul class="unstyled" id="tree">  <li class="file active"><a href="/posts/6646b637/">Linux创建证书</a></li>  <li class="file"><a href="/posts/4cf37030/">openEuler中奇怪的网络管理服务</a></li>  <li class="file"><a href="/posts/83a68e5f/">Linux中的软链接和硬链接</a></li>  </ul> 
                     </li> 
                     
                     <li class="directory">
@@ -312,50 +306,116 @@
 </aside>
             
             <section id="main">
-            
-<div class="timeline timeline-wrap">
-    <div class="timeline-row timeline-row-major">
-        <span class="node"><i class="fa fa-folder"></i></span>
-        <h1 class="title">Linux系统</h1>
-    </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+            <article id="post-Linux创建证书" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
                 
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/posts/undefined/">Linux创建证书</a>
-        </h1>
-    
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Linux/">Linux</a>
+    </div>
 
-                <div class="article-meta">
-                    
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/Linux%E5%9F%BA%E7%A1%80/" rel="tag">Linux基础</a>
+    </div>
+
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/posts/undefined/">
+        <a href="/posts/6646b637/">
             <time datetime="2024-02-01T01:04:40.000Z" itemprop="datePublished">2024-02-01</time>
         </a>
     </div>
 
 
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Linux%E7%B3%BB%E7%BB%9F/">Linux系统</a>
-    </div>
-
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link-link" href="/tags/Linux/" rel="tag">Linux</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/raw/writing/source/_posts/Linux创建证书.md"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/edit/writing/source/_posts/Linux创建证书.md"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/commits/writing/source/_posts/Linux创建证书.md"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
     
-</div>
+        <h1 class="article-title" itemprop="name">
+            Linux创建证书
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+        
+        
+            <p>创建证书请求文件CSR和私钥</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">openssl req -new -nodes -sha256 -newkey rsa:2048 -keyout [<span class="variable">$Key_File</span>] -out [<span class="variable">$OpenSSL_CSR</span>]</span><br><span class="line">说明</span><br><span class="line">new：指定生成一个新的 CSR 文件。</span><br><span class="line">nodes：指定密钥文件不被加密。</span><br><span class="line">sha256：指定摘要算法。</span><br><span class="line">newkey rsa:2048：指定密钥类型和长度。</span><br><span class="line">[<span class="variable">$Key_File</span>]：密钥文件名称。</span><br><span class="line">[<span class="variable">$OpenSSL_CSR</span>]：加密后文件的存放路径。new：指定生成一个新的 CSR 文件。</span><br><span class="line">4. 根据系统返回的提示，输入生成 CSR 文件所需的信息。以下是关于提示的说明：</span><br><span class="line">Organization Name：公司名称，可以是中文或英文。</span><br><span class="line">Organizational Unit Name：部门名称，可以是中文或英文。</span><br><span class="line">Country Code：申请单位所属国家，只能是两个字母的国家码。例如，中国填写为 CN。</span><br><span class="line">State or Province Name：州名或省份名称，可以是中文或英文。</span><br><span class="line">Locality Name：城市名称，可以是中文或英文。</span><br><span class="line">Common Name：申请 SSL 证书的具体网站域名。</span><br><span class="line">Email Address：可选择不输入。</span><br><span class="line">Challenge Password：可选择不输入。</span><br><span class="line">5. 按照命令提示输入相应内容后，即可在当前目录下获取密钥文件和 CSR 文件。</span><br></pre></td></tr></table></figure>
+<p>创建证书</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl x509 -signkey xxx.key -<span class="keyword">in</span> xxx.csr -req -days 365 -out xxx.crt</span><br></pre></td></tr></table></figure>
+<p>获取证书过期时间</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl x509 -<span class="keyword">in</span> &lt;cert&gt;.pem -noout -dates</span><br></pre></td></tr></table></figure>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+        <a href="/posts/undefined/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    在adminlte中使用select2
+                
+            </div>
+        </a>
+    
+    
+        <a href="/posts/undefined/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">django和adminlte笔记</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
 
             <div style="text-align: center;">
                 <p style="text-align: center;"> 感谢浏览，如对您有帮助或需联系我，欢迎关注我的微信公众号~</p>
