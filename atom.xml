@@ -6,7 +6,7 @@
   <link href="https://www.51yunwei.top/atom.xml" rel="self"/>
   
   <link href="https://www.51yunwei.top/"/>
-  <updated>2024-05-31T08:34:43.094Z</updated>
+  <updated>2024-05-31T08:34:46.812Z</updated>
   <id>https://www.51yunwei.top/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.51yunwei.top/posts/b6ae4c2c/"/>
     <id>https://www.51yunwei.top/posts/b6ae4c2c/</id>
     <published>2024-05-31T08:30:15.000Z</published>
-    <updated>2024-05-31T08:34:43.094Z</updated>
+    <updated>2024-05-31T08:34:46.812Z</updated>
     
     <content type="html"><![CDATA[<p>在虚拟化环境上，有普通磁盘和共享磁盘，有时候进行扩容后，多台虚拟机上的磁盘大小一样，那怎么判断某个盘是不是共享磁盘呢？这时候我们可以使用<code>blkid</code>命令来查看。</p><p>命令输出结果如下，如果多台虚拟机输出的<code>uuid</code>是一样的，那这个磁盘就是共享磁盘了。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@txy201-51 tmp]<span class="comment"># blkid /dev/vda1</span></span><br><span class="line">/dev/vda1: UUID=<span class="string">&quot;4b499d76-769a-40a0-93dc-4a31a59add28&quot;</span> TYPE=<span class="string">&quot;ext4&quot;</span></span><br></pre></td></tr></table></figure>]]></content>
     
