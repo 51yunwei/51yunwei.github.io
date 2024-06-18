@@ -3,20 +3,23 @@
 <head>
     <meta charset="utf-8">
     
-    <title>归档: 2024 | 运维少年</title>
+    <title>Linux中的用户ID | 运维少年</title>
     
     
-        <meta name="keywords" content="运维少年">
+        <meta name="keywords" content="Linux基础">
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="感谢浏览我的博客，欢迎关注微信公众号“运维少年” 获取最新资讯哦~">
-<meta property="og:type" content="website">
-<meta property="og:title" content="运维少年">
-<meta property="og:url" content="https://www.51yunwei.top/archives/2024/page/2/index.html">
+    <meta name="description" content="UID指的是用户的ID(User ID)，一个用户的UID标识一个给定用户，UID是用户的唯一标识符，通过UID可以区分不同的用户类别，比如UID为0的是超级用户，UID为1000-600000之间的是普通用户，而UID为1-999之间的是虚拟用户。  超级用户：也称为root用户，UID为0，拥有系统的完全控制权限，可以进行修改、删除文件等操作。 普通用户：也成为一般用户，UID为1000-60">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux中的用户ID">
+<meta property="og:url" content="https://www.51yunwei.top/posts/a0e0543a/index.html">
 <meta property="og:site_name" content="运维少年">
-<meta property="og:description" content="感谢浏览我的博客，欢迎关注微信公众号“运维少年” 获取最新资讯哦~">
+<meta property="og:description" content="UID指的是用户的ID(User ID)，一个用户的UID标识一个给定用户，UID是用户的唯一标识符，通过UID可以区分不同的用户类别，比如UID为0的是超级用户，UID为1000-600000之间的是普通用户，而UID为1-999之间的是虚拟用户。  超级用户：也称为root用户，UID为0，拥有系统的完全控制权限，可以进行修改、删除文件等操作。 普通用户：也成为一般用户，UID为1000-60">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-06-18T03:13:16.000Z">
+<meta property="article:modified_time" content="2024-06-18T03:53:42.495Z">
 <meta property="article:author" content="运维少年">
+<meta property="article:tag" content="Linux基础">
 <meta name="twitter:card" content="summary">
     
 
@@ -178,13 +181,13 @@
         
         
          <ul class="unstyled" id="tree"> 
-                    <li class="directory">
+                    <li class="directory open">
                         <a href="#" data-role="directory">
-                            <i class="fa fa-folder"></i>
+                            <i class="fa fa-folder-open"></i>
                             &nbsp;
                             Linux
                         </a>
-                         <ul class="unstyled" id="tree">  <li class="file"><a href="/posts/6646b637/">Linux创建证书</a></li>  <li class="file"><a href="/posts/4cf37030/">openEuler中奇怪的网络管理服务</a></li>  <li class="file"><a href="/posts/83a68e5f/">Linux中的软链接和硬链接</a></li>  <li class="file"><a href="/posts/b6ae4c2c/">怎么判断多台虚拟机上的磁盘是不是同一块磁盘呢？</a></li>  <li class="file"><a href="/posts/a0e0543a/">Linux中的用户ID</a></li>  </ul> 
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/posts/6646b637/">Linux创建证书</a></li>  <li class="file"><a href="/posts/4cf37030/">openEuler中奇怪的网络管理服务</a></li>  <li class="file"><a href="/posts/83a68e5f/">Linux中的软链接和硬链接</a></li>  <li class="file"><a href="/posts/b6ae4c2c/">怎么判断多台虚拟机上的磁盘是不是同一块磁盘呢？</a></li>  <li class="file active"><a href="/posts/a0e0543a/">Linux中的用户ID</a></li>  </ul> 
                     </li> 
                     
                     <li class="directory">
@@ -303,103 +306,125 @@
 </aside>
             
             <section id="main">
-            <div class="timeline timeline-wrap">
-    
-            <div class="timeline-row timeline-row-major">
-                <span class="node"><i class="fa fa-calendar-o"></i></span>
-                <h1 class="title"><a href="/archives/2024/">2024</a></h1>
-            </div>
-    
-            <div class="timeline-row timeline-row-major">
-                <span class="node"><i class="fa fa-calendar"></i></span>
-                <h1 class="title"><a href="/archives/2024/04/">2024-04</a><span class="archive-list-count">3</span></h1>
-            </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+            <article id="post-Linux中的用户ID" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Linux/">Linux</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/Linux%E5%9F%BA%E7%A1%80/" rel="tag">Linux基础</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/posts/a0e0543a/">
+            <time datetime="2024-06-18T03:13:16.000Z" itemprop="datePublished">2024-06-18</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/raw/writing/source/_posts/Linux中的用户ID.md"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/edit/writing/source/_posts/Linux中的用户ID.md"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/commits/writing/source/_posts/Linux中的用户ID.md"> History </a>
+                            </div>
+                        
+                    </div>
+                
                 
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/posts/undefined/">django将查询结果转换为字典</a>
+        <h1 class="article-title" itemprop="name">
+            Linux中的用户ID
         </h1>
     
 
-                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">文章目录</strong>
+                    
+                </div>
+            
+        
+        
+            <p><code>UID</code>指的是用户的<code>ID</code>(User ID)，一个用户的UID标识一个给定用户，UID是用户的唯一标识符，通过UID可以区分不同的用户类别，比如UID为0的是超级用户，UID为1000-600000之间的是普通用户，而UID为1-999之间的是虚拟用户。</p>
+<ul class="lvl-0">
+<li class="lvl-2">超级用户：也称为root用户，UID为0，拥有系统的完全控制权限，可以进行修改、删除文件等操作。</li>
+<li class="lvl-2">普通用户：也成为一般用户，UID为1000-60000之间，可以对自己目录下的文件进行访问和修改，也可以对经过授权的文件进行访问。</li>
+<li class="lvl-2">虚拟用户：也称为系统用户，UID为1-999之间，不提供密码登录系统，它们的存在主要是为了方便系统的管理。</li>
+</ul>
+<p><strong>用户在登录系统时，是通过UID来区分用户，而不是通过用户名来区分</strong><br>
+实验步骤：<br>
+1、创建一个UID为1000的用户user02，再创建一个相同id的user01，通过id命令，发现两个用户都显示为user02</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@kvm-hkcloud01 ~]<span class="comment"># useradd -u 1000 user02</span></span><br><span class="line">[root@kvm-hkcloud01 ~]<span class="comment"># useradd -u 1000 -o user01</span></span><br><span class="line">[root@kvm-hkcloud01 ~]<span class="comment"># id user01</span></span><br><span class="line">uid=1000(user02) gid=1002(user02) <span class="built_in">groups</span>=1002(user02)</span><br><span class="line">[root@kvm-hkcloud01 ~]<span class="comment"># id user02</span></span><br><span class="line">uid=1000(user02) gid=1002(user02) <span class="built_in">groups</span>=1002(user02)</span><br></pre></td></tr></table></figure>
+<p>2、切换到user01下，发现名称还是user02，但是组信息变为了user01的</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@kvm-hkcloud01 ~]<span class="comment"># su - user01</span></span><br><span class="line">Last login: Tue Jun 18 11:35:27 CST 2024 on pts/0</span><br><span class="line">[user02@kvm-hkcloud01 ~]$ <span class="built_in">id</span></span><br><span class="line">uid=1000(user02) gid=1003(user01) <span class="built_in">groups</span>=1003(user01)</span><br><span class="line">[user02@kvm-hkcloud01 ~]$</span><br></pre></td></tr></table></figure>
+<p>3、当user02的uid发生改变时，再查看user01的信息，因为没有重复的id的情况下，用户名就能正常的显示user01了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@kvm-hkcloud01 ~]<span class="comment"># usermod -u 1001 user02</span></span><br><span class="line">[root@kvm-hkcloud01 ~]<span class="comment"># id user02</span></span><br><span class="line">uid=1001(user02) gid=1002(user02) <span class="built_in">groups</span>=1002(user02)</span><br><span class="line">[root@kvm-hkcloud01 ~]<span class="comment"># id user01</span></span><br><span class="line">uid=1000(user01) gid=1003(user01) <span class="built_in">groups</span>=1003(user01)</span><br></pre></td></tr></table></figure>
+<p>4、当我再将user02的uid修改为1000的时候，再查看user01的信息，发现user01的用户名又显示为user02了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@kvm-hkcloud01 ~]<span class="comment"># usermod -u 1000 -o user02</span></span><br><span class="line">[root@kvm-hkcloud01 ~]<span class="comment"># id user02</span></span><br><span class="line">uid=1000(user02) gid=1002(user02) <span class="built_in">groups</span>=1002(user02)</span><br><span class="line">[root@kvm-hkcloud01 ~]<span class="comment"># id user01</span></span><br><span class="line">uid=1000(user02) gid=1002(user02) <span class="built_in">groups</span>=1002(user02)</span><br></pre></td></tr></table></figure>
+<p><strong>那么，当UID重复的时候，是谁决定了用哪个用户名作为显示呢？</strong><br>
+想一想，哪个文件记录了UID信息？没错,是<code>/etc/passwd</code>当我将user01和user02的行进行调转之后（user01）在前，使用id查看的时候，显示的用户名就是user01了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 修改前</span></span><br><span class="line">[root@kvm-hkcloud01 ~]<span class="comment"># tail -n 2 /etc/passwd</span></span><br><span class="line">user02:x:1000:1002::/home/user02:/bin/bash</span><br><span class="line">user01:x:1000:1003::/home/user01:/bin/bash</span><br><span class="line">[root@kvm-hkcloud01 ~]<span class="comment"># id user01</span></span><br><span class="line">uid=1000(user02) gid=1002(user02) <span class="built_in">groups</span>=1002(user02)</span><br><span class="line">[root@kvm-hkcloud01 ~]<span class="comment"># id user02</span></span><br><span class="line">uid=1000(user02) gid=1002(user02) <span class="built_in">groups</span>=1002(user02)</span><br><span class="line">[root@kvm-hkcloud01 ~]<span class="comment"># vi /etc/passwd</span></span><br><span class="line"><span class="comment"># 修改后</span></span><br><span class="line">[root@kvm-hkcloud01 ~]<span class="comment"># tail -n 2 /etc/passwd</span></span><br><span class="line">user01:x:1000:1003::/home/user01:/bin/bash</span><br><span class="line">user02:x:1000:1002::/home/user02:/bin/bash</span><br><span class="line">[root@kvm-hkcloud01 ~]<span class="comment"># id user01</span></span><br><span class="line">uid=1000(user01) gid=1003(user01) <span class="built_in">groups</span>=1003(user01)</span><br><span class="line">[root@kvm-hkcloud01 ~]<span class="comment"># id user02</span></span><br><span class="line">uid=1000(user01) gid=1003(user01) <span class="built_in">groups</span>=1003(user01)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
             </div>
-        </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
     
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
+<nav id="article-nav">
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/posts/undefined/">在adminlte中使用datatable</a>
-        </h1>
+    
+        <a href="/posts/b6ae4c2c/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">怎么判断多台虚拟机上的磁盘是不是同一块磁盘呢？</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
     
 
-                
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/posts/undefined/">在adminlte中使用select2</a>
-        </h1>
-    
 
-                
-            </div>
-        </div>
-    
-            <div class="timeline-row timeline-row-major">
-                <span class="node"><i class="fa fa-calendar"></i></span>
-                <h1 class="title"><a href="/archives/2024/02/">2024-02</a><span class="archive-list-count">1</span></h1>
-            </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/posts/6646b637/">Linux创建证书</a>
-        </h1>
-    
 
-                
-            </div>
-        </div>
-    
-            <div class="timeline-row timeline-row-major">
-                <span class="node"><i class="fa fa-calendar"></i></span>
-                <h1 class="title"><a href="/archives/2024/01/">2024-01</a><span class="archive-list-count">1</span></h1>
-            </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/posts/undefined/">django和adminlte笔记</a>
-        </h1>
-    
 
-                
-            </div>
-        </div>
-    
-</div>
-
-    <nav id="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/2024/">&laquo; 上一页</a><a class="page-number" href="/archives/2024/">1</a><span class="page-number current">2</span>
-    </nav>
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
 
            </section>
         </div>
