@@ -61,6 +61,18 @@
         <content type="html"><![CDATA[<p>在CentOS 7及更高的版本中，使用<code>chkconfig</code>命令查看开机自启动信息时，发现只有几个服务被<code>SysV</code>管理的服务，没有包括<code>systemd</code>管理的服务。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[root@kvm-hkcloud01 var]<span class="comment"># chkconfig --list</span></span><br><span class="line"></span><br><span class="line">Note: This output shows SysV services only and does not include native</span><br><span class="line">      systemd services. SysV configuration data might be overridden by native</span><br><span class="line">      systemd configuration.</span><br><span class="line"></span><br><span class="line">      If you want to list systemd services use <span class="string">&#x27;systemctl list-unit-files&#x27;</span>.</span><br><span class="line">      To see services enabled on particular target use</span><br><span class="line">      <span class="string">&#x27;systemctl list-dependencies [target]&#x27;</span>.</span><br><span class="line"></span><br><span class="line">netconsole      0:off   1:off   2:off   3:off   4:off   5:off   6:off</span><br><span class="line">network         0:off   1:off   2:on    3:on    4:on    5:on    6:off</span><br><span class="line">[root@kvm-hkcloud01 var]<span class="comment">#</span></span><br></pre></td></tr></table></figure><p>如果需要查看被<code>systemd</code>管理的服务，可以使用以下命令进行查询。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@kvm-hkcloud01 var]<span class="comment"># systemctl list-unit-files</span></span><br></pre></td></tr></table></figure>]]></content>
       
       
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
       
     </entry>
     
