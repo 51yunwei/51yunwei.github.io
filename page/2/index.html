@@ -211,7 +211,7 @@
                             &nbsp;
                             前端学习
                         </a>
-                         <ul class="unstyled" id="tree">  <li class="file"><a href="/posts/undefined/">adminlte中使用时间插件</a></li>  <li class="file"><a href="/posts/undefined/">清除模态框form的内容</a></li>  </ul> 
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/posts/undefined/">adminlte中使用时间插件</a></li>  <li class="file"><a href="/posts/undefined/">清除模态框form的内容</a></li>  <li class="file"><a href="/posts/17c655b1/">Jquery禁用按钮，防止重复提交</a></li>  </ul> 
                     </li> 
                     
                     <li class="directory">
@@ -231,7 +231,7 @@
                         </a>
                          <ul class="unstyled" id="tree">  <li class="file"><a href="/posts/undefined/">测试文章</a></li>  <li class="file"><a href="/posts/undefined/">Hello World</a></li>  <li class="file"><a href="/posts/undefined/">测试图片</a></li>  </ul> 
                     </li> 
-                     <li class="file"><a href="/posts/0/"></a></li>  </ul> 
+                     <li class="file"><a href="/posts/0/"></a></li>  <li class="file"><a href="/posts/614dd6d8/">systemd怎么查看开机自启动服务</a></li>  </ul> 
     </div>
     <script>
         $(document).ready(function() {
@@ -304,6 +304,199 @@
             
             <section id="main">
             
+        <article id="post-清除模态框form的内容" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">前端学习</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/adminlte/" rel="tag">adminlte</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/posts/undefined/">
+            <time datetime="2024-04-19T00:38:14.000Z" itemprop="datePublished">2024-04-19</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/raw/writing/source/_posts/清除模态框form的内容.md"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/edit/writing/source/_posts/清除模态框form的内容.md"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/commits/writing/source/_posts/清除模态框form的内容.md"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/posts/undefined/">清除模态框form的内容</a>
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+            
+        
+        
+            <p>在模态框提交数据后，页面不刷新的情况下，再次点击模态框，上次输入的内容还保留着，可以通过下面的方式清除模态框内容</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在ajax返回成功时可以执行</span></span><br><span class="line">$(<span class="string">&#x27;.modal-body&#x27;</span>).<span class="title function_">find</span>(<span class="string">&#x27;form&#x27;</span>).<span class="title function_">trigger</span>(<span class="string">&#x27;reset&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果在用户点击关闭时也要执行，可以在show.bs.modal事件里设置</span></span><br><span class="line"> $(<span class="string">&#x27;#updatemodal&#x27;</span>).<span class="title function_">on</span>(<span class="string">&#x27;show.bs.modal&#x27;</span>, <span class="keyword">function</span> (<span class="params">event</span>) &#123;</span><br><span class="line">    $(<span class="string">&#x27;.modal-body&#x27;</span>).<span class="title function_">find</span>(<span class="string">&#x27;form&#x27;</span>).<span class="title function_">trigger</span>(<span class="string">&#x27;reset&#x27;</span>);</span><br><span class="line">    <span class="comment">// 其他内容</span></span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+
+
+
+
+    
+        <article id="post-modal中使用form" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/adminlte/" rel="tag">adminlte</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/posts/undefined/">
+            <time datetime="2024-04-18T02:14:04.000Z" itemprop="datePublished">2024-04-18</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/raw/writing/source/_posts/modal中使用form.md"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/edit/writing/source/_posts/modal中使用form.md"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/commits/writing/source/_posts/modal中使用form.md"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/posts/undefined/">modal中使用form</a>
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                
+                    
+                    <p><ul class="lvl-0">
+<li class="lvl-2">
+<p>html</p>
+</li>
+</ul>
+</p><p>
+                
+            
+        
+        
+            </p></div>   
+            <div class="article-more-link">
+                <a href="/posts/undefined/#more">查看更多</a>
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+
+
+
+
+    
         <article id="post-adminlte中使用时间插件" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -1088,209 +1281,6 @@
         
         
             
-            </div>
-        
-        <footer class="article-footer">
-        </footer>
-    </div>
-</article>
-
-
-
-
-
-
-    
-        <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-                    <div class="article-meta">
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/%E5%8D%9A%E5%AE%A2%E6%B5%8B%E8%AF%95/">博客测试</a>
-    </div>
-
-                        
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/posts/undefined/">
-            <time datetime="2023-12-30T03:31:33.884Z" itemprop="datePublished">2023-12-30</time>
-        </a>
-    </div>
-
-
-                        
-                            <i class="fa fa-bar-chart"></i>
-                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
-                        
-                        
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/raw/writing/source/_posts/hello-world.md"> Source </a>
-                            </div>
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/edit/writing/source/_posts/hello-world.md"> Edit </a>
-                            </div>
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/commits/writing/source/_posts/hello-world.md"> History </a>
-                            </div>
-                        
-                    </div>
-                
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/posts/undefined/">Hello World</a>
-        </h1>
-    
-
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-        
-            
-                
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                
-                    
-                    <p></p><p>Welcome to <a target="_blank" rel="external nofollow noopener noreferrer" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="external nofollow noopener noreferrer" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="external nofollow noopener noreferrer" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start">Quick Start</h2>
-<h3 id="Create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<p>
-                
-            
-        
-        
-            </p></div>   
-            <div class="article-more-link">
-                <a href="/posts/undefined/#more">查看更多</a>
-            </div>
-        
-        <footer class="article-footer">
-        </footer>
-    </div>
-</article>
-
-
-
-
-
-
-    
-        <article id="post-Github-Page-Hexo-搭建个人博客问题小记" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-                    <div class="article-meta">
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link-link" href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" rel="tag">博客搭建</a>
-    </div>
-
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/posts/undefined/">
-            <time datetime="2023-12-28T01:08:08.000Z" itemprop="datePublished">2023-12-28</time>
-        </a>
-    </div>
-
-
-                        
-                            <i class="fa fa-bar-chart"></i>
-                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
-                        
-                        
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/raw/writing/source/_posts/Github-Page-Hexo-搭建个人博客问题小记.md"> Source </a>
-                            </div>
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/edit/writing/source/_posts/Github-Page-Hexo-搭建个人博客问题小记.md"> Edit </a>
-                            </div>
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/commits/writing/source/_posts/Github-Page-Hexo-搭建个人博客问题小记.md"> History </a>
-                            </div>
-                        
-                    </div>
-                
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/posts/undefined/">Github Page + Hexo 搭建个人博客问题小记</a>
-        </h1>
-    
-
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-        
-            
-                
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                
-                    
-                    <p><blockquote>
-<p>在使用Github Page + Hexo搭建个人博客的时候遇到了一些问题，现记录如下，主题使用的是cactus</p>
-</blockquote>
-</p><h1>问题1 hexo-deployer-git 提示输入用户名/密码</h1>
-<p>在<code>deploy</code>中配置了<code>token</code>后，使用<code>hexo g -d</code>部署到<code>Github</code>，提示输入用户名密码，但是现在<code>Github</code>已经不支持命令行使用用户名密码登录了，所以需要改为<code>SSH</code>的方式，将<code>deploy</code>的<code>token</code>去掉，<code>repo</code>配置为<code>git@github.com/用户名/仓库名</code>在Github仓库下，选择<code>Settings &gt; Deploy keys &gt;添加一个Deploy key</code>，将系统的<code>~/.ssh/xxxx.pub</code>文件的内容布置上去，然后在GitHub界面勾选<code>Allow write access</code>即可。</p>
-<p>
-                
-            
-        
-        
-            </p></div>   
-            <div class="article-more-link">
-                <a href="/posts/undefined/#more">查看更多</a>
             </div>
         
         <footer class="article-footer">

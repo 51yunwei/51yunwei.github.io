@@ -211,7 +211,7 @@
                             &nbsp;
                             前端学习
                         </a>
-                         <ul class="unstyled" id="tree">  <li class="file"><a href="/posts/undefined/">adminlte中使用时间插件</a></li>  <li class="file"><a href="/posts/undefined/">清除模态框form的内容</a></li>  </ul> 
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/posts/undefined/">adminlte中使用时间插件</a></li>  <li class="file"><a href="/posts/undefined/">清除模态框form的内容</a></li>  <li class="file"><a href="/posts/17c655b1/">Jquery禁用按钮，防止重复提交</a></li>  </ul> 
                     </li> 
                     
                     <li class="directory">
@@ -231,7 +231,7 @@
                         </a>
                          <ul class="unstyled" id="tree">  <li class="file"><a href="/posts/undefined/">测试文章</a></li>  <li class="file"><a href="/posts/undefined/">Hello World</a></li>  <li class="file"><a href="/posts/undefined/">测试图片</a></li>  </ul> 
                     </li> 
-                     <li class="file"><a href="/posts/0/"></a></li>  </ul> 
+                     <li class="file"><a href="/posts/0/"></a></li>  <li class="file"><a href="/posts/614dd6d8/">systemd怎么查看开机自启动服务</a></li>  </ul> 
     </div>
     <script>
         $(document).ready(function() {
@@ -304,6 +304,197 @@
             
             <section id="main">
             
+        <article id="post-Jquery禁用按钮" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">前端学习</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/Jquery/" rel="tag">Jquery</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/posts/17c655b1/">
+            <time datetime="2024-06-21T07:58:07.000Z" itemprop="datePublished">2024-06-21</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/raw/writing/source/_posts/Jquery禁用按钮.md"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/edit/writing/source/_posts/Jquery禁用按钮.md"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/commits/writing/source/_posts/Jquery禁用按钮.md"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/posts/17c655b1/">Jquery禁用按钮，防止重复提交</a>
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                
+                    
+                    <p></p><p>使用<code>对象.prop(&quot;disabled&quot;,true)</code>可以进行禁用，<code>对象.prop(&quot;disabled&quot;,false)</code>取消禁用。</p>
+<ul class="lvl-0">
+<li class="lvl-2">html代码如下</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">id</span>=<span class="string">&quot;editEventForm&quot;</span> <span class="attr">novalidate</span>=<span class="string">&quot;novalidate&quot;</span>&gt;</span></span><br><span class="line">.....</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card-footer&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;javascript:history.go(-1);&quot;</span> <span class="attr">class</span>=<span class="string">&quot;btn btn-success float-right&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span> 返回<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">class</span>=<span class="string">&quot;btn btn-primary float-right&quot;</span> <span class="attr">style</span>=<span class="string">&quot;margin-right:5px;&quot;</span>&gt;</span>提交<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>
+                
+            
+        
+        
+            </p></div>   
+            <div class="article-more-link">
+                <a href="/posts/17c655b1/#more">查看更多</a>
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+
+
+
+
+    
+        <article id="post-systemd怎么查看开机自启动服务" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+                        
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/posts/614dd6d8/">
+            <time datetime="2024-06-21T03:31:50.000Z" itemprop="datePublished">2024-06-21</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/raw/writing/source/_posts/systemd怎么查看开机自启动服务.md"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/edit/writing/source/_posts/systemd怎么查看开机自启动服务.md"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/commits/writing/source/_posts/systemd怎么查看开机自启动服务.md"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/posts/614dd6d8/">systemd怎么查看开机自启动服务</a>
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+            
+        
+        
+            <p>在CentOS 7及更高的版本中，使用<code>chkconfig</code>命令查看开机自启动信息时，发现只有几个服务被<code>SysV</code>管理的服务，没有包括<code>systemd</code>管理的服务。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[root@kvm-hkcloud01 var]<span class="comment"># chkconfig --list</span></span><br><span class="line"></span><br><span class="line">Note: This output shows SysV services only and does not include native</span><br><span class="line">      systemd services. SysV configuration data might be overridden by native</span><br><span class="line">      systemd configuration.</span><br><span class="line"></span><br><span class="line">      If you want to list systemd services use <span class="string">&#x27;systemctl list-unit-files&#x27;</span>.</span><br><span class="line">      To see services enabled on particular target use</span><br><span class="line">      <span class="string">&#x27;systemctl list-dependencies [target]&#x27;</span>.</span><br><span class="line"></span><br><span class="line">netconsole      0:off   1:off   2:off   3:off   4:off   5:off   6:off</span><br><span class="line">network         0:off   1:off   2:on    3:on    4:on    5:on    6:off</span><br><span class="line">[root@kvm-hkcloud01 var]<span class="comment">#</span></span><br></pre></td></tr></table></figure>
+<p>如果需要查看被<code>systemd</code>管理的服务，可以使用以下命令进行查询。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@kvm-hkcloud01 var]<span class="comment"># systemctl list-unit-files</span></span><br></pre></td></tr></table></figure>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+
+
+
+
+    
         <article id="post-proc-sysrq-trigger的妙用" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -1046,199 +1237,6 @@ tags:</p>
 <p>部署文档链接如下：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/zthxxx/hexo-theme-Wikitten/blob/master/README_zh-CN.md</span><br></pre></td></tr></table></figure>
 
-            </div>
-        
-        <footer class="article-footer">
-        </footer>
-    </div>
-</article>
-
-
-
-
-
-
-    
-        <article id="post-清除模态框form的内容" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-                    <div class="article-meta">
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">前端学习</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link-link" href="/tags/adminlte/" rel="tag">adminlte</a>
-    </div>
-
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/posts/undefined/">
-            <time datetime="2024-04-19T00:38:14.000Z" itemprop="datePublished">2024-04-19</time>
-        </a>
-    </div>
-
-
-                        
-                            <i class="fa fa-bar-chart"></i>
-                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
-                        
-                        
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/raw/writing/source/_posts/清除模态框form的内容.md"> Source </a>
-                            </div>
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/edit/writing/source/_posts/清除模态框form的内容.md"> Edit </a>
-                            </div>
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/commits/writing/source/_posts/清除模态框form的内容.md"> History </a>
-                            </div>
-                        
-                    </div>
-                
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/posts/undefined/">清除模态框form的内容</a>
-        </h1>
-    
-
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-        
-            
-                
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-            
-        
-        
-            <p>在模态框提交数据后，页面不刷新的情况下，再次点击模态框，上次输入的内容还保留着，可以通过下面的方式清除模态框内容</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在ajax返回成功时可以执行</span></span><br><span class="line">$(<span class="string">&#x27;.modal-body&#x27;</span>).<span class="title function_">find</span>(<span class="string">&#x27;form&#x27;</span>).<span class="title function_">trigger</span>(<span class="string">&#x27;reset&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果在用户点击关闭时也要执行，可以在show.bs.modal事件里设置</span></span><br><span class="line"> $(<span class="string">&#x27;#updatemodal&#x27;</span>).<span class="title function_">on</span>(<span class="string">&#x27;show.bs.modal&#x27;</span>, <span class="keyword">function</span> (<span class="params">event</span>) &#123;</span><br><span class="line">    $(<span class="string">&#x27;.modal-body&#x27;</span>).<span class="title function_">find</span>(<span class="string">&#x27;form&#x27;</span>).<span class="title function_">trigger</span>(<span class="string">&#x27;reset&#x27;</span>);</span><br><span class="line">    <span class="comment">// 其他内容</span></span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure>
-
-            </div>
-        
-        <footer class="article-footer">
-        </footer>
-    </div>
-</article>
-
-
-
-
-
-
-    
-        <article id="post-modal中使用form" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-                    <div class="article-meta">
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link-link" href="/tags/adminlte/" rel="tag">adminlte</a>
-    </div>
-
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/posts/undefined/">
-            <time datetime="2024-04-18T02:14:04.000Z" itemprop="datePublished">2024-04-18</time>
-        </a>
-    </div>
-
-
-                        
-                            <i class="fa fa-bar-chart"></i>
-                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
-                        
-                        
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/raw/writing/source/_posts/modal中使用form.md"> Source </a>
-                            </div>
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/edit/writing/source/_posts/modal中使用form.md"> Edit </a>
-                            </div>
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/commits/writing/source/_posts/modal中使用form.md"> History </a>
-                            </div>
-                        
-                    </div>
-                
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/posts/undefined/">modal中使用form</a>
-        </h1>
-    
-
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-        
-            
-                
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                
-                    
-                    <p><ul class="lvl-0">
-<li class="lvl-2">
-<p>html</p>
-</li>
-</ul>
-</p><p>
-                
-            
-        
-        
-            </p></div>   
-            <div class="article-more-link">
-                <a href="/posts/undefined/#more">查看更多</a>
             </div>
         
         <footer class="article-footer">
