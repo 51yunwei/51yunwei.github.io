@@ -184,7 +184,7 @@
                             &nbsp;
                             Linux
                         </a>
-                         <ul class="unstyled" id="tree">  <li class="file"><a href="/posts/6646b637/">Linux创建证书</a></li>  <li class="file"><a href="/posts/4cf37030/">openEuler中奇怪的网络管理服务</a></li>  <li class="file"><a href="/posts/83a68e5f/">Linux中的软链接和硬链接</a></li>  <li class="file"><a href="/posts/b6ae4c2c/">怎么判断多台虚拟机上的磁盘是不是同一块磁盘呢？</a></li>  <li class="file"><a href="/posts/a0e0543a/">Linux中的用户ID会不会重复？</a></li>  <li class="file"><a href="/posts/de677c90/">Linux文件的ACL</a></li>  </ul> 
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/posts/6646b637/">Linux创建证书</a></li>  <li class="file"><a href="/posts/4cf37030/">openEuler中奇怪的网络管理服务</a></li>  <li class="file"><a href="/posts/83a68e5f/">Linux中的软链接和硬链接</a></li>  <li class="file"><a href="/posts/b6ae4c2c/">怎么判断多台虚拟机上的磁盘是不是同一块磁盘呢？</a></li>  <li class="file"><a href="/posts/a0e0543a/">Linux中的用户ID会不会重复？</a></li>  <li class="file"><a href="/posts/de677c90/">Linux文件的ACL</a></li>  <li class="file"><a href="/posts/c0f21a4/">Linux中sysrq-trigger的妙用</a></li>  </ul> 
                     </li> 
                     
                     <li class="directory">
@@ -231,7 +231,7 @@
                         </a>
                          <ul class="unstyled" id="tree">  <li class="file"><a href="/posts/undefined/">测试文章</a></li>  <li class="file"><a href="/posts/undefined/">Hello World</a></li>  <li class="file"><a href="/posts/undefined/">测试图片</a></li>  </ul> 
                     </li> 
-                     <li class="file"><a href="/posts/614dd6d8/">systemd怎么查看开机自启动服务</a></li>  <li class="file"><a href="/posts/0/"></a></li>  </ul> 
+                     <li class="file"><a href="/posts/614dd6d8/">systemd怎么查看开机自启动服务</a></li>  </ul> 
     </div>
     <script>
         $(document).ready(function() {
@@ -304,9 +304,59 @@
             
             <section id="main">
             
-        <article id="post-proc-sysrq-trigger的妙用" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-Linux中sysrq-trigger的妙用" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Linux/">Linux</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/Linux/" rel="tag">Linux</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/posts/c0f21a4/">
+            <time datetime="2024-06-21T08:13:01.000Z" itemprop="datePublished">2024-06-21</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/raw/writing/source/_posts/Linux中sysrq-trigger的妙用.md"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/edit/writing/source/_posts/Linux中sysrq-trigger的妙用.md"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/commits/writing/source/_posts/Linux中sysrq-trigger的妙用.md"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/posts/c0f21a4/">Linux中sysrq-trigger的妙用</a>
+        </h1>
+    
+
+            </header>
         
         
         <div class="article-entry" itemprop="articleBody">
@@ -332,19 +382,19 @@
                 
                 
                     
-                    <p><hr>
-</p><p>title: /proc/sysrq-trigger的妙用<br>
-toc: true<br>
-date: 2024-06-21 03:07:54<br>
-tags:</p>
+                    <p><blockquote>
+<p>sysrq被称为魔术组合键，只要内核没有完全锁住，不管内核在做什么事情，使用这些组合键都可以搜集包括系统内存使用、CPU任务处理、进程运行状态等系统运行信息。 注意：信息的输出都在/var/log/message下</p>
+</blockquote>
+</p><p>Linux如何模拟崩溃？如何强制关机？这时候就可以使用到本文提到的<code>/proc/sysrq-trigger</code>文件了。</p>
+<ul class="lvl-0">
 <p>
                 
             
         
         
-            </p></div>   
+            </p></ul></div>   
             <div class="article-more-link">
-                <a href="/posts/0/#more">查看更多</a>
+                <a href="/posts/c0f21a4/#more">查看更多</a>
             </div>
         
         <footer class="article-footer">
