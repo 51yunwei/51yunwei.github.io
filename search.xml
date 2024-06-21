@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Linux重装系统后恢复LVM</title>
+      <link href="/posts/1208ed6f/"/>
+      <url>/posts/1208ed6f/</url>
+      
+        <content type="html"><![CDATA[<p>最近重装了操作系统，仅格式化了操作系统盘，数据盘没有动，因为数据盘之前使用<code>lvm</code>进行管理的，不能直接挂在，要先恢复<code>lvm</code>信息才能挂载。</p><blockquote><p>恢复的前提是要知道vg的名称！！！</p></blockquote><p>步骤如下：</p><ul class="lvl-0"><li class="lvl-2"><p>扫描和识别<code>pv</code>信息</p></li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@kvm-hkcloud01 ~]<span class="comment"># pvscan</span></span><br><span class="line">  PV /dev/vdb   VG vg_data         lvm2 [&lt;30.00 GiB / 1020.00 MiB free]</span><br><span class="line">  Total: 1 [&lt;30.00 GiB] / <span class="keyword">in</span> use: 1 [&lt;30.00 GiB] / <span class="keyword">in</span> no VG: 0 [0   ]</span><br></pre></td></tr></table></figure><ul class="lvl-0"><li class="lvl-2"><p>激活vg（前提是要知道vg的名称）</p></li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@kvm-hkcloud01 ~]<span class="comment"># vgchange -ay vg_data</span></span><br><span class="line">  1 logical volume(s) <span class="keyword">in</span> volume group <span class="string">&quot;vg_data&quot;</span> now active</span><br></pre></td></tr></table></figure><ul class="lvl-0"><li class="lvl-2"><p>查看是否有<code>lv</code>数据</p></li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">[root@kvm-hkcloud01 ~]<span class="comment"># lvdisplay</span></span><br><span class="line">  --- Logical volume ---</span><br><span class="line">  LV Path                /dev/vg_data/lv_data</span><br><span class="line">  LV Name                lv_data</span><br><span class="line">  VG Name                vg_data</span><br><span class="line">  LV UUID                JJOdQt-2l5h-fEHJ-MkIo-bwG3-G3YV-mfjz72</span><br><span class="line">  LV Write Access        <span class="built_in">read</span>/write</span><br><span class="line">  LV Creation host, time kvm-hkcloud01.local, 2024-02-23 11:41:13 +0800</span><br><span class="line">  LV Status              available</span><br><span class="line">  <span class="comment"># open                 0</span></span><br><span class="line">  LV Size                29.00 GiB</span><br><span class="line">  Current LE             7424</span><br><span class="line">  Segments               1</span><br><span class="line">  Allocation             inherit</span><br><span class="line">  Read ahead sectors     auto</span><br><span class="line">  - currently <span class="built_in">set</span> to     8192</span><br><span class="line">  Block device           252:0</span><br><span class="line"></span><br><span class="line">[root@kvm-hkcloud01 ~]<span class="comment">#</span></span><br></pre></td></tr></table></figure><ul class="lvl-0"><li class="lvl-2"><p>挂载</p></li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@kvm-hkcloud01 ~]<span class="comment"># mount /dev/mapper/vg_data-lv_data /data</span></span><br><span class="line">[root@kvm-hkcloud01 ~]<span class="comment"># df -h</span></span><br><span class="line">Filesystem                   Size  Used Avail Use% Mounted on</span><br><span class="line">devtmpfs                     4.0M     0  4.0M   0% /dev</span><br><span class="line">tmpfs                        484M     0  484M   0% /dev/shm</span><br><span class="line">tmpfs                        194M  5.4M  189M   3% /run</span><br><span class="line">tmpfs                        4.0M     0  4.0M   0% /sys/fs/cgroup</span><br><span class="line">/dev/vda1                     50G  1.8G   46G   4% /</span><br><span class="line">tmpfs                        484M     0  484M   0% /tmp</span><br><span class="line">/dev/mapper/vg_data-lv_data   29G  3.4G   26G  12% /data</span><br></pre></td></tr></table></figure><h2 id="参考资料">参考资料</h2><blockquote><ul class="lvl-1"><li class="lvl-2"><p><a href=""></a></p></li><li class="lvl-2"><p><a href=""></a></p></li></ul></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> 文件系统 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Linux中sysrq-trigger的妙用</title>
       <link href="/posts/c0f21a4/"/>
       <url>/posts/c0f21a4/</url>
