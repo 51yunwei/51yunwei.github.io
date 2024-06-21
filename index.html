@@ -231,7 +231,7 @@
                         </a>
                          <ul class="unstyled" id="tree">  <li class="file"><a href="/posts/undefined/">测试文章</a></li>  <li class="file"><a href="/posts/undefined/">Hello World</a></li>  <li class="file"><a href="/posts/undefined/">测试图片</a></li>  </ul> 
                     </li> 
-                     </ul> 
+                     <li class="file"><a href="/posts/0/"></a></li>  </ul> 
     </div>
     <script>
         $(document).ready(function() {
@@ -304,6 +304,60 @@
             
             <section id="main">
             
+        <article id="post-proc-sysrq-trigger的妙用" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                
+                    
+                    <p><hr>
+</p><p>title: /proc/sysrq-trigger的妙用<br>
+toc: true<br>
+date: 2024-06-21 03:07:54<br>
+tags:</p>
+<p>
+                
+            
+        
+        
+            </p></div>   
+            <div class="article-more-link">
+                <a href="/posts/0/#more">查看更多</a>
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+
+
+
+
+    
         <article id="post-Linux文件的ACL" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -1198,112 +1252,8 @@
 
 
     
-        <article id="post-adminlte中使用时间插件" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-                    <div class="article-meta">
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">前端学习</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link-link" href="/tags/adminlte/" rel="tag">adminlte</a>
-    </div>
-
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/posts/undefined/">
-            <time datetime="2024-04-17T09:29:02.000Z" itemprop="datePublished">2024-04-17</time>
-        </a>
-    </div>
-
-
-                        
-                            <i class="fa fa-bar-chart"></i>
-                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
-                        
-                        
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/raw/writing/source/_posts/adminlte中使用时间插件.md"> Source </a>
-                            </div>
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/edit/writing/source/_posts/adminlte中使用时间插件.md"> Edit </a>
-                            </div>
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/commits/writing/source/_posts/adminlte中使用时间插件.md"> History </a>
-                            </div>
-                        
-                    </div>
-                
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/posts/undefined/">adminlte中使用时间插件</a>
-        </h1>
-    
-
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-        
-            
-                
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                
-                    
-                    <p></p><h1>daterangepicker</h1>
-<ul class="lvl-0">
-<li class="lvl-2">引入文件，语言是由moment控制的</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;&#123;% static &#x27;adminlte/plugins/daterangepicker/daterangepicker.css&#x27; %&#125;&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;&#123;% static &#x27;adminlte/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css&#x27; %&#125;&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;&#123;% static &#x27;adminlte/plugins/moment/moment.min.js&#x27; %&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;&#123;% static &#x27;adminlte/plugins/moment/locale/zh-cn.js&#x27; %&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;&#123;% static &#x27;adminlte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js&#x27; %&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;&#123;% static &#x27;adminlte/plugins/daterangepicker/daterangepicker.js&#x27; %&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>
-                
-            
-        
-        
-            </p></div>   
-            <div class="article-more-link">
-                <a href="/posts/undefined/#more">查看更多</a>
-            </div>
-        
-        <footer class="article-footer">
-        </footer>
-    </div>
-</article>
-
-
-
-
-
-
-    
         <nav id="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
+        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
         </nav>
     
 
