@@ -184,7 +184,7 @@
                             &nbsp;
                             Linux
                         </a>
-                         <ul class="unstyled" id="tree">  <li class="file"><a href="/posts/6646b637/">Linux创建证书</a></li>  <li class="file"><a href="/posts/4cf37030/">openEuler中奇怪的网络管理服务</a></li>  <li class="file"><a href="/posts/83a68e5f/">Linux中的软链接和硬链接</a></li>  <li class="file"><a href="/posts/b6ae4c2c/">怎么判断多台虚拟机上的磁盘是不是同一块磁盘呢？</a></li>  <li class="file"><a href="/posts/a0e0543a/">Linux中的用户ID会不会重复？</a></li>  <li class="file"><a href="/posts/de677c90/">Linux文件的ACL</a></li>  <li class="file"><a href="/posts/614dd6d8/">systemd怎么查看开机自启动服务</a></li>  <li class="file"><a href="/posts/c0f21a4/">Linux中sysrq-trigger的妙用</a></li>  <li class="file"><a href="/posts/1208ed6f/">Linux重装系统后恢复LVM</a></li>  </ul> 
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/posts/6646b637/">Linux创建证书</a></li>  <li class="file"><a href="/posts/4cf37030/">openEuler中奇怪的网络管理服务</a></li>  <li class="file"><a href="/posts/83a68e5f/">Linux中的软链接和硬链接</a></li>  <li class="file"><a href="/posts/b6ae4c2c/">怎么判断多台虚拟机上的磁盘是不是同一块磁盘呢？</a></li>  <li class="file"><a href="/posts/a0e0543a/">Linux中的用户ID会不会重复？</a></li>  <li class="file"><a href="/posts/de677c90/">Linux文件的ACL</a></li>  <li class="file"><a href="/posts/614dd6d8/">systemd怎么查看开机自启动服务</a></li>  <li class="file"><a href="/posts/c0f21a4/">Linux中sysrq-trigger的妙用</a></li>  <li class="file"><a href="/posts/1208ed6f/">Linux重装系统后恢复LVM</a></li>  <li class="file"><a href="/posts/1c033694/">openEuler开启kdump失败</a></li>  </ul> 
                     </li> 
                     
                     <li class="directory">
@@ -304,6 +304,110 @@
             
             <section id="main">
             
+        <article id="post-openEuler开启kdump失败" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Linux/">Linux</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/kdump/" rel="tag">kdump</a>, <a class="tag-link-link" href="/tags/openEuler/" rel="tag">openEuler</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/posts/1c033694/">
+            <time datetime="2024-06-24T07:23:00.000Z" itemprop="datePublished">2024-06-24</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/raw/writing/source/_posts/openEuler开启kdump失败.md"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/edit/writing/source/_posts/openEuler开启kdump失败.md"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/commits/writing/source/_posts/openEuler开启kdump失败.md"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/posts/1c033694/">openEuler开启kdump失败</a>
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                
+                    
+                    <p></p><h1>一、现象</h1>
+<p>openEuler启动kdump失败，显示<code>No memory reserved for crash kernel</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[root@kvm-hkcloud01 ~]<span class="comment"># systemctl status kdump</span></span><br><span class="line"> kdump.service - Crash recovery kernel arming</span><br><span class="line">     Loaded: loaded (/usr/lib/systemd/system/kdump.service; enabled; vendor preset: enabled)</span><br><span class="line">     Active: failed (Result: exit-code) since Mon 2024-06-24 14:50:48 CST; 26min ago</span><br><span class="line">    Process: 1004 ExecStart=/usr/bin/kdumpctl start (code=exited, status=1/FAILURE)</span><br><span class="line">   Main PID: 1004 (code=exited, status=1/FAILURE)</span><br><span class="line"></span><br><span class="line">Jun 24 14:50:47 kvm-hkcloud01 systemd[1]: Starting Crash recovery kernel arming...</span><br><span class="line">Jun 24 14:50:48 kvm-hkcloud01 kdumpctl[1015]: No memory reserved <span class="keyword">for</span> crash kernel</span><br><span class="line">Jun 24 14:50:48 kvm-hkcloud01 kdumpctl[1015]: Starting kdump: [FAILED]</span><br><span class="line">Jun 24 14:50:48 kvm-hkcloud01 systemd[1]: kdump.service: Main process exited, code=exited, status=1/FAILURE</span><br><span class="line">Jun 24 14:50:48 kvm-hkcloud01 systemd[1]: kdump.service: Failed with result <span class="string">&#x27;exit-code&#x27;</span>.</span><br><span class="line">Jun 24 14:50:48 kvm-hkcloud01 systemd[1]: Failed to start Crash recovery kernel arming.</span><br></pre></td></tr></table></figure>
+<h1>二、问题分析</h1>
+<p>根据提示来看，应该是申请不到内存导致的，但从<code>free</code>的结果来看，是可以满足kdump的要求的</p>
+<p>
+                
+            
+        
+        
+            </p></div>   
+            <div class="article-more-link">
+                <a href="/posts/1c033694/#more">查看更多</a>
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+
+
+
+
+    
         <article id="post-Linux重装系统后恢复LVM" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -1216,110 +1320,6 @@
             </p></div>   
             <div class="article-more-link">
                 <a href="/posts/4cf37030/#more">查看更多</a>
-            </div>
-        
-        <footer class="article-footer">
-        </footer>
-    </div>
-</article>
-
-
-
-
-
-
-    
-        <article id="post-给hexo主题添加代码块复制功能" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-                    <div class="article-meta">
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link-link" href="/tags/hexo/" rel="tag">hexo</a>
-    </div>
-
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/posts/undefined/">
-            <time datetime="2024-05-29T07:32:02.000Z" itemprop="datePublished">2024-05-29</time>
-        </a>
-    </div>
-
-
-                        
-                            <i class="fa fa-bar-chart"></i>
-                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
-                        
-                        
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/raw/writing/source/_posts/给hexo主题添加代码块复制功能.md"> Source </a>
-                            </div>
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/edit/writing/source/_posts/给hexo主题添加代码块复制功能.md"> Edit </a>
-                            </div>
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/commits/writing/source/_posts/给hexo主题添加代码块复制功能.md"> History </a>
-                            </div>
-                        
-                    </div>
-                
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/posts/undefined/">给hexo主题添加代码块复制功能</a>
-        </h1>
-    
-
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-        
-            
-                
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                
-                    
-                    <p><blockquote>
-<p>适用于所有的Hexo主题</p>
-</blockquote>
-</p><h1>创建clipboard_use.js</h1>
-<p>在<code>themes/xxx/source/js</code> 目录下，创建<code>clipboard_use.js</code>，添加内容如下</p>
-<p>
-                
-            
-        
-        
-            </p></div>   
-            <div class="article-more-link">
-                <a href="/posts/undefined/#more">查看更多</a>
             </div>
         
         <footer class="article-footer">
