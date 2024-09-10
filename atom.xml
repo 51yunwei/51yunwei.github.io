@@ -6,7 +6,7 @@
   <link href="https://www.51yunwei.top/atom.xml" rel="self"/>
   
   <link href="https://www.51yunwei.top/"/>
-  <updated>2024-06-26T03:17:26.486Z</updated>
+  <updated>2024-09-10T01:29:04.585Z</updated>
   <id>https://www.51yunwei.top/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>OpenEuler 安装MySql</title>
+    <link href="https://www.51yunwei.top/posts/b5a91e2c/"/>
+    <id>https://www.51yunwei.top/posts/b5a91e2c/</id>
+    <published>2024-09-10T01:22:10.000Z</published>
+    <updated>2024-09-10T01:29:04.585Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>安装mysql</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install mysql-server -y</span><br></pre></td></tr></table></figure><p><strong>初始化</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld --initialize --console</span><br></pre></td></tr></table></figure><p><strong>目录授权</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chown</span> -R mysql:mysql /var/lib/mysql/</span><br></pre></td></tr></table></figure><blockquote><p>注意，如果在/etc/my.cnf.d/my.cnf中修改了目录路径，需要对相关路径进行权限修改。</p></blockquote><p><strong>设置登录密码</strong></p><ul class="lvl-0"><li class="lvl-2"><p>修改配置</p></li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/my.cnf</span><br><span class="line"><span class="comment">#在mysqld模块下添加</span></span><br><span class="line">skip-grant-tables</span><br></pre></td></tr></table></figure><ul class="lvl-0"><li class="lvl-2"><p>重启服务</p></li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart mysqld</span><br></pre></td></tr></table></figure><ul class="lvl-0"><li class="lvl-2"><p>进入数据库</p></li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br><span class="line"><span class="comment"># 在提示密码时直接按回车</span></span><br></pre></td></tr></table></figure><ul class="lvl-0"><li class="lvl-2"><p>在数据库中刷新权限</p></li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; flush privileges;</span><br><span class="line">Query OK, 0 rows affected (0.05 sec)</span><br></pre></td></tr></table></figure><ul class="lvl-0"><li class="lvl-2"><p>修改密码</p></li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; alter user <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span> identified by <span class="string">&#x27;newpassword&#x27;</span>;</span><br><span class="line">Query OK, 0 rows affected (0.01 sec)</span><br></pre></td></tr></table></figure><ul class="lvl-0"><li class="lvl-2"><p>删除配置</p></li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/my.cnf</span><br><span class="line"><span class="comment">#在mysqld模块下删除</span></span><br><span class="line">skip-grant-tables</span><br></pre></td></tr></table></figure><ul class="lvl-0"><li class="lvl-2"><p>重启服务就可以使用密码登录了</p></li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart mysqld</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;strong&gt;安装mysql&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;</summary>
+      
+    
+    
+    
+    <category term="Linux" scheme="https://www.51yunwei.top/categories/Linux/"/>
+    
+    
+    <category term="Linux" scheme="https://www.51yunwei.top/tags/Linux/"/>
+    
+    <category term="Database" scheme="https://www.51yunwei.top/tags/Database/"/>
+    
+  </entry>
   
   <entry>
     <title>openEuler开启kdump失败</title>
@@ -515,31 +542,6 @@
     
     
     <category term="adminlte" scheme="https://www.51yunwei.top/tags/adminlte/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux创建证书</title>
-    <link href="https://www.51yunwei.top/posts/6646b637/"/>
-    <id>https://www.51yunwei.top/posts/6646b637/</id>
-    <published>2024-02-01T01:04:40.000Z</published>
-    <updated>2024-08-30T06:44:56.801Z</updated>
-    
-    <content type="html"><![CDATA[<p>创建证书请求文件CSR和私钥</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">openssl req -new -nodes -sha256 -newkey rsa:2048 -keyout [<span class="variable">$Key_File</span>] -out [<span class="variable">$OpenSSL_CSR</span>]</span><br><span class="line">说明</span><br><span class="line">new：指定生成一个新的 CSR 文件。</span><br><span class="line">nodes：指定密钥文件不被加密。</span><br><span class="line">sha256：指定摘要算法。</span><br><span class="line">newkey rsa:2048：指定密钥类型和长度。</span><br><span class="line">[<span class="variable">$Key_File</span>]：密钥文件名称。</span><br><span class="line">[<span class="variable">$OpenSSL_CSR</span>]：加密后文件的存放路径。new：指定生成一个新的 CSR 文件。</span><br><span class="line">4. 根据系统返回的提示，输入生成 CSR 文件所需的信息。以下是关于提示的说明：</span><br><span class="line">Organization Name：公司名称，可以是中文或英文。</span><br><span class="line">Organizational Unit Name：部门名称，可以是中文或英文。</span><br><span class="line">Country Code：申请单位所属国家，只能是两个字母的国家码。例如，中国填写为 CN。</span><br><span class="line">State or Province Name：州名或省份名称，可以是中文或英文。</span><br><span class="line">Locality Name：城市名称，可以是中文或英文。</span><br><span class="line">Common Name：申请 SSL 证书的具体网站域名。</span><br><span class="line">Email Address：可选择不输入。</span><br><span class="line">Challenge Password：可选择不输入。</span><br><span class="line">5. 按照命令提示输入相应内容后，即可在当前目录下获取密钥文件和 CSR 文件。</span><br></pre></td></tr></table></figure><p>创建证书</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl x509 -signkey xxx.key -<span class="keyword">in</span> xxx.csr -req -days 365 -out xxx.crt</span><br></pre></td></tr></table></figure><p>获取证书过期时间</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl x509 -<span class="keyword">in</span> &lt;cert&gt;.pem -noout -enddate</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;创建证书请求文件CSR和私钥&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;</summary>
-      
-    
-    
-    
-    <category term="Linux" scheme="https://www.51yunwei.top/categories/Linux/"/>
-    
-    
-    <category term="Linux基础" scheme="https://www.51yunwei.top/tags/Linux%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   

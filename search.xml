@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>OpenEuler 安装MySql</title>
+      <link href="/posts/b5a91e2c/"/>
+      <url>/posts/b5a91e2c/</url>
+      
+        <content type="html"><![CDATA[<p><strong>安装mysql</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install mysql-server -y</span><br></pre></td></tr></table></figure><p><strong>初始化</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld --initialize --console</span><br></pre></td></tr></table></figure><p><strong>目录授权</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chown</span> -R mysql:mysql /var/lib/mysql/</span><br></pre></td></tr></table></figure><blockquote><p>注意，如果在/etc/my.cnf.d/my.cnf中修改了目录路径，需要对相关路径进行权限修改。</p></blockquote><p><strong>设置登录密码</strong></p><ul class="lvl-0"><li class="lvl-2"><p>修改配置</p></li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/my.cnf</span><br><span class="line"><span class="comment">#在mysqld模块下添加</span></span><br><span class="line">skip-grant-tables</span><br></pre></td></tr></table></figure><ul class="lvl-0"><li class="lvl-2"><p>重启服务</p></li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart mysqld</span><br></pre></td></tr></table></figure><ul class="lvl-0"><li class="lvl-2"><p>进入数据库</p></li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br><span class="line"><span class="comment"># 在提示密码时直接按回车</span></span><br></pre></td></tr></table></figure><ul class="lvl-0"><li class="lvl-2"><p>在数据库中刷新权限</p></li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; flush privileges;</span><br><span class="line">Query OK, 0 rows affected (0.05 sec)</span><br></pre></td></tr></table></figure><ul class="lvl-0"><li class="lvl-2"><p>修改密码</p></li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; alter user <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span> identified by <span class="string">&#x27;newpassword&#x27;</span>;</span><br><span class="line">Query OK, 0 rows affected (0.01 sec)</span><br></pre></td></tr></table></figure><ul class="lvl-0"><li class="lvl-2"><p>删除配置</p></li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/my.cnf</span><br><span class="line"><span class="comment">#在mysqld模块下删除</span></span><br><span class="line">skip-grant-tables</span><br></pre></td></tr></table></figure><ul class="lvl-0"><li class="lvl-2"><p>重启服务就可以使用密码登录了</p></li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart mysqld</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Database </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>openEuler开启kdump失败</title>
       <link href="/posts/1c033694/"/>
       <url>/posts/1c033694/</url>
