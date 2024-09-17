@@ -6,7 +6,7 @@
   <link href="https://www.esearch.top/atom.xml" rel="self"/>
   
   <link href="https://www.esearch.top/"/>
-  <updated>2024-09-17T08:10:21.112Z</updated>
+  <updated>2024-09-17T08:12:04.818Z</updated>
   <id>https://www.esearch.top/</id>
   
   <author>
@@ -21,17 +21,17 @@
     <link href="https://www.esearch.top/posts/6c7d376/"/>
     <id>https://www.esearch.top/posts/6c7d376/</id>
     <published>2024-09-17T08:07:35.000Z</published>
-    <updated>2024-09-17T08:10:21.112Z</updated>
+    <updated>2024-09-17T08:12:04.818Z</updated>
     
-    <content type="html"><![CDATA[<h1>一、现象</h1><p>在<code>cloudflare</code>设置好dns之后，gitpage页面无法打开，显示** 将您重定向的次数过多**</p><h1>二、解决办法</h1><p>在<code>cloudflare``SSL/TLS</code> &gt; <code>概述</code>中，将<code>SSL/TLS加密</code>修改为灵活即可。</p>]]></content>
+    <content type="html"><![CDATA[<h1>一、现象</h1><p>在<code>cloudflare</code>设置好dns之后，gitpage页面无法打开，显示<strong>将您重定向的次数过多</strong></p><h1>二、解决办法</h1><p>在<code>cloudflare</code>的<code>SSL/TLS</code> &gt; <code>概述</code>中，将<code>SSL/TLS加密</code>修改为灵活即可。</p>]]></content>
     
     
       
       
     <summary type="html">&lt;h1&gt;一、现象&lt;/h1&gt;
-&lt;p&gt;在&lt;code&gt;cloudflare&lt;/code&gt;设置好dns之后，gitpage页面无法打开，显示** 将您重定向的次数过多**&lt;/p&gt;
+&lt;p&gt;在&lt;code&gt;cloudflare&lt;/code&gt;设置好dns之后，gitpage页面无法打开，显示&lt;strong&gt;将您重定向的次数过多&lt;/strong&gt;&lt;/p&gt;
 &lt;h1&gt;二、解决办法&lt;/h1&gt;
-&lt;p&gt;在&lt;code&gt;cloudflare``SSL/TLS&lt;/code&gt; &amp;</summary>
+&lt;p&gt;在&lt;code&gt;cloudflare&lt;/code</summary>
       
     
     

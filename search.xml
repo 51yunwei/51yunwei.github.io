@@ -8,7 +8,7 @@
       <link href="/posts/6c7d376/"/>
       <url>/posts/6c7d376/</url>
       
-        <content type="html"><![CDATA[<h1>一、现象</h1><p>在<code>cloudflare</code>设置好dns之后，gitpage页面无法打开，显示** 将您重定向的次数过多**</p><h1>二、解决办法</h1><p>在<code>cloudflare``SSL/TLS</code> &gt; <code>概述</code>中，将<code>SSL/TLS加密</code>修改为灵活即可。</p>]]></content>
+        <content type="html"><![CDATA[<h1>一、现象</h1><p>在<code>cloudflare</code>设置好dns之后，gitpage页面无法打开，显示<strong>将您重定向的次数过多</strong></p><h1>二、解决办法</h1><p>在<code>cloudflare</code>的<code>SSL/TLS</code> &gt; <code>概述</code>中，将<code>SSL/TLS加密</code>修改为灵活即可。</p>]]></content>
       
       
       <categories>
