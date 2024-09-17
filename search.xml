@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>gitpage 套上 cloudflare后显示过多重定向问题解决</title>
+      <link href="/posts/6c7d376/"/>
+      <url>/posts/6c7d376/</url>
+      
+        <content type="html"><![CDATA[<h1>一、现象</h1><p>在<code>cloudflare</code>设置好dns之后，gitpage页面无法打开，显示** 将您重定向的次数过多**</p><h1>二、解决办法</h1><p>在<code>cloudflare``SSL/TLS</code> &gt; <code>概述</code>中，将<code>SSL/TLS加密</code>修改为灵活即可。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 博客搭建 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 博客搭建 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>OpenEuler 安装MySql</title>
       <link href="/posts/b5a91e2c/"/>
       <url>/posts/b5a91e2c/</url>
