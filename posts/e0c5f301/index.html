@@ -16,12 +16,14 @@
 <meta property="og:site_name" content="运维少年">
 <meta property="og:description" content="部署webssh，可以实现使用浏览器ssh登录，摆脱工具的限制  部署   docker运行   1docker run -d --log-driver json-file --log-opt max-file&#x3D;1 --log-opt max-size&#x3D;100m -p 8032:5032 --restart always --name webssh -e TZ&#x3D;Asia&#x2F;Shanghai -e">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.esearch.top/img/webssh2.png">
 <meta property="article:published_time" content="2024-09-24T09:31:30.000Z">
-<meta property="article:modified_time" content="2024-09-24T10:01:02.406Z">
+<meta property="article:modified_time" content="2024-09-24T15:19:14.058Z">
 <meta property="article:author" content="运维少年">
 <meta property="article:tag" content="工具">
 <meta property="article:tag" content="Docker">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.esearch.top/img/webssh2.png">
     
 
     
@@ -390,6 +392,12 @@
 </li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">port: web使用端口, 默认5032</span><br><span class="line">savePass: 是否保存密码, 默认true</span><br><span class="line">authInfo: 开启账号密码登录验证, &#x27;user:pass&#x27;的格式设置</span><br></pre></td></tr></table></figure>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>打开网页<br>
+<img src="/img/webssh2.png" alt="webssh"></p>
+</li>
+</ul>
 <h1>nginx反向代理(可选)</h1>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">map <span class="variable">$http_upgrade</span> <span class="variable">$connection_upgrade</span> &#123;</span><br><span class="line">    default keep-alive;</span><br><span class="line">    <span class="string">&#x27;websocket&#x27;</span> upgrade;</span><br><span class="line">&#125;</span><br><span class="line">server &#123;</span><br><span class="line">    listen  80;</span><br><span class="line">    client_max_body_size 1024m;</span><br><span class="line">    server_name     webssh.域名.top;</span><br><span class="line">    location / &#123;</span><br><span class="line">        proxy_set_header        Host <span class="variable">$host</span>;</span><br><span class="line">        proxy_pass      http://0.0.0.0:8032; <span class="comment"># 转发</span></span><br><span class="line">        proxy_set_header X-Real-IP <span class="variable">$remote_addr</span>;  <span class="comment">#获取客户端真实IP</span></span><br><span class="line">        proxy_set_header REMOTE-HOST <span class="variable">$remote_addr</span>;</span><br><span class="line">        proxy_set_header Upgrade <span class="variable">$http_upgrade</span>;</span><br><span class="line">        proxy_set_header Connection <span class="variable">$connection_upgrade</span>;</span><br><span class="line">        proxy_set_header X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;</span><br><span class="line">        add_header Access-Control-Allow-Origin *;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
