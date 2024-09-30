@@ -176,7 +176,7 @@
                             &nbsp;
                             Linux
                         </a>
-                         <ul class="unstyled" id="tree">  <li class="file"><a href="/posts/6646b637/">Linux创建证书</a></li>  <li class="file"><a href="/posts/4cf37030/">openEuler中奇怪的网络管理服务</a></li>  <li class="file"><a href="/posts/83a68e5f/">Linux中的软链接和硬链接</a></li>  <li class="file"><a href="/posts/b6ae4c2c/">怎么判断多台虚拟机上的磁盘是不是同一块磁盘呢？</a></li>  <li class="file"><a href="/posts/a0e0543a/">Linux中的用户ID会不会重复？</a></li>  <li class="file"><a href="/posts/de677c90/">Linux文件的ACL</a></li>  <li class="file"><a href="/posts/614dd6d8/">systemd怎么查看开机自启动服务</a></li>  <li class="file"><a href="/posts/c0f21a4/">Linux中sysrq-trigger的妙用</a></li>  <li class="file"><a href="/posts/1208ed6f/">Linux重装系统后恢复LVM</a></li>  <li class="file"><a href="/posts/1c033694/">openEuler开启kdump失败</a></li>  <li class="file"><a href="/posts/b5a91e2c/">OpenEuler 安装MySql</a></li>  </ul> 
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/posts/6646b637/">Linux创建证书</a></li>  <li class="file"><a href="/posts/4cf37030/">openEuler中奇怪的网络管理服务</a></li>  <li class="file"><a href="/posts/83a68e5f/">Linux中的软链接和硬链接</a></li>  <li class="file"><a href="/posts/b6ae4c2c/">怎么判断多台虚拟机上的磁盘是不是同一块磁盘呢？</a></li>  <li class="file"><a href="/posts/a0e0543a/">Linux中的用户ID会不会重复？</a></li>  <li class="file"><a href="/posts/de677c90/">Linux文件的ACL</a></li>  <li class="file"><a href="/posts/614dd6d8/">systemd怎么查看开机自启动服务</a></li>  <li class="file"><a href="/posts/c0f21a4/">Linux中sysrq-trigger的妙用</a></li>  <li class="file"><a href="/posts/1208ed6f/">Linux重装系统后恢复LVM</a></li>  <li class="file"><a href="/posts/1c033694/">openEuler开启kdump失败</a></li>  <li class="file"><a href="/posts/b5a91e2c/">OpenEuler 安装MySql</a></li>  <li class="file"><a href="/posts/78eb14d2/">Debian脚本中使用了&>/dev/null，$?总是返回0</a></li>  </ul> 
                     </li> 
                     
                     <li class="directory">
@@ -305,6 +305,110 @@
             
             <section id="main">
             
+        <article id="post-Debian脚本中使用了-dev-null，-总是返回0" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Linux/">Linux</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/Linux/" rel="tag">Linux</a>, <a class="tag-link-link" href="/tags/Shell/" rel="tag">Shell</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/posts/78eb14d2/">
+            <time datetime="2024-09-30T09:33:10.000Z" itemprop="datePublished">2024-09-30</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/raw/writing/source/_posts/Debian脚本中使用了-dev-null，-总是返回0.md"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/edit/writing/source/_posts/Debian脚本中使用了-dev-null，-总是返回0.md"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/commits/writing/source/_posts/Debian脚本中使用了-dev-null，-总是返回0.md"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/posts/78eb14d2/">Debian脚本中使用了&amp;&gt;/dev/null，$?总是返回0</a>
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                
+                    
+                    <p></p><h1>一、问题现象</h1>
+<p>在<code>CentOS</code>中编写了一段<code>Shell</code>脚本，作用很简单，就是监控nginx的配置文件是否发生了变化，如果发生了变化就自动<code>reload</code>一次，脚本如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">true</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  md5=`<span class="built_in">md5sum</span> /etc/nginx/conf.d/port-to-domain.conf | awk <span class="string">&#x27;&#123;print $1&#125;&#x27;</span>`</span><br><span class="line">  grep <span class="variable">$&#123;md5&#125;</span> /tmp/md5result &amp;&gt;/dev/null</span><br><span class="line">  <span class="keyword">if</span> [ $? -ne 0 ];<span class="keyword">then</span> </span><br><span class="line">    <span class="built_in">echo</span> `<span class="built_in">date</span>` <span class="string">&#x27;Config File Change&#x27;</span></span><br><span class="line">    <span class="built_in">echo</span> `<span class="built_in">date</span>` <span class="string">&#x27;Command nginx -t exec&#x27;</span></span><br><span class="line">    nginx -t</span><br><span class="line">    <span class="keyword">if</span> [ $? -eq 0 ];<span class="keyword">then</span></span><br><span class="line">      <span class="built_in">echo</span> `<span class="built_in">date</span>` <span class="string">&#x27;Command nginx -t exec success&#x27;</span></span><br><span class="line">      nginx -s reload</span><br><span class="line">      <span class="built_in">echo</span> `<span class="built_in">date</span>` <span class="string">&#x27;Command nginx -s reload exec&#x27;</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">      <span class="built_in">echo</span> `<span class="built_in">date</span>` <span class="string">&#x27;Command nginx -t exec failed&#x27;</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">    </span><br><span class="line">    <span class="built_in">echo</span> <span class="variable">$&#123;md5&#125;</span> &gt; /tmp/md5result</span><br><span class="line">    <span class="built_in">echo</span> `<span class="built_in">date</span>` <span class="string">&#x27;Change md5result&#x27;</span></span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> `<span class="built_in">date</span>` <span class="string">&#x27;Config File NoChange&#x27;</span></span><br><span class="line">  <span class="keyword">fi</span></span><br><span class="line">  <span class="built_in">sleep</span> 5</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<p>在<code>CentOS</code>中运行一切正常，但是在Debian中运行异常，具体是<code>grep $&#123;md5&#125; /tmp/md5result &amp;&gt;/dev/null</code>的返回值总是0</p>
+<ul class="lvl-0">
+<p>
+                
+            
+        
+        
+            </p></ul></div>   
+            <div class="article-more-link">
+                <a href="/posts/78eb14d2/#more">查看更多</a>
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+
+
+
+
+    
         <article id="post-使用docker安装webssh" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -1221,110 +1325,6 @@
             </p></div>   
             <div class="article-more-link">
                 <a href="/posts/de677c90/#more">查看更多</a>
-            </div>
-        
-        <footer class="article-footer">
-        </footer>
-    </div>
-</article>
-
-
-
-
-
-
-    
-        <article id="post-Linux中的用户ID会不会重复？" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-                    <div class="article-meta">
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Linux/">Linux</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link-link" href="/tags/Linux%E5%9F%BA%E7%A1%80/" rel="tag">Linux基础</a>
-    </div>
-
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/posts/a0e0543a/">
-            <time datetime="2024-06-18T03:13:16.000Z" itemprop="datePublished">2024-06-18</time>
-        </a>
-    </div>
-
-
-                        
-                            <i class="fa fa-bar-chart"></i>
-                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
-                        
-                        
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/raw/writing/source/_posts/Linux中的用户ID会不会重复？.md"> Source </a>
-                            </div>
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/edit/writing/source/_posts/Linux中的用户ID会不会重复？.md"> Edit </a>
-                            </div>
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/commits/writing/source/_posts/Linux中的用户ID会不会重复？.md"> History </a>
-                            </div>
-                        
-                    </div>
-                
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/posts/a0e0543a/">Linux中的用户ID会不会重复？</a>
-        </h1>
-    
-
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-        
-            
-                
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                
-                    
-                    <p></p><p><code>UID</code>指的是用户的<code>ID</code>(User ID)，一个用户的UID标识一个给定用户，UID是用户的唯一标识符，通过UID可以区分不同的用户类别，比如UID为0的是超级用户，UID为1000-600000之间的是普通用户，而UID为1-999之间的是虚拟用户。</p>
-<ul class="lvl-0">
-<li class="lvl-2">超级用户：也称为root用户，UID为0，拥有系统的完全控制权限，可以进行修改、删除文件等操作。</li>
-<li class="lvl-2">普通用户：也成为一般用户，UID为1000-60000之间，可以对自己目录下的文件进行访问和修改，也可以对经过授权的文件进行访问。</li>
-<li class="lvl-2">虚拟用户：也称为系统用户，UID为1-999之间，不提供密码登录系统，它们的存在主要是为了方便系统的管理。</li>
-<p>
-                
-            
-        
-        
-            </p></ul></div>   
-            <div class="article-more-link">
-                <a href="/posts/a0e0543a/#more">查看更多</a>
             </div>
         
         <footer class="article-footer">

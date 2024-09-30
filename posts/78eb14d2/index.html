@@ -3,24 +3,24 @@
 <head>
     <meta charset="utf-8">
     
-    <title>OpenEuler 安装MySql | 运维少年</title>
+    <title>Debian脚本中使用了&amp;&gt;/dev/null，$?总是返回0 | 运维少年</title>
     
     
-        <meta name="keywords" content="Linux,Database">
+        <meta name="keywords" content="Linux,Shell">
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="安装mysql 1yum install mysql-server -y 初始化 1mysqld --initialize --console 目录授权 1chown -R mysql:mysql &#x2F;var&#x2F;lib&#x2F;mysql&#x2F;  注意，如果在&#x2F;etc&#x2F;my.cnf.d&#x2F;my.cnf中修改了目录路径，需要对相关路径进行权限修改。  设置登录密码   修改配置   123vi &#x2F;etc&#x2F;my.cnf">
+    <meta name="description" content="一、问题现象 在CentOS中编写了一段Shell脚本，作用很简单，就是监控nginx的配置文件是否发生了变化，如果发生了变化就自动reload一次，脚本如下： 123456789101112131415161718192021222324#!&#x2F;bin&#x2F;bashwhile truedo  md5&#x3D;&#96;md5sum &#x2F;etc&#x2F;nginx&#x2F;conf.d&#x2F;port-to-domain.conf | awk">
 <meta property="og:type" content="article">
-<meta property="og:title" content="OpenEuler 安装MySql">
-<meta property="og:url" content="https://www.esearch.top/posts/b5a91e2c/index.html">
+<meta property="og:title" content="Debian脚本中使用了&amp;&gt;&#x2F;dev&#x2F;null，$?总是返回0">
+<meta property="og:url" content="https://www.esearch.top/posts/78eb14d2/index.html">
 <meta property="og:site_name" content="运维少年">
-<meta property="og:description" content="安装mysql 1yum install mysql-server -y 初始化 1mysqld --initialize --console 目录授权 1chown -R mysql:mysql &#x2F;var&#x2F;lib&#x2F;mysql&#x2F;  注意，如果在&#x2F;etc&#x2F;my.cnf.d&#x2F;my.cnf中修改了目录路径，需要对相关路径进行权限修改。  设置登录密码   修改配置   123vi &#x2F;etc&#x2F;my.cnf">
+<meta property="og:description" content="一、问题现象 在CentOS中编写了一段Shell脚本，作用很简单，就是监控nginx的配置文件是否发生了变化，如果发生了变化就自动reload一次，脚本如下： 123456789101112131415161718192021222324#!&#x2F;bin&#x2F;bashwhile truedo  md5&#x3D;&#96;md5sum &#x2F;etc&#x2F;nginx&#x2F;conf.d&#x2F;port-to-domain.conf | awk">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-09-10T01:22:10.000Z">
-<meta property="article:modified_time" content="2024-09-10T01:29:18.330Z">
+<meta property="article:published_time" content="2024-09-30T09:33:10.000Z">
+<meta property="article:modified_time" content="2024-09-30T09:52:45.673Z">
 <meta property="article:author" content="运维少年">
 <meta property="article:tag" content="Linux">
-<meta property="article:tag" content="Database">
+<meta property="article:tag" content="Shell">
 <meta name="twitter:card" content="summary">
     
 
@@ -180,7 +180,7 @@
                             &nbsp;
                             Linux
                         </a>
-                         <ul class="unstyled" id="tree">  <li class="file"><a href="/posts/6646b637/">Linux创建证书</a></li>  <li class="file"><a href="/posts/4cf37030/">openEuler中奇怪的网络管理服务</a></li>  <li class="file"><a href="/posts/83a68e5f/">Linux中的软链接和硬链接</a></li>  <li class="file"><a href="/posts/b6ae4c2c/">怎么判断多台虚拟机上的磁盘是不是同一块磁盘呢？</a></li>  <li class="file"><a href="/posts/a0e0543a/">Linux中的用户ID会不会重复？</a></li>  <li class="file"><a href="/posts/de677c90/">Linux文件的ACL</a></li>  <li class="file"><a href="/posts/614dd6d8/">systemd怎么查看开机自启动服务</a></li>  <li class="file"><a href="/posts/c0f21a4/">Linux中sysrq-trigger的妙用</a></li>  <li class="file"><a href="/posts/1208ed6f/">Linux重装系统后恢复LVM</a></li>  <li class="file"><a href="/posts/1c033694/">openEuler开启kdump失败</a></li>  <li class="file active"><a href="/posts/b5a91e2c/">OpenEuler 安装MySql</a></li>  <li class="file"><a href="/posts/78eb14d2/">Debian脚本中使用了&>/dev/null，$?总是返回0</a></li>  </ul> 
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/posts/6646b637/">Linux创建证书</a></li>  <li class="file"><a href="/posts/4cf37030/">openEuler中奇怪的网络管理服务</a></li>  <li class="file"><a href="/posts/83a68e5f/">Linux中的软链接和硬链接</a></li>  <li class="file"><a href="/posts/b6ae4c2c/">怎么判断多台虚拟机上的磁盘是不是同一块磁盘呢？</a></li>  <li class="file"><a href="/posts/a0e0543a/">Linux中的用户ID会不会重复？</a></li>  <li class="file"><a href="/posts/de677c90/">Linux文件的ACL</a></li>  <li class="file"><a href="/posts/614dd6d8/">systemd怎么查看开机自启动服务</a></li>  <li class="file"><a href="/posts/c0f21a4/">Linux中sysrq-trigger的妙用</a></li>  <li class="file"><a href="/posts/1208ed6f/">Linux重装系统后恢复LVM</a></li>  <li class="file"><a href="/posts/1c033694/">openEuler开启kdump失败</a></li>  <li class="file"><a href="/posts/b5a91e2c/">OpenEuler 安装MySql</a></li>  <li class="file active"><a href="/posts/78eb14d2/">Debian脚本中使用了&>/dev/null，$?总是返回0</a></li>  </ul> 
                     </li> 
                     
                     <li class="directory">
@@ -308,7 +308,7 @@
 </aside>
             
             <section id="main">
-            <article id="post-OpenEuler-安装MySql" class="article article-type-post" itemscope itemprop="blogPost">
+            <article id="post-Debian脚本中使用了-dev-null，-总是返回0" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -324,14 +324,14 @@
                         
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link-link" href="/tags/Database/" rel="tag">Database</a>, <a class="tag-link-link" href="/tags/Linux/" rel="tag">Linux</a>
+        <a class="tag-link-link" href="/tags/Linux/" rel="tag">Linux</a>, <a class="tag-link-link" href="/tags/Shell/" rel="tag">Shell</a>
     </div>
 
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/posts/b5a91e2c/">
-            <time datetime="2024-09-10T01:22:10.000Z" itemprop="datePublished">2024-09-10</time>
+        <a href="/posts/78eb14d2/">
+            <time datetime="2024-09-30T09:33:10.000Z" itemprop="datePublished">2024-09-30</time>
         </a>
     </div>
 
@@ -342,13 +342,13 @@
                         
                         
                             <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/raw/writing/source/_posts/OpenEuler-安装MySql.md"> Source </a>
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/raw/writing/source/_posts/Debian脚本中使用了-dev-null，-总是返回0.md"> Source </a>
                             </div>
                             <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/edit/writing/source/_posts/OpenEuler-安装MySql.md"> Edit </a>
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/edit/writing/source/_posts/Debian脚本中使用了-dev-null，-总是返回0.md"> Edit </a>
                             </div>
                             <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/commits/writing/source/_posts/OpenEuler-安装MySql.md"> History </a>
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/commits/writing/source/_posts/Debian脚本中使用了-dev-null，-总是返回0.md"> History </a>
                             </div>
                         
                     </div>
@@ -356,7 +356,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            OpenEuler 安装MySql
+            Debian脚本中使用了&amp;&gt;/dev/null，$?总是返回0
         </h1>
     
 
@@ -369,63 +369,52 @@
             
                 <div id="toc" class="toc-article">
                 <strong class="toc-title">文章目录</strong>
-                    
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">一、问题现象</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">二、问题排查</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">三、结论</span></a></li></ol>
                 </div>
             
         
         
-            <p><strong>安装mysql</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install mysql-server -y</span><br></pre></td></tr></table></figure>
-<p><strong>初始化</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld --initialize --console</span><br></pre></td></tr></table></figure>
-<p><strong>目录授权</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chown</span> -R mysql:mysql /var/lib/mysql/</span><br></pre></td></tr></table></figure>
+            <h1>一、问题现象</h1>
+<p>在<code>CentOS</code>中编写了一段<code>Shell</code>脚本，作用很简单，就是监控nginx的配置文件是否发生了变化，如果发生了变化就自动<code>reload</code>一次，脚本如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">true</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  md5=`<span class="built_in">md5sum</span> /etc/nginx/conf.d/port-to-domain.conf | awk <span class="string">&#x27;&#123;print $1&#125;&#x27;</span>`</span><br><span class="line">  grep <span class="variable">$&#123;md5&#125;</span> /tmp/md5result &amp;&gt;/dev/null</span><br><span class="line">  <span class="keyword">if</span> [ $? -ne 0 ];<span class="keyword">then</span> </span><br><span class="line">    <span class="built_in">echo</span> `<span class="built_in">date</span>` <span class="string">&#x27;Config File Change&#x27;</span></span><br><span class="line">    <span class="built_in">echo</span> `<span class="built_in">date</span>` <span class="string">&#x27;Command nginx -t exec&#x27;</span></span><br><span class="line">    nginx -t</span><br><span class="line">    <span class="keyword">if</span> [ $? -eq 0 ];<span class="keyword">then</span></span><br><span class="line">      <span class="built_in">echo</span> `<span class="built_in">date</span>` <span class="string">&#x27;Command nginx -t exec success&#x27;</span></span><br><span class="line">      nginx -s reload</span><br><span class="line">      <span class="built_in">echo</span> `<span class="built_in">date</span>` <span class="string">&#x27;Command nginx -s reload exec&#x27;</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">      <span class="built_in">echo</span> `<span class="built_in">date</span>` <span class="string">&#x27;Command nginx -t exec failed&#x27;</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">    </span><br><span class="line">    <span class="built_in">echo</span> <span class="variable">$&#123;md5&#125;</span> &gt; /tmp/md5result</span><br><span class="line">    <span class="built_in">echo</span> `<span class="built_in">date</span>` <span class="string">&#x27;Change md5result&#x27;</span></span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> `<span class="built_in">date</span>` <span class="string">&#x27;Config File NoChange&#x27;</span></span><br><span class="line">  <span class="keyword">fi</span></span><br><span class="line">  <span class="built_in">sleep</span> 5</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<p>在<code>CentOS</code>中运行一切正常，但是在Debian中运行异常，具体是<code>grep $&#123;md5&#125; /tmp/md5result &amp;&gt;/dev/null</code>的返回值总是0</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>Centos执行过程</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@txy201-51 ~]<span class="comment"># sh -x monitor.sh </span></span><br><span class="line">+ <span class="literal">true</span></span><br><span class="line">++ <span class="built_in">md5sum</span> /etc/nginx/conf.d/port-to-domain.conf</span><br><span class="line">++ awk <span class="string">&#x27;&#123;print $1&#125;&#x27;</span></span><br><span class="line">+ md5=37e9863c68386613dd0ee4b3a5183380</span><br><span class="line">+ grep 37e9863c68386613dd0ee4b3a5183380 /tmp/md5result</span><br><span class="line">+ <span class="string">&#x27;[&#x27;</span> 1 -ne 0 <span class="string">&#x27;]&#x27;</span> <span class="comment"># 正常返回非0值</span></span><br><span class="line">+ <span class="built_in">echo</span> <span class="string">&#x27;Config File Change&#x27;</span></span><br><span class="line">Config File Change</span><br></pre></td></tr></table></figure>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>Debian系统执行过程</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">root@cd3b9bf29db3:/<span class="comment"># sh -x monitor.sh </span></span><br><span class="line">+ <span class="literal">true</span></span><br><span class="line">+ <span class="built_in">md5sum</span> /etc/nginx/conf.d/port-to-domain.conf</span><br><span class="line">+ awk &#123;<span class="built_in">print</span> <span class="variable">$1</span>&#125;</span><br><span class="line">+ md5=bca7fa98ab245fa12a4a70a9b15e8b9a</span><br><span class="line">+ </span><br><span class="line">+ [ 0 -ne 0 ]  <span class="comment"># 结果返回0，即使/tmp/md5result不存在也返回0</span></span><br><span class="line">+ grep bca7fa98ab245fa12a4a70a9b15e8b9a /tmp/md5result</span><br><span class="line">+ <span class="built_in">date</span></span><br><span class="line">+ <span class="built_in">echo</span> Mon Sep 30 09:21:43 UTC 2024 Config File NoChange</span><br></pre></td></tr></table></figure>
+<h1>二、问题排查</h1>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>我在Debian的命令行手动执行以上命令，均无问题。</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">root@cd3b9bf29db3:/<span class="comment"># md5=`md5sum /etc/nginx/conf.d/port-to-domain.conf | awk &#x27;&#123;print $1&#125;&#x27;`</span></span><br><span class="line">root@cd3b9bf29db3:/<span class="comment"># grep $&#123;md5&#125; /tmp/md5result &amp;&gt;/dev/null</span></span><br><span class="line">root@cd3b9bf29db3:/<span class="comment"># echo $?</span></span><br><span class="line">2 <span class="comment"># 返回正常</span></span><br><span class="line">root@cd3b9bf29db3:/<span class="comment">#  </span></span><br></pre></td></tr></table></figure>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>尝试将<code>&amp;&gt;/dev/null</code>删除掉，再测试，发现正常了，不知道是啥原因导致的异常。</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">root@cd3b9bf29db3:/<span class="comment"># sh -x monitor.sh </span></span><br><span class="line">+ <span class="literal">true</span></span><br><span class="line">+ <span class="built_in">md5sum</span> /etc/nginx/conf.d/port-to-domain.conf</span><br><span class="line">+ awk &#123;<span class="built_in">print</span> <span class="variable">$1</span>&#125;</span><br><span class="line">+ md5=bca7fa98ab245fa12a4a70a9b15e8b9a</span><br><span class="line">+ grep bca7fa98ab245fa12a4a70a9b15e8b9a /tmp/md5result</span><br><span class="line">grep: /tmp/md5result: No such file or directory</span><br><span class="line">+ [ 2 -ne 0 ] <span class="comment"># 返回值正常了</span></span><br></pre></td></tr></table></figure>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>我尝试修改了运行脚本的方式，从<code>sh scritp.sh</code> 修改为<code>bash script.sh</code>，结果成功了</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">root@cd3b9bf29db3:/<span class="comment"># echo &gt; /tmp/md5result </span></span><br><span class="line"><span class="comment"># bash 与预期相符</span></span><br><span class="line">root@cd3b9bf29db3:/<span class="comment"># bash monitor.sh </span></span><br><span class="line">Mon Sep 30 09:48:11 UTC 2024 Config File Change</span><br><span class="line">Mon Sep 30 09:48:11 UTC 2024 Command nginx -t <span class="built_in">exec</span></span><br><span class="line">nginx: the configuration file /etc/nginx/nginx.conf syntax is ok</span><br><span class="line">nginx: configuration file /etc/nginx/nginx.conf <span class="built_in">test</span> is successful</span><br><span class="line">Mon Sep 30 09:48:11 UTC 2024 Command nginx -t <span class="built_in">exec</span> success</span><br><span class="line">2024/09/30 09:48:11 [notice] 592<span class="comment">#592: signal process started</span></span><br><span class="line">Mon Sep 30 09:48:11 UTC 2024 Command nginx -s reload <span class="built_in">exec</span></span><br><span class="line">Mon Sep 30 09:48:11 UTC 2024 Change md5result</span><br><span class="line">Mon Sep 30 09:48:16 UTC 2024 Config File NoChange</span><br><span class="line">^C</span><br><span class="line">root@cd3b9bf29db3:/<span class="comment"># echo 1 &gt; /tmp/md5result </span></span><br><span class="line"><span class="comment"># sh 与预期不相符</span></span><br><span class="line">root@cd3b9bf29db3:/<span class="comment"># sh monitor.sh </span></span><br><span class="line">Mon Sep 30 09:48:38 UTC 2024 Config File NoChange</span><br><span class="line">Mon Sep 30 09:48:43 UTC 2024 Config File NoChange</span><br></pre></td></tr></table></figure>
+<h1>三、结论</h1>
 <blockquote>
-<p>注意，如果在/etc/my.cnf.d/my.cnf中修改了目录路径，需要对相关路径进行权限修改。</p>
+<p>这个结论是问AI的您遇到的问题很可能是由于sh和bash在处理某些命令或脚本构造时的行为差异所致。在Linux系统中，sh通常指的是POSIX shell，而bash是Bourne Again SHell的简称，它是GNU项目的一个兼容sh的shell程序，提供了许多sh没有的特性和改进。</p>
 </blockquote>
-<p><strong>设置登录密码</strong></p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>修改配置</p>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/my.cnf</span><br><span class="line"><span class="comment">#在mysqld模块下添加</span></span><br><span class="line">skip-grant-tables</span><br></pre></td></tr></table></figure>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>重启服务</p>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart mysqld</span><br></pre></td></tr></table></figure>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>进入数据库</p>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br><span class="line"><span class="comment"># 在提示密码时直接按回车</span></span><br></pre></td></tr></table></figure>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>在数据库中刷新权限</p>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; flush privileges;</span><br><span class="line">Query OK, 0 rows affected (0.05 sec)</span><br></pre></td></tr></table></figure>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>修改密码</p>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; alter user <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span> identified by <span class="string">&#x27;newpassword&#x27;</span>;</span><br><span class="line">Query OK, 0 rows affected (0.01 sec)</span><br></pre></td></tr></table></figure>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>删除配置</p>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/my.cnf</span><br><span class="line"><span class="comment">#在mysqld模块下删除</span></span><br><span class="line">skip-grant-tables</span><br></pre></td></tr></table></figure>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>重启服务就可以使用密码登录了</p>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart mysqld</span><br></pre></td></tr></table></figure>
+<p><strong>为啥CentOS可以，Debian不行?</strong><br>
+应该是sh的版本等不同造成的。</p>
 
             </div>
         
@@ -438,19 +427,10 @@
     
 <nav id="article-nav">
     
-        <a href="/posts/6c7d376/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">上一篇</strong>
-            <div class="article-nav-title">
-                
-                    gitpage 套上 cloudflare后显示过多重定向问题解决
-                
-            </div>
-        </a>
     
-    
-        <a href="/posts/1c033694/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/posts/e0c5f301/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">openEuler开启kdump失败</div>
+            <div class="article-nav-title">使用docker安装webssh</div>
         </a>
     
 </nav>
