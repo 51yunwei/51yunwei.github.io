@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>nginx 代理设置访问密码（不依赖htpasswd工具）</title>
+      <link href="/posts/f2baa4c/"/>
+      <url>/posts/f2baa4c/</url>
+      
+        <content type="html"><![CDATA[<h1>Nginx访问密码配置（无需htpasswd）</h1><p>要在Nginx中配置访问密码而不依赖于<code>htpasswd</code>等第三方工具，可以按照以下步骤手动创建密码文件并在Nginx配置中引用它。</p><h2 id="步骤1：创建密码文件">步骤1：创建密码文件</h2><ol><li class="lvl-3"><p><strong>生成加密密码</strong>：使用编程语言或在线工具生成加密密码。例如，使用Python的<code>crypt</code>模块：</p></li></ol><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> crypt</span><br><span class="line"><span class="built_in">print</span>(crypt.crypt(<span class="string">&quot;your_password&quot;</span>, <span class="string">&quot;salt&quot;</span>))</span><br></pre></td></tr></table></figure><ol start="2"><li class="lvl-3"><p><strong>保存密码文件</strong>：创建一个文本文件（如<code>passwords</code>），并将加密后的密码保存在其中，格式为：</p></li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">username:$apr1$...$...</span><br></pre></td></tr></table></figure><ol start="3"><li class="lvl-3"><p><strong>存放密码文件</strong>：将<code>passwords</code>文件放置在安全的位置，如<code>/etc/nginx/</code>目录下。</p></li></ol><h2 id="步骤2：编辑Nginx配置文件">步骤2：编辑Nginx配置文件</h2><ol><li class="lvl-3"><p><strong>打开配置文件</strong>：编辑<code>Nginx</code>主配置文件<code>/etc/nginx/nginx.conf</code>或相关虚拟主机配置文件。</p></li><li class="lvl-3"><p><strong>添加认证指令</strong>：在相应的<code>server</code>块或<code>location</code>块中添加以下指令以启用基本认证：</p></li></ol><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">location</span> / &#123;</span><br><span class="line">    <span class="attribute">auth_basic</span> <span class="string">&quot;Restricted&quot;</span>;</span><br><span class="line">    <span class="attribute">auth_basic_user_file</span> /etc/nginx/passwords;</span><br><span class="line">    <span class="comment"># 其他配置...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ul class="lvl-0"><li class="lvl-2"><p><code>auth_basic &quot;Restricted&quot;</code>;定义了认证提示信息。</p></li><li class="lvl-2"><p><code>auth_basic_user_file</code>指定之前创建的密码文件路径。</p></li></ul><h2 id="步骤3：重新加载">步骤3：重新加载</h2><p>保存配置文件更改后，重启Nginx服务以应用新设置：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure><h2 id="步骤4：测试访问">步骤4：测试访问</h2><p>尝试访问网站，系统应提示输入用户名和密码。使用在<code>passwords</code>文件中定义的凭据登录，若正确，可正常访问网站。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Nginx </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Debian脚本中使用了&amp;&gt;/dev/null，$?总是返回0</title>
       <link href="/posts/78eb14d2/"/>
       <url>/posts/78eb14d2/</url>
