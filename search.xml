@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>node_exporter添加访问验证</title>
+      <link href="/posts/3b0a5d69/"/>
+      <url>/posts/3b0a5d69/</url>
+      
+        <content type="html"><![CDATA[<p>假设你想要求所有访问<code>Prometheus</code>实例的用户提供用户名和密码。为了这个例子，使用<code>admin</code>作为用户名，并选择任何你喜欢的密码。</p><h1>步骤1：密码哈希</h1><p>首先，生成密码的<code>bcrypt</code>哈希值。为了生成哈希密码，我们将使用python3-bcrypt。让我们通过运行apt install python3-bcrypt来安装它，假设你正在运行类似<code>debian</code>的发行版。其他替代方案也存在来生成哈希密码；为了测试，你也可以使用网上的bcrypt生成器。</p><p>这里是一个使用<code>python3-bcrypt</code>的<code>python</code>脚本，它会提示你输入密码并对其进行哈希处理：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> getpass</span><br><span class="line"><span class="keyword">import</span> bcrypt</span><br><span class="line"><span class="comment"># 提示输入密码</span></span><br><span class="line">password = getpass.getpass(<span class="string">&quot;password: &quot;</span>)</span><br><span class="line">hashed_password = bcrypt.hashpw(password.encode(<span class="string">&quot;utf-8&quot;</span>), bcrypt.gensalt())</span><br><span class="line"><span class="comment"># 获取密码的哈希值</span></span><br><span class="line"><span class="built_in">print</span>(hashed_password.decode())</span><br></pre></td></tr></table></figure><h1>步骤2：创建web.yml</h1><p>让我们创建一个<code>web.yml</code>文件，内容如下：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">basic_auth_users:</span></span><br><span class="line">    <span class="attr">admin:</span> <span class="string">$2b$12$hNf2lSsxfm0.i4a.1kVpSOVyBCfIB51VRjgBUyv6kdnyTlgWj81Ay</span></span><br></pre></td></tr></table></figure><blockquote><p>注意用户名:【空格】密码</p></blockquote><p>你可以使用<code>promtool check web-config web.yml</code>来验证该文件</p><h1>步骤3：启动Prometheus</h1><p>你可以使用<code>web</code>配置文件来启动<code>prometheus</code>：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ prometheus --web.config.file=web.yml</span><br></pre></td></tr></table></figure><h1>步骤4：测试</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">curl -u admin http://localhost:9090/metrics</span><br><span class="line"></span><br></pre></td></tr></table></figure><h1>（可选）步骤5：node_exporter以docker的方式运行</h1><p>在原有运行容器的命令中加上<code>--web.config.file=/xxx/xxx/web.yml</code></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 原有命令</span></span><br><span class="line">docker run -d   --net=<span class="string">&quot;host&quot;</span>   --pid=<span class="string">&quot;host&quot;</span>   -v <span class="string">&quot;/:/host:ro,rslave&quot;</span> --name prom-node  quay.io/prometheus/node-exporter:latest   --path.rootfs=/host</span><br><span class="line"><span class="comment"># 启用验证命令</span></span><br><span class="line">docker run -d   --net=<span class="string">&quot;host&quot;</span>   --pid=<span class="string">&quot;host&quot;</span>   -v <span class="string">&quot;/:/host:ro,rslave&quot;</span> --name prom-node  quay.io/prometheus/node-exporter:latest   --path.rootfs=/host --web.config.file=/host/data/prometheus/config.yml</span><br></pre></td></tr></table></figure><h1>步骤6：在server端的<code>prometheus.yml</code>添加验证信息</h1><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="attr">job_name:</span> <span class="string">&#x27;node&#x27;</span></span><br><span class="line">    <span class="attr">static_configs:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">targets:</span> [<span class="string">&#x27;xxx.xxx.xxx.xxx:9100&#x27;</span>]</span><br><span class="line">    <span class="attr">basic_auth:</span></span><br><span class="line">      <span class="attr">username:</span> <span class="string">admin</span> <span class="comment"># 用户名</span></span><br><span class="line">      <span class="attr">password:</span> <span class="string">xxxx</span> <span class="comment"># 明文密码</span></span><br></pre></td></tr></table></figure><h1>步骤7：测试验证</h1><p>登录到<code>server</code>前台，验证是否能够获取<code>node</code>数据</p><h2 id="参考资料">参考资料</h2><blockquote><ul class="lvl-1"><li class="lvl-2"><p><a href="https://prometheus.io/docs/guides/basic-auth/">Securing Prometheus API and UI endpoints using basic auth</a></p></li></ul></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Prometheus </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>nginx 代理设置访问密码（不依赖htpasswd工具）</title>
       <link href="/posts/f2baa4c/"/>
       <url>/posts/f2baa4c/</url>
