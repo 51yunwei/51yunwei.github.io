@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>Prometheus-AlertManager设置邮件发送告警信息</title>
+      <link href="/posts/6bafdf3f/"/>
+      <url>/posts/6bafdf3f/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>以网易163邮箱为例</p></blockquote><p>修改<code>alertmanager.yml</code>文件</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">global:</span></span><br><span class="line">  <span class="attr">resolve_timeout:</span> <span class="string">5m</span> <span class="comment"># 当警报恢复后，等待这个时长才认为警报真正解决</span></span><br><span class="line">  <span class="attr">smtp_from:</span> <span class="string">&#x27;xxxx@163.com&#x27;</span> <span class="comment"># 发送警报邮件的发件人邮箱地址</span></span><br><span class="line">  <span class="attr">smtp_smarthost:</span> <span class="string">&#x27;smtp.163.com:465&#x27;</span> <span class="comment"># 邮件发送使用的SMTP服务器地址和端口</span></span><br><span class="line">  <span class="attr">smtp_auth_username:</span> <span class="string">&#x27;xxx@163.com&#x27;</span> <span class="comment"># 用于SMTP认证的用户名，通常是发件人的邮箱地址</span></span><br><span class="line">  <span class="attr">smtp_auth_password:</span> <span class="string">&#x27;xxxxxxx&#x27;</span> <span class="comment"># 用于SMTP认证的密码，这里应该是邮箱的授权码（token），而非登录密码</span></span><br><span class="line">  <span class="attr">smtp_require_tls:</span> <span class="literal">false</span> <span class="comment"># 是否要求使用TLS加密邮件传输，这里设置为false表示不强制要求</span></span><br><span class="line">  <span class="attr">smtp_hello:</span> <span class="string">&#x27;163.com&#x27;</span> <span class="comment"># SMTP连接时的HELO/EHLO标识，通常使用邮件服务商的域名</span></span><br><span class="line"></span><br><span class="line"><span class="attr">route:</span></span><br><span class="line">  <span class="attr">group_by:</span> [<span class="string">&#x27;alertname&#x27;</span>] <span class="comment"># 按照警报名称对警报进行分组</span></span><br><span class="line">  <span class="attr">group_wait:</span> <span class="string">30s</span> <span class="comment"># 在将警报发送给接收者之前等待的时间，以便收集更多相关警报</span></span><br><span class="line">  <span class="attr">group_interval:</span> <span class="string">5m</span> <span class="comment"># 分组后，每隔这个时长检查一次是否有新警报加入同一分组</span></span><br><span class="line">  <span class="attr">repeat_interval:</span> <span class="string">1h</span> <span class="comment"># 对于同一个分组的警报，每隔这个时长重复发送一次通知</span></span><br><span class="line">  <span class="attr">receiver:</span> <span class="string">&#x27;163email&#x27;</span> <span class="comment"># 默认的警报通知接收者，这里引用了下面定义的receivers中的一个</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># receivers中定义了警报通知的接收者，包括他们的联系方式</span></span><br><span class="line"><span class="attr">receivers:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">&#x27;163email&#x27;</span> <span class="comment"># 接收者的名称，用于在route中引用</span></span><br><span class="line">    <span class="attr">email_configs:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">to:</span> <span class="string">&#x27;xxx@yeah.net&#x27;</span> <span class="comment"># 接收警报邮件的邮箱地址</span></span><br><span class="line">        <span class="attr">send_resolved:</span> <span class="literal">true</span> <span class="comment"># 当警报恢复时，是否发送恢复通知邮件</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Prometheus </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Prometheus </tag>
+            
+            <tag> AlertManager </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Prometheus基于文件的自动发现</title>
       <link href="/posts/13b4287e/"/>
       <url>/posts/13b4287e/</url>
@@ -13,7 +42,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Prometheus </category>
           
       </categories>
       
@@ -40,7 +69,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Prometheus </category>
           
       </categories>
       
@@ -67,7 +96,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Prometheus </category>
           
       </categories>
       

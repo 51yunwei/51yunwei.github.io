@@ -176,7 +176,16 @@
                             &nbsp;
                             Linux
                         </a>
-                         <ul class="unstyled" id="tree">  <li class="file"><a href="/posts/6646b637/">Linux创建证书</a></li>  <li class="file"><a href="/posts/4cf37030/">openEuler中奇怪的网络管理服务</a></li>  <li class="file"><a href="/posts/83a68e5f/">Linux中的软链接和硬链接</a></li>  <li class="file"><a href="/posts/b6ae4c2c/">怎么判断多台虚拟机上的磁盘是不是同一块磁盘呢？</a></li>  <li class="file"><a href="/posts/a0e0543a/">Linux中的用户ID会不会重复？</a></li>  <li class="file"><a href="/posts/de677c90/">Linux文件的ACL</a></li>  <li class="file"><a href="/posts/614dd6d8/">systemd怎么查看开机自启动服务</a></li>  <li class="file"><a href="/posts/c0f21a4/">Linux中sysrq-trigger的妙用</a></li>  <li class="file"><a href="/posts/1208ed6f/">Linux重装系统后恢复LVM</a></li>  <li class="file"><a href="/posts/1c033694/">openEuler开启kdump失败</a></li>  <li class="file"><a href="/posts/b5a91e2c/">OpenEuler 安装MySql</a></li>  <li class="file"><a href="/posts/78eb14d2/">Debian脚本中使用了&>/dev/null，$?总是返回0</a></li>  <li class="file"><a href="/posts/f2baa4c/">nginx 代理设置访问密码（不依赖htpasswd工具）</a></li>  <li class="file"><a href="/posts/3b0a5d69/">node_exporter添加访问验证</a></li>  <li class="file"><a href="/posts/68a5e006/">阿里云-使用Prometheus配置报警规则的最佳实践</a></li>  <li class="file"><a href="/posts/13b4287e/">Prometheus基于文件的自动发现</a></li>  </ul> 
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/posts/6646b637/">Linux创建证书</a></li>  <li class="file"><a href="/posts/4cf37030/">openEuler中奇怪的网络管理服务</a></li>  <li class="file"><a href="/posts/83a68e5f/">Linux中的软链接和硬链接</a></li>  <li class="file"><a href="/posts/b6ae4c2c/">怎么判断多台虚拟机上的磁盘是不是同一块磁盘呢？</a></li>  <li class="file"><a href="/posts/a0e0543a/">Linux中的用户ID会不会重复？</a></li>  <li class="file"><a href="/posts/de677c90/">Linux文件的ACL</a></li>  <li class="file"><a href="/posts/614dd6d8/">systemd怎么查看开机自启动服务</a></li>  <li class="file"><a href="/posts/c0f21a4/">Linux中sysrq-trigger的妙用</a></li>  <li class="file"><a href="/posts/1208ed6f/">Linux重装系统后恢复LVM</a></li>  <li class="file"><a href="/posts/1c033694/">openEuler开启kdump失败</a></li>  <li class="file"><a href="/posts/b5a91e2c/">OpenEuler 安装MySql</a></li>  <li class="file"><a href="/posts/78eb14d2/">Debian脚本中使用了&>/dev/null，$?总是返回0</a></li>  <li class="file"><a href="/posts/f2baa4c/">nginx 代理设置访问密码（不依赖htpasswd工具）</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Prometheus
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/posts/3b0a5d69/">node_exporter添加访问验证</a></li>  <li class="file"><a href="/posts/68a5e006/">阿里云-使用Prometheus配置报警规则的最佳实践</a></li>  <li class="file"><a href="/posts/13b4287e/">Prometheus基于文件的自动发现</a></li>  <li class="file"><a href="/posts/6bafdf3f/">Prometheus-AlertManager设置邮件发送告警信息</a></li>  </ul> 
                     </li> 
                     
                     <li class="directory">
@@ -305,6 +314,110 @@
             
             <section id="main">
             
+        <article id="post-Prometheus-AlertManager设置邮件发送告警信息" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Prometheus/">Prometheus</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/AlertManager/" rel="tag">AlertManager</a>, <a class="tag-link-link" href="/tags/Linux/" rel="tag">Linux</a>, <a class="tag-link-link" href="/tags/Prometheus/" rel="tag">Prometheus</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/posts/6bafdf3f/">
+            <time datetime="2024-10-05T09:36:08.000Z" itemprop="datePublished">2024-10-05</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/raw/writing/source/_posts/Prometheus-AlertManager设置邮件发送告警信息.md"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/edit/writing/source/_posts/Prometheus-AlertManager设置邮件发送告警信息.md"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/commits/writing/source/_posts/Prometheus-AlertManager设置邮件发送告警信息.md"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/posts/6bafdf3f/">Prometheus-AlertManager设置邮件发送告警信息</a>
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                
+                    
+                    <p><blockquote>
+<p>以网易163邮箱为例</p>
+</blockquote>
+</p><p>修改<code>alertmanager.yml</code>文件</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">global:</span></span><br><span class="line">  <span class="attr">resolve_timeout:</span> <span class="string">5m</span> <span class="comment"># 当警报恢复后，等待这个时长才认为警报真正解决</span></span><br><span class="line">  <span class="attr">smtp_from:</span> <span class="string">&#x27;xxxx@163.com&#x27;</span> <span class="comment"># 发送警报邮件的发件人邮箱地址</span></span><br><span class="line">  <span class="attr">smtp_smarthost:</span> <span class="string">&#x27;smtp.163.com:465&#x27;</span> <span class="comment"># 邮件发送使用的SMTP服务器地址和端口</span></span><br><span class="line">  <span class="attr">smtp_auth_username:</span> <span class="string">&#x27;xxx@163.com&#x27;</span> <span class="comment"># 用于SMTP认证的用户名，通常是发件人的邮箱地址</span></span><br><span class="line">  <span class="attr">smtp_auth_password:</span> <span class="string">&#x27;xxxxxxx&#x27;</span> <span class="comment"># 用于SMTP认证的密码，这里应该是邮箱的授权码（token），而非登录密码</span></span><br><span class="line">  <span class="attr">smtp_require_tls:</span> <span class="literal">false</span> <span class="comment"># 是否要求使用TLS加密邮件传输，这里设置为false表示不强制要求</span></span><br><span class="line">  <span class="attr">smtp_hello:</span> <span class="string">&#x27;163.com&#x27;</span> <span class="comment"># SMTP连接时的HELO/EHLO标识，通常使用邮件服务商的域名</span></span><br><span class="line"></span><br><span class="line"><span class="attr">route:</span></span><br><span class="line">  <span class="attr">group_by:</span> [<span class="string">&#x27;alertname&#x27;</span>] <span class="comment"># 按照警报名称对警报进行分组</span></span><br><span class="line">  <span class="attr">group_wait:</span> <span class="string">30s</span> <span class="comment"># 在将警报发送给接收者之前等待的时间，以便收集更多相关警报</span></span><br><span class="line">  <span class="attr">group_interval:</span> <span class="string">5m</span> <span class="comment"># 分组后，每隔这个时长检查一次是否有新警报加入同一分组</span></span><br><span class="line">  <span class="attr">repeat_interval:</span> <span class="string">1h</span> <span class="comment"># 对于同一个分组的警报，每隔这个时长重复发送一次通知</span></span><br><span class="line">  <span class="attr">receiver:</span> <span class="string">&#x27;163email&#x27;</span> <span class="comment"># 默认的警报通知接收者，这里引用了下面定义的receivers中的一个</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># receivers中定义了警报通知的接收者，包括他们的联系方式</span></span><br><span class="line"><span class="attr">receivers:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">&#x27;163email&#x27;</span> <span class="comment"># 接收者的名称，用于在route中引用</span></span><br><span class="line">    <span class="attr">email_configs:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">to:</span> <span class="string">&#x27;xxx@yeah.net&#x27;</span> <span class="comment"># 接收警报邮件的邮箱地址</span></span><br><span class="line">        <span class="attr">send_resolved:</span> <span class="literal">true</span> <span class="comment"># 当警报恢复时，是否发送恢复通知邮件</span></span><br></pre></td></tr></table></figure>
+<p>
+                
+            
+        
+        
+            </p></div>   
+            <div class="article-more-link">
+                <a href="/posts/6bafdf3f/#more">查看更多</a>
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+
+
+
+
+    
         <article id="post-Prometheus基于文件的自动发现" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -315,7 +428,7 @@
                         
     <div class="article-category">
     	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Linux/">Linux</a>
+        <a class="article-category-link" href="/categories/Prometheus/">Prometheus</a>
     </div>
 
                         
@@ -419,7 +532,7 @@
                         
     <div class="article-category">
     	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Linux/">Linux</a>
+        <a class="article-category-link" href="/categories/Prometheus/">Prometheus</a>
     </div>
 
                         
@@ -523,7 +636,7 @@
                         
     <div class="article-category">
     	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Linux/">Linux</a>
+        <a class="article-category-link" href="/categories/Prometheus/">Prometheus</a>
     </div>
 
                         
@@ -1221,110 +1334,6 @@
             </p></div>   
             <div class="article-more-link">
                 <a href="/posts/1c033694/#more">查看更多</a>
-            </div>
-        
-        <footer class="article-footer">
-        </footer>
-    </div>
-</article>
-
-
-
-
-
-
-    
-        <article id="post-Linux重装系统后恢复LVM" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-                    <div class="article-meta">
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Linux/">Linux</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link-link" href="/tags/Linux/" rel="tag">Linux</a>, <a class="tag-link-link" href="/tags/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/" rel="tag">文件系统</a>
-    </div>
-
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/posts/1208ed6f/">
-            <time datetime="2024-06-21T09:16:37.000Z" itemprop="datePublished">2024-06-21</time>
-        </a>
-    </div>
-
-
-                        
-                            <i class="fa fa-bar-chart"></i>
-                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
-                        
-                        
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/raw/writing/source/_posts/Linux重装系统后恢复LVM.md"> Source </a>
-                            </div>
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/edit/writing/source/_posts/Linux重装系统后恢复LVM.md"> Edit </a>
-                            </div>
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/commits/writing/source/_posts/Linux重装系统后恢复LVM.md"> History </a>
-                            </div>
-                        
-                    </div>
-                
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/posts/1208ed6f/">Linux重装系统后恢复LVM</a>
-        </h1>
-    
-
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-        
-            
-                
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                
-                    
-                    <p></p><p>最近重装了操作系统，仅格式化了操作系统盘，数据盘没有动，因为数据盘之前使用<code>lvm</code>进行管理的，不能直接挂在，要先恢复<code>lvm</code>信息才能挂载。</p>
-<blockquote>
-<p>恢复的前提是要知道vg的名称！！！</p>
-</blockquote>
-<p>步骤如下：</p>
-<p>
-                
-            
-        
-        
-            </p></div>   
-            <div class="article-more-link">
-                <a href="/posts/1208ed6f/#more">查看更多</a>
             </div>
         
         <footer class="article-footer">
