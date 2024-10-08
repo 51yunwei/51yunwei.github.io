@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Prometheus告警中如何携带主机名</title>
+      <link href="/posts/cbb5ee1c/"/>
+      <url>/posts/cbb5ee1c/</url>
+      
+        <content type="html"><![CDATA[<p>主机名<code>（nodename）</code>在指标<code>node_uname_info</code>中，且<code>node_uname_info</code>的值恰巧为1，所以我们可以在<code>PromQL</code>中通过<code>node_uname_info</code>提取，只需要在原有<code>PromQL</code>后添加</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* on(instance) group_left(nodename) (node_uname_info)</span><br></pre></td></tr></table></figure><p>这样，在prometheus告警的labels中，就可以通过nodename获取主机名了</p><p>比如原先的expr为</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">node_filesystem_size_bytes</span> <span class="bullet">-</span> <span class="string">node_filesystem_avail_bytes)</span> <span class="string">/</span> <span class="string">node_filesystem_size_bytes</span> <span class="string">&gt;</span> <span class="number">0.7</span></span><br></pre></td></tr></table></figure><p>修改为以下的expr就行</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">((node_filesystem_size_bytes</span> <span class="bullet">-</span> <span class="string">node_filesystem_avail_bytes)</span> <span class="string">/</span> <span class="string">node_filesystem_size_bytes)</span> <span class="string">*</span> <span class="string">on</span> <span class="string">(instance)</span> <span class="string">group_left</span> <span class="string">(nodename)</span> <span class="string">(node_uname_info)</span> <span class="string">&gt;</span> <span class="number">0.7</span></span><br></pre></td></tr></table></figure><h2 id="参考资料">参考资料</h2><blockquote><ul class="lvl-1"><li class="lvl-2"><p><a href="https://www.cnblogs.com/heian99/p/15257897.html#:~:text=%E4%B8%BB%E6%9C%BA%E5%90%8D%EF%BC%88nodena">Prometheus监控，生产可用告警规则（可获取主机名）</a></p></li></ul></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> Prometheus </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Prometheus </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>热重载Prometheus和AlertManager配置文件</title>
       <link href="/posts/ed0140b7/"/>
       <url>/posts/ed0140b7/</url>

@@ -185,7 +185,7 @@
                             &nbsp;
                             Prometheus
                         </a>
-                         <ul class="unstyled" id="tree">  <li class="file"><a href="/posts/3b0a5d69/">node_exporter添加访问验证</a></li>  <li class="file"><a href="/posts/68a5e006/">阿里云-使用Prometheus配置报警规则的最佳实践</a></li>  <li class="file"><a href="/posts/13b4287e/">Prometheus基于文件的自动发现</a></li>  <li class="file"><a href="/posts/6bafdf3f/">Prometheus-AlertManager设置邮件发送告警信息</a></li>  <li class="file"><a href="/posts/ed0140b7/">热重载Prometheus和AlertManager配置文件</a></li>  </ul> 
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/posts/3b0a5d69/">node_exporter添加访问验证</a></li>  <li class="file"><a href="/posts/68a5e006/">阿里云-使用Prometheus配置报警规则的最佳实践</a></li>  <li class="file"><a href="/posts/13b4287e/">Prometheus基于文件的自动发现</a></li>  <li class="file"><a href="/posts/6bafdf3f/">Prometheus-AlertManager设置邮件发送告警信息</a></li>  <li class="file"><a href="/posts/ed0140b7/">热重载Prometheus和AlertManager配置文件</a></li>  <li class="file"><a href="/posts/cbb5ee1c/">Prometheus告警中如何携带主机名</a></li>  </ul> 
                     </li> 
                     
                     <li class="directory">
@@ -314,6 +314,110 @@
             
             <section id="main">
             
+        <article id="post-OpenEuler-安装MySql" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Linux/">Linux</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/Database/" rel="tag">Database</a>, <a class="tag-link-link" href="/tags/Linux/" rel="tag">Linux</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/posts/b5a91e2c/">
+            <time datetime="2024-09-10T01:22:10.000Z" itemprop="datePublished">2024-09-10</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/raw/writing/source/_posts/OpenEuler-安装MySql.md"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/edit/writing/source/_posts/OpenEuler-安装MySql.md"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/commits/writing/source/_posts/OpenEuler-安装MySql.md"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/posts/b5a91e2c/">OpenEuler 安装MySql</a>
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                
+                    
+                    <p></p><p><strong>安装mysql</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install mysql-server -y</span><br></pre></td></tr></table></figure>
+<p><strong>初始化</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld --initialize --console</span><br></pre></td></tr></table></figure>
+<p><strong>目录授权</strong></p>
+<p>
+                
+            
+        
+        
+            </p></div>   
+            <div class="article-more-link">
+                <a href="/posts/b5a91e2c/#more">查看更多</a>
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+
+
+
+
+    
         <article id="post-openEuler开启kdump失败" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -1226,110 +1330,6 @@
             </p></div>   
             <div class="article-more-link">
                 <a href="/posts/83a68e5f/#more">查看更多</a>
-            </div>
-        
-        <footer class="article-footer">
-        </footer>
-    </div>
-</article>
-
-
-
-
-
-
-    
-        <article id="post-openEuler中奇怪的网络管理服务" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-                    <div class="article-meta">
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Linux/">Linux</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link-link" href="/tags/openEuler/" rel="tag">openEuler</a>
-    </div>
-
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/posts/4cf37030/">
-            <time datetime="2024-05-30T09:11:31.000Z" itemprop="datePublished">2024-05-30</time>
-        </a>
-    </div>
-
-
-                        
-                            <i class="fa fa-bar-chart"></i>
-                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
-                        
-                        
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/raw/writing/source/_posts/openEuler中奇怪的网络管理服务.md"> Source </a>
-                            </div>
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/edit/writing/source/_posts/openEuler中奇怪的网络管理服务.md"> Edit </a>
-                            </div>
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/commits/writing/source/_posts/openEuler中奇怪的网络管理服务.md"> History </a>
-                            </div>
-                        
-                    </div>
-                
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/posts/4cf37030/">openEuler中奇怪的网络管理服务</a>
-        </h1>
-    
-
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-        
-            
-                
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                
-                    
-                    <p></p><p>openEuler中的网络服务</p>
-<h1>管理网络服务</h1>
-<p>openEuler没有network服务，当我修改了网卡配置文件之后，使用以下命令进行重启，报错<code>Failed to restart network.service: Unit network.service not found.</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost sshuser]<span class="comment"># systemctl restart network</span></span><br><span class="line">Failed to restart network.service: Unit network.service not found.</span><br><span class="line">[root@localhost sshuser]<span class="comment"># </span></span><br></pre></td></tr></table></figure>
-<p>经过查询才知道，<code>EulerOS</code>没有<code>network</code>服务，而是使用<code>NetworkManager</code>管理网络服务，所以直接重启这个服务即可。</p>
-<p>
-                
-            
-        
-        
-            </p></div>   
-            <div class="article-more-link">
-                <a href="/posts/4cf37030/#more">查看更多</a>
             </div>
         
         <footer class="article-footer">
