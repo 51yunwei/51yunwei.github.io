@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>在Prometheus的rule文件中使用判断语句和变量</title>
+      <link href="/posts/25711707/"/>
+      <url>/posts/25711707/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>话不多说，直接给出示例，相信一眼就能看到怎么用了</p></blockquote><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="attr">name:</span> <span class="string">hostStatsAlert300s</span></span><br><span class="line">  <span class="attr">interval:</span> <span class="string">5m</span></span><br><span class="line">  <span class="attr">rules:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">alert:</span> <span class="string">磁盘使用率超过阈值告警</span></span><br><span class="line">    <span class="attr">expr:</span> <span class="string">((node_filesystem_size_bytes</span> <span class="bullet">-</span> <span class="string">node_filesystem_avail_bytes)</span> <span class="string">/</span> <span class="string">node_filesystem_size_bytes)</span> <span class="string">*</span> <span class="string">on(instance)</span> <span class="string">group_left(nodename)</span> <span class="string">(node_uname_info)</span> <span class="string">&gt;</span> <span class="number">0.7</span></span><br><span class="line">    <span class="attr">labels:</span> </span><br><span class="line">      <span class="attr">severity:</span> <span class="string">&quot;<span class="template-variable">&#123;&#123; if gt $value 0.9 &#125;&#125;</span> 紧急告警 <span class="template-variable">&#123;&#123; else if gt $value 0.8 &#125;&#125;</span> 重要告警 <span class="template-variable">&#123;&#123; else if gt $value 0.7 &#125;&#125;</span> 次要告警 <span class="template-variable">&#123;&#123; end &#125;&#125;</span>&quot;</span></span><br><span class="line">    <span class="attr">annotations:</span></span><br><span class="line">      <span class="attr">summary:</span> <span class="string">&quot;主机 <span class="template-variable">&#123;&#123; $labels.nodename &#125;&#125;</span>  目录 <span class="template-variable">&#123;&#123; $labels.mountpoint &#125;&#125;</span> 磁盘使用率过高&quot;</span></span><br><span class="line">      <span class="attr">description:</span> <span class="string">&quot;主机<span class="template-variable">&#123;&#123; $labels.nodename &#125;&#125;</span> 磁盘使用率过高，告警阈值：<span class="template-variable">&#123;&#123; if gt $value 0.9 &#125;&#125;</span>90<span class="template-variable">%&#123;&#123; else if gt $value 0.8 &#125;</span>&#125;80<span class="template-variable">%&#123;&#123; else if gt $value 0.7 &#125;</span>&#125;70<span class="template-variable">%&#123;&#123; end &#125;</span>&#125;，当前使用率：<span class="template-variable">&#123;&#123; $value | humanizePercentage &#125;&#125;</span>，目录：<span class="template-variable">&#123;&#123; $labels.mountpoint &#125;&#125;</span>&quot;</span></span><br></pre></td></tr></table></figure><ul class="lvl-0"><li class="lvl-2"><p><code>$labels</code>：在web界面查询出来的所有标签值都能用</p></li><li class="lvl-2"><p><code>$value</code>：警报触发时的表达式计算结果</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Prometheus </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Prometheus </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Prometheus告警中如何携带主机名</title>
       <link href="/posts/cbb5ee1c/"/>
       <url>/posts/cbb5ee1c/</url>

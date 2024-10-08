@@ -185,7 +185,7 @@
                             &nbsp;
                             Prometheus
                         </a>
-                         <ul class="unstyled" id="tree">  <li class="file"><a href="/posts/3b0a5d69/">node_exporter添加访问验证</a></li>  <li class="file"><a href="/posts/68a5e006/">阿里云-使用Prometheus配置报警规则的最佳实践</a></li>  <li class="file"><a href="/posts/13b4287e/">Prometheus基于文件的自动发现</a></li>  <li class="file"><a href="/posts/6bafdf3f/">Prometheus-AlertManager设置邮件发送告警信息</a></li>  <li class="file"><a href="/posts/ed0140b7/">热重载Prometheus和AlertManager配置文件</a></li>  <li class="file"><a href="/posts/cbb5ee1c/">Prometheus告警中如何携带主机名</a></li>  </ul> 
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/posts/3b0a5d69/">node_exporter添加访问验证</a></li>  <li class="file"><a href="/posts/68a5e006/">阿里云-使用Prometheus配置报警规则的最佳实践</a></li>  <li class="file"><a href="/posts/13b4287e/">Prometheus基于文件的自动发现</a></li>  <li class="file"><a href="/posts/6bafdf3f/">Prometheus-AlertManager设置邮件发送告警信息</a></li>  <li class="file"><a href="/posts/ed0140b7/">热重载Prometheus和AlertManager配置文件</a></li>  <li class="file"><a href="/posts/cbb5ee1c/">Prometheus告警中如何携带主机名</a></li>  <li class="file"><a href="/posts/25711707/">在Prometheus的rule文件中使用判断语句和变量</a></li>  </ul> 
                     </li> 
                     
                     <li class="directory">
@@ -314,6 +314,110 @@
             
             <section id="main">
             
+        <article id="post-在Prometheus的rule文件中使用判断语句和变量" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Prometheus/">Prometheus</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/Prometheus/" rel="tag">Prometheus</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/posts/25711707/">
+            <time datetime="2024-10-08T08:55:26.000Z" itemprop="datePublished">2024-10-08</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/raw/writing/source/_posts/在Prometheus的rule文件中使用判断语句和变量.md"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/edit/writing/source/_posts/在Prometheus的rule文件中使用判断语句和变量.md"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/commits/writing/source/_posts/在Prometheus的rule文件中使用判断语句和变量.md"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/posts/25711707/">在Prometheus的rule文件中使用判断语句和变量</a>
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                
+                    
+                    <p><blockquote>
+<p>话不多说，直接给出示例，相信一眼就能看到怎么用了</p>
+</blockquote>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="attr">name:</span> <span class="string">hostStatsAlert300s</span></span><br><span class="line">  <span class="attr">interval:</span> <span class="string">5m</span></span><br><span class="line">  <span class="attr">rules:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">alert:</span> <span class="string">磁盘使用率超过阈值告警</span></span><br><span class="line">    <span class="attr">expr:</span> <span class="string">((node_filesystem_size_bytes</span> <span class="bullet">-</span> <span class="string">node_filesystem_avail_bytes)</span> <span class="string">/</span> <span class="string">node_filesystem_size_bytes)</span> <span class="string">*</span> <span class="string">on(instance)</span> <span class="string">group_left(nodename)</span> <span class="string">(node_uname_info)</span> <span class="string">&gt;</span> <span class="number">0.7</span></span><br><span class="line">    <span class="attr">labels:</span> </span><br><span class="line">      <span class="attr">severity:</span> <span class="string">&quot;<span class="template-variable">&#123;&#123; if gt $value 0.9 &#125;&#125;</span> 紧急告警 <span class="template-variable">&#123;&#123; else if gt $value 0.8 &#125;&#125;</span> 重要告警 <span class="template-variable">&#123;&#123; else if gt $value 0.7 &#125;&#125;</span> 次要告警 <span class="template-variable">&#123;&#123; end &#125;&#125;</span>&quot;</span></span><br><span class="line">    <span class="attr">annotations:</span></span><br><span class="line">      <span class="attr">summary:</span> <span class="string">&quot;主机 <span class="template-variable">&#123;&#123; $labels.nodename &#125;&#125;</span>  目录 <span class="template-variable">&#123;&#123; $labels.mountpoint &#125;&#125;</span> 磁盘使用率过高&quot;</span></span><br><span class="line">      <span class="attr">description:</span> <span class="string">&quot;主机<span class="template-variable">&#123;&#123; $labels.nodename &#125;&#125;</span> 磁盘使用率过高，告警阈值：<span class="template-variable">&#123;&#123; if gt $value 0.9 &#125;&#125;</span>90<span class="template-variable">%&#123;&#123; else if gt $value 0.8 &#125;</span>&#125;80<span class="template-variable">%&#123;&#123; else if gt $value 0.7 &#125;</span>&#125;70<span class="template-variable">%&#123;&#123; end &#125;</span>&#125;，当前使用率：<span class="template-variable">&#123;&#123; $value | humanizePercentage &#125;&#125;</span>，目录：<span class="template-variable">&#123;&#123; $labels.mountpoint &#125;&#125;</span>&quot;</span></span><br></pre></td></tr></table></figure>
+<ul class="lvl-0">
+<p>
+                
+            
+        
+        
+            </p></ul></p></div>   
+            <div class="article-more-link">
+                <a href="/posts/25711707/#more">查看更多</a>
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+
+
+
+
+    
         <article id="post-Prometheus告警中如何携带主机名" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -1237,103 +1341,6 @@
             </p></ul></div>   
             <div class="article-more-link">
                 <a href="/posts/e0c5f301/#more">查看更多</a>
-            </div>
-        
-        <footer class="article-footer">
-        </footer>
-    </div>
-</article>
-
-
-
-
-
-
-    
-        <article id="post-gitpage-套上-cloudflare后显示过多重定向问题解决" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-                    <div class="article-meta">
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link-link" href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" rel="tag">博客搭建</a>
-    </div>
-
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/posts/6c7d376/">
-            <time datetime="2024-09-17T08:07:35.000Z" itemprop="datePublished">2024-09-17</time>
-        </a>
-    </div>
-
-
-                        
-                            <i class="fa fa-bar-chart"></i>
-                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
-                        
-                        
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/raw/writing/source/_posts/gitpage-套上-cloudflare后显示过多重定向问题解决.md"> Source </a>
-                            </div>
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/edit/writing/source/_posts/gitpage-套上-cloudflare后显示过多重定向问题解决.md"> Edit </a>
-                            </div>
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/commits/writing/source/_posts/gitpage-套上-cloudflare后显示过多重定向问题解决.md"> History </a>
-                            </div>
-                        
-                    </div>
-                
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/posts/6c7d376/">gitpage 套上 cloudflare后显示过多重定向问题解决</a>
-        </h1>
-    
-
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-        
-            
-                
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-            
-        
-        
-            <h1>一、现象</h1>
-<p>在<code>cloudflare</code>设置好dns之后，gitpage页面无法打开，显示<strong>将您重定向的次数过多</strong></p>
-<h1>二、解决办法</h1>
-<p>在<code>cloudflare</code>的<code>SSL/TLS</code> &gt; <code>概述</code>中，将<code>SSL/TLS加密</code>修改为灵活即可。</p>
-
             </div>
         
         <footer class="article-footer">
