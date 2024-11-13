@@ -6,7 +6,7 @@
   <link href="https://www.esearch.top/atom.xml" rel="self"/>
   
   <link href="https://www.esearch.top/"/>
-  <updated>2024-10-08T08:58:45.853Z</updated>
+  <updated>2024-11-13T06:37:59.127Z</updated>
   <id>https://www.esearch.top/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>更换电脑后如何恢复hexo博客环境</title>
+    <link href="https://www.esearch.top/posts/e245ef8f/"/>
+    <id>https://www.esearch.top/posts/e245ef8f/</id>
+    <published>2024-11-13T06:18:44.000Z</published>
+    <updated>2024-11-13T06:37:59.127Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>本博客环境在vscode容器中，所以是当vscode容器被删除后(数据还在的情况下)，如何恢复环境</p></blockquote><h1>下载vscode容器</h1><p>由于国内<code>docker</code>被搬，需要使用以下命令进行镜像拉取。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull docker.1panel.dev/codercom/code-server</span><br></pre></td></tr></table></figure><h1>容器内安装环境</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 进入hexo目录，具体目录根据实际而定</span></span><br><span class="line"><span class="built_in">cd</span> /home/coder/project/hexo-blog </span><br><span class="line"><span class="comment"># 配置apt源，vscode使用的是debian的系统</span></span><br><span class="line">sudo sed -i <span class="string">&#x27;s/deb.debian.org/mirrors.ustc.edu.cn/g&#x27;</span> /etc/apt/sources.list.d/debian.sources</span><br><span class="line"><span class="comment"># 更新源</span></span><br><span class="line">sudo apt update</span><br><span class="line"><span class="comment"># 安装 npm</span></span><br><span class="line">sudo apt install npm</span><br><span class="line"><span class="comment"># 配置npm的源</span></span><br><span class="line">sudo npm config <span class="built_in">set</span> registry https://registry.npmmirror.com/</span><br><span class="line"><span class="comment"># 安装hexo cli等</span></span><br><span class="line">sudo npm install hexo-cli -g </span><br><span class="line">sudo npm install</span><br><span class="line">sudo npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure><h1>生成新的连接密钥</h1><ul class="lvl-0"><li class="lvl-2"><p>生成密钥</p></li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;Github用户名&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;Github邮箱@qq.com&quot;</span></span><br><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;Gihub邮箱@qq.com&quot;</span></span><br></pre></td></tr></table></figure><ul class="lvl-0"><li class="lvl-2"><p>将密钥添加到<code>Github项目 &gt; settings &gt; SSH and GPG keys</code>中<br><img src="%E6%9B%B4%E6%8D%A2sshkey.png" alt="添加SSH key"></p></li></ul><h1>环境测试</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /home/coder/project/hexo-blog </span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure><h2 id="参考资料">参考资料</h2><blockquote><ul class="lvl-1"><li class="lvl-2"><p><a href="https://aoleye.github.io/2024/08/07/hexoxdn/index.html">Hexo更换新电脑后需要的迁移操作，备份文件及恢复方法（突然看到比较简单详细的相关文章，记录一下）</a></p></li></ul></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;本博客环境在vscode容器中，所以是当vscode容器被删除后(数据还在的情况下)，如何恢复环境&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1&gt;下载vscode容器&lt;/h1&gt;
+&lt;p&gt;由于国内&lt;code&gt;docker&lt;/code&gt;被搬，需要使用以下命</summary>
+      
+    
+    
+    
+    <category term="博客搭建" scheme="https://www.esearch.top/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    
+    
+    <category term="hexo" scheme="https://www.esearch.top/tags/hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>在Prometheus的rule文件中使用判断语句和变量</title>
@@ -532,31 +560,6 @@
       
       
     <summary type="html">&lt;p&gt;&lt;code&gt;UID&lt;/code&gt;指的是用户的&lt;code&gt;ID&lt;/code&gt;(User ID)，一个用户的UID标识一个给定用户，UID是用户的唯一标识符，通过UID可以区分不同的用户类别，比如UID为0的是超级用户，UID为1000-600000之间的是普通用户，而UID为</summary>
-      
-    
-    
-    
-    <category term="Linux" scheme="https://www.esearch.top/categories/Linux/"/>
-    
-    
-    <category term="Linux基础" scheme="https://www.esearch.top/tags/Linux%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>怎么判断多台虚拟机上的磁盘是不是同一块磁盘呢？</title>
-    <link href="https://www.esearch.top/posts/b6ae4c2c/"/>
-    <id>https://www.esearch.top/posts/b6ae4c2c/</id>
-    <published>2024-05-31T08:30:15.000Z</published>
-    <updated>2024-05-31T08:34:46.812Z</updated>
-    
-    <content type="html"><![CDATA[<p>在虚拟化环境上，有普通磁盘和共享磁盘，有时候进行扩容后，多台虚拟机上的磁盘大小一样，那怎么判断某个盘是不是共享磁盘呢？这时候我们可以使用<code>blkid</code>命令来查看。</p><p>命令输出结果如下，如果多台虚拟机输出的<code>uuid</code>是一样的，那这个磁盘就是共享磁盘了。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@txy201-51 tmp]<span class="comment"># blkid /dev/vda1</span></span><br><span class="line">/dev/vda1: UUID=<span class="string">&quot;4b499d76-769a-40a0-93dc-4a31a59add28&quot;</span> TYPE=<span class="string">&quot;ext4&quot;</span></span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;在虚拟化环境上，有普通磁盘和共享磁盘，有时候进行扩容后，多台虚拟机上的磁盘大小一样，那怎么判断某个盘是不是共享磁盘呢？这时候我们可以使用&lt;code&gt;blkid&lt;/code&gt;命令来查看。&lt;/p&gt;
-&lt;p&gt;命令输出结果如下，如果多台虚拟机输出的&lt;code&gt;uuid&lt;/code&gt;是</summary>
       
     
     
