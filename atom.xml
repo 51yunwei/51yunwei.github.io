@@ -6,7 +6,7 @@
   <link href="https://www.esearch.top/atom.xml" rel="self"/>
   
   <link href="https://www.esearch.top/"/>
-  <updated>2024-11-19T03:10:23.816Z</updated>
+  <updated>2024-11-19T03:15:52.723Z</updated>
   <id>https://www.esearch.top/</id>
   
   <author>
@@ -17,11 +17,41 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>安装Pycharm</title>
+    <link href="https://www.esearch.top/posts/8b89de9f/"/>
+    <id>https://www.esearch.top/posts/8b89de9f/</id>
+    <published>2024-11-19T03:13:57.000Z</published>
+    <updated>2024-11-19T03:15:52.723Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li class="lvl-3"><p>下载资源后解压，以管理员身份运行pycharm-professional-2024.1.exe</p></li></ol><p>解压码：520000</p><p>下载链接：<a href="https://pan.xunlei.com/s/VO41LIAJ5geCjsQuhaUTNRM8A1?pwd=tjwt#">https://pan.xunlei.com/s/VO41LIAJ5geCjsQuhaUTNRM8A1?pwd=tjwt#</a></p><p><img src="%E5%AE%89%E8%A3%85pycharm/670054-20240812005434554-1485877061.png" alt="img"></p><ol start="2"><li class="lvl-3"><p>安装程序内：下一步 -&gt; 设置安装目录（软件安装不推荐放c盘，可以改成别的盘），下一步 -&gt; 根据需要勾选安装选项，下一步 -&gt; 点击安装 -&gt; wait a minute… -&gt; 取消勾选运行，完成</p></li></ol><p><img src="%E5%AE%89%E8%A3%85pycharm/670054-20240812005534332-1571787127.png" alt="img"></p><p><img src="%E5%AE%89%E8%A3%85pycharm/670054-20240812005552831-950427646.png" alt="img"></p><p><img src="%E5%AE%89%E8%A3%85pycharm/670054-20240812005628989-1191932550.png" alt="img"></p><p><img src="%E5%AE%89%E8%A3%85pycharm/670054-20240812005645089-240093658.png" alt="img"></p><p><img src="%E5%AE%89%E8%A3%85pycharm/670054-20240812005720794-1317170926.png" alt="img"></p><p><img src="%E5%AE%89%E8%A3%85pycharm/670054-20240812005703765-2064376457.png" alt="img"></p><h3 id="激活流程：">激活流程：</h3><ol><li class="lvl-3"><p>解压ja-netfilter-all-2024.x-2022.2.x-20230914.zip</p></li><li class="lvl-3"><p>将解压后文件夹内jetbra文件夹复制粘贴到C盘的根目录，永久激活插件位置：C:\jetbra\scripts （不要删除或移动位置）</p></li></ol><p><img src="%E5%AE%89%E8%A3%85pycharm/670054-20240812005812348-1022122108.png" alt="img"></p><ol start="3"><li class="lvl-3"><p>进入C:\jetbra\scripts，双击运行install-all-users.vbs，弹窗点击确定</p></li></ol><p><img src="%E5%AE%89%E8%A3%85pycharm/670054-20240812005902649-48703434.png" alt="img"></p><p><img src="%E5%AE%89%E8%A3%85pycharm/670054-20240812005918826-748558002.png" alt="img"></p><ol start="4"><li class="lvl-3"><p>等待… （大概几十秒到几分钟，中间没有任何窗口动画，执行完成才会弹出来，请耐心等待，弹出之后才进行下一步）弹窗内出现“DONE”，点击确定</p></li></ol><p><img src="%E5%AE%89%E8%A3%85pycharm/670054-20240812005946480-824346839.png" alt="img"></p><ol start="5"><li class="lvl-3"><p>启动pycharm，首次启动提示点击“Continue”-&gt; Don’t Send</p></li><li class="lvl-3"><p>Activate PyCharm</p></li></ol><p><img src="%E5%AE%89%E8%A3%85pycharm/670054-20240812010013492-1896072670.png" alt="img"></p><ol start="7"><li class="lvl-3"><p>打开C:\jetbra目录 激活码.txt，复制【PyCharm-2023.2.x】下面完整的激活码内容</p></li></ol><p><img src="%E5%AE%89%E8%A3%85pycharm/670054-20240812010110516-516504542.png" alt="img"></p><p><img src="%E5%AE%89%E8%A3%85pycharm/670054-20240812010144653-1745615715.png" alt="img"></p><ol start="8"><li class="lvl-3"><p>回到PyCharm软件激活界面，选择激活码方式(Activate code)，将激活码粘贴到框内，点击“Activate”</p></li><li class="lvl-3"><p>永久激活成功（有效时间忽略），点击Continue</p></li></ol><h3 id="汉化方法：">汉化方法：</h3><p>File -&gt; Settings -&gt; Plugins -&gt; Marketplace -&gt; 输入Chinese搜索 -&gt; Chinese (Simplified) Language Pack / 中文语言包 -&gt; 安装 -&gt; 重启PyCharm</p><p><img src="%E5%AE%89%E8%A3%85pycharm/670054-20240812010442723-626880976.png" alt="img"></p><p><img src="%E5%AE%89%E8%A3%85pycharm/670054-20240812010541570-789360701.png" alt="img"></p><p><img src="%E5%AE%89%E8%A3%85pycharm/670054-20240812010610010-300931416.png" alt="img"></p><h2 id="参考资料">参考资料</h2><blockquote><ul class="lvl-1"><li class="lvl-2"><p><a href="https://www.cnblogs.com/ft-Pavilion/p/18354195">pycharm专业版的安装和破解教程</a></p></li></ul></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;ol&gt;
+&lt;li class=&quot;lvl-3&quot;&gt;
+&lt;p&gt;下载资源后解压，以管理员身份运行pycharm-professional-2024.1.exe&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;解压码：520000&lt;/p&gt;
+&lt;p&gt;下载链接：&lt;a href=&quot;https://pan.xu</summary>
+      
+    
+    
+    
+    <category term="工具" scheme="https://www.esearch.top/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="Pycharm" scheme="https://www.esearch.top/tags/Pycharm/"/>
+    
+  </entry>
+  
+  <entry>
     <title>安装Typora</title>
     <link href="https://www.esearch.top/posts/12fa9bf/"/>
     <id>https://www.esearch.top/posts/12fa9bf/</id>
     <published>2024-11-19T03:08:37.000Z</published>
-    <updated>2024-11-19T03:10:23.816Z</updated>
+    <updated>2024-11-19T03:13:29.471Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>实测可用日期为：2024-11-19</p><p>目前最新版本 1.8.10.0 也是可以实现激活</p><p>注：免修改<a href="https://so.csdn.net/so/search?q=%E6%B3%A8%E5%86%8C%E8%A1%A8&amp;spm=1001.2101.3001.7020">注册表</a>、不用修改时间，更不需要改补丁</p></blockquote><h1>01、下载&amp;安装 Typora</h1><p>从官网下载最新版本的 Typora，并安装<img src="%E5%AE%89%E8%A3%85Typora/38bd5cd75dad7eae8b01b3036cfb99b6.png" alt="aaec86fd073442f099182e1764588c39.png"></p><h1>02、开始激活Typora</h1><p>找到Typora安装目录，依次找到这个文件</p><p><code>resources\page-dist\static\js\LicenseIndex.**********.********.chunk.js</code></p><p>用记事本打开它，查找以下字段：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">e.hasActivated=&quot;true&quot;==e.hasActivated,</span><br></pre></td></tr></table></figure><p>替换为：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">e.hasActivated=&quot;true&quot;==&quot;true&quot;,</span><br></pre></td></tr></table></figure><p>保存文件失败的话，可以先保存到桌面，再去替换原来的文件</p><h1>03、关闭软件每次启动时的已激活的弹窗</h1><blockquote><p>注意：这个时候打开软件已经提示激活成功了</p><p>由于每次打开软件都会弹出“已激活”的窗口，下面是关闭这个弹窗。</p></blockquote><p>在Typora安装目录依次找到这个文件</p><p><code>resources\page-dist\license.html</code></p><p>用记事本打开它，查 找</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;/body&gt;&lt;/html&gt;</span><br></pre></td></tr></table></figure><p>替换为：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;/body&gt;&lt;script&gt;window.onload=function()&#123;setTimeout(()=&gt;&#123;window.close();&#125;,5);&#125;&lt;/script&gt;&lt;/html&gt;</span><br></pre></td></tr></table></figure><h1>04、去除软件左下角“未激活”提示</h1><p>在Typora安装目录依次找到这个文件</p><p><code>resources\locales\zh-Hans.lproj\Panel.json</code></p><p>查找</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;UNREGISTERED&quot;:&quot;未激活&quot;,</span><br></pre></td></tr></table></figure><p>替换为</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;UNREGISTERED&quot;:&quot; &quot;,</span><br></pre></td></tr></table></figure><h1>05、操作结束</h1><p>操作后的 Typora，各种功能均能正常使用，仅有“许可证信息”/“我的许可证”页面无法打开、左下角存在“x”（可手工点击关闭但重新打开软件会重新出现）。</p><p>如果弹窗提示错误，就点击一下下图中的位置，再关闭浏览器就行了。</p><h2 id="参考资料">参考资料</h2><blockquote><ul class="lvl-1"><li class="lvl-2"><p><a href="https://blog.csdn.net/m0_58416529/article/details/136098186">2024Typora破解，最新版本的1.8.10.0可用</a></p></li></ul></blockquote>]]></content>
     
@@ -549,31 +579,6 @@
     
     
     <category term="Jquery" scheme="https://www.esearch.top/tags/Jquery/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>systemd怎么查看开机自启动服务</title>
-    <link href="https://www.esearch.top/posts/614dd6d8/"/>
-    <id>https://www.esearch.top/posts/614dd6d8/</id>
-    <published>2024-06-21T03:31:50.000Z</published>
-    <updated>2024-06-21T09:54:03.126Z</updated>
-    
-    <content type="html"><![CDATA[<p>在CentOS 7及更高的版本中，使用<code>chkconfig</code>命令查看开机自启动信息时，发现只有几个服务被<code>SysV</code>管理的服务，没有包括<code>systemd</code>管理的服务。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[root@kvm-hkcloud01 var]<span class="comment"># chkconfig --list</span></span><br><span class="line"></span><br><span class="line">Note: This output shows SysV services only and does not include native</span><br><span class="line">      systemd services. SysV configuration data might be overridden by native</span><br><span class="line">      systemd configuration.</span><br><span class="line"></span><br><span class="line">      If you want to list systemd services use <span class="string">&#x27;systemctl list-unit-files&#x27;</span>.</span><br><span class="line">      To see services enabled on particular target use</span><br><span class="line">      <span class="string">&#x27;systemctl list-dependencies [target]&#x27;</span>.</span><br><span class="line"></span><br><span class="line">netconsole      0:off   1:off   2:off   3:off   4:off   5:off   6:off</span><br><span class="line">network         0:off   1:off   2:on    3:on    4:on    5:on    6:off</span><br><span class="line">[root@kvm-hkcloud01 var]<span class="comment">#</span></span><br></pre></td></tr></table></figure><p>如果需要查看被<code>systemd</code>管理的服务，可以使用以下命令进行查询。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@kvm-hkcloud01 var]<span class="comment"># systemctl list-unit-files</span></span><br></pre></td></tr></table></figure><p>更多systemd内容，可参考<a href="https://ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html">https://ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;在CentOS 7及更高的版本中，使用&lt;code&gt;chkconfig&lt;/code&gt;命令查看开机自启动信息时，发现只有几个服务被&lt;code&gt;SysV&lt;/code&gt;管理的服务，没有包括&lt;code&gt;systemd&lt;/code&gt;管理的服务。&lt;/p&gt;
-&lt;figure class=&quot;h</summary>
-      
-    
-    
-    
-    <category term="Linux" scheme="https://www.esearch.top/categories/Linux/"/>
-    
-    
-    <category term="Linux" scheme="https://www.esearch.top/tags/Linux/"/>
     
   </entry>
   

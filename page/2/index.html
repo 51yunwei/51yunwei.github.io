@@ -248,7 +248,7 @@
                             &nbsp;
                             工具
                         </a>
-                         <ul class="unstyled" id="tree">  <li class="file"><a href="/posts/12fa9bf/">安装Typora</a></li>  </ul> 
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/posts/12fa9bf/">安装Typora</a></li>  <li class="file"><a href="/posts/8b89de9f/">安装Pycharm</a></li>  </ul> 
                     </li> 
                     
                     <li class="directory">
@@ -332,6 +332,110 @@
             
             <section id="main">
             
+        <article id="post-node-exporter添加访问验证" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Prometheus/">Prometheus</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/Linux/" rel="tag">Linux</a>, <a class="tag-link-link" href="/tags/Prometheus/" rel="tag">Prometheus</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/posts/3b0a5d69/">
+            <time datetime="2024-10-03T07:46:13.000Z" itemprop="datePublished">2024-10-03</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/raw/writing/source/_posts/node-exporter添加访问验证.md"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/edit/writing/source/_posts/node-exporter添加访问验证.md"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/commits/writing/source/_posts/node-exporter添加访问验证.md"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/posts/3b0a5d69/">node_exporter添加访问验证</a>
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                
+                    
+                    <p></p><p>假设你想要求所有访问<code>Prometheus</code>实例的用户提供用户名和密码。为了这个例子，使用<code>admin</code>作为用户名，并选择任何你喜欢的密码。</p>
+<h1>步骤1：密码哈希</h1>
+<p>首先，生成密码的<code>bcrypt</code>哈希值。为了生成哈希密码，我们将使用python3-bcrypt。让我们通过运行apt install python3-bcrypt来安装它，假设你正在运行类似<code>debian</code>的发行版。其他替代方案也存在来生成哈希密码；为了测试，你也可以使用网上的bcrypt生成器。</p>
+<p>这里是一个使用<code>python3-bcrypt</code>的<code>python</code>脚本，它会提示你输入密码并对其进行哈希处理：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> getpass</span><br><span class="line"><span class="keyword">import</span> bcrypt</span><br><span class="line"><span class="comment"># 提示输入密码</span></span><br><span class="line">password = getpass.getpass(<span class="string">&quot;password: &quot;</span>)</span><br><span class="line">hashed_password = bcrypt.hashpw(password.encode(<span class="string">&quot;utf-8&quot;</span>), bcrypt.gensalt())</span><br><span class="line"><span class="comment"># 获取密码的哈希值</span></span><br><span class="line"><span class="built_in">print</span>(hashed_password.decode())</span><br></pre></td></tr></table></figure>
+<p>
+                
+            
+        
+        
+            </p></div>   
+            <div class="article-more-link">
+                <a href="/posts/3b0a5d69/#more">查看更多</a>
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+
+
+
+
+    
         <article id="post-nginx-代理设置访问密码（不依赖htpasswd工具）" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -1261,112 +1365,8 @@
 
 
     
-        <article id="post-systemd怎么查看开机自启动服务" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-                    <div class="article-meta">
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Linux/">Linux</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link-link" href="/tags/Linux/" rel="tag">Linux</a>
-    </div>
-
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/posts/614dd6d8/">
-            <time datetime="2024-06-21T03:31:50.000Z" itemprop="datePublished">2024-06-21</time>
-        </a>
-    </div>
-
-
-                        
-                            <i class="fa fa-bar-chart"></i>
-                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
-                        
-                        
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/raw/writing/source/_posts/systemd怎么查看开机自启动服务.md"> Source </a>
-                            </div>
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/edit/writing/source/_posts/systemd怎么查看开机自启动服务.md"> Edit </a>
-                            </div>
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/commits/writing/source/_posts/systemd怎么查看开机自启动服务.md"> History </a>
-                            </div>
-                        
-                    </div>
-                
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/posts/614dd6d8/">systemd怎么查看开机自启动服务</a>
-        </h1>
-    
-
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-        
-            
-                
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                
-                    
-                    <p></p><p>在CentOS 7及更高的版本中，使用<code>chkconfig</code>命令查看开机自启动信息时，发现只有几个服务被<code>SysV</code>管理的服务，没有包括<code>systemd</code>管理的服务。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[root@kvm-hkcloud01 var]<span class="comment"># chkconfig --list</span></span><br><span class="line"></span><br><span class="line">Note: This output shows SysV services only and does not include native</span><br><span class="line">      systemd services. SysV configuration data might be overridden by native</span><br><span class="line">      systemd configuration.</span><br><span class="line"></span><br><span class="line">      If you want to list systemd services use <span class="string">&#x27;systemctl list-unit-files&#x27;</span>.</span><br><span class="line">      To see services enabled on particular target use</span><br><span class="line">      <span class="string">&#x27;systemctl list-dependencies [target]&#x27;</span>.</span><br><span class="line"></span><br><span class="line">netconsole      0:off   1:off   2:off   3:off   4:off   5:off   6:off</span><br><span class="line">network         0:off   1:off   2:on    3:on    4:on    5:on    6:off</span><br><span class="line">[root@kvm-hkcloud01 var]<span class="comment">#</span></span><br></pre></td></tr></table></figure>
-<p>如果需要查看被<code>systemd</code>管理的服务，可以使用以下命令进行查询。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@kvm-hkcloud01 var]<span class="comment"># systemctl list-unit-files</span></span><br></pre></td></tr></table></figure>
-<p>更多systemd内容，可参考<a target="_blank" rel="external nofollow noopener noreferrer" href="https://ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html">https://ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html</a></p>
-<p>
-                
-            
-        
-        
-            </p></div>   
-            <div class="article-more-link">
-                <a href="/posts/614dd6d8/#more">查看更多</a>
-            </div>
-        
-        <footer class="article-footer">
-        </footer>
-    </div>
-</article>
-
-
-
-
-
-
-    
         <nav id="page-nav">
-        <a class="extend prev" rel="prev" href="/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">下一页 &raquo;</a>
+        <a class="extend prev" rel="prev" href="/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">下一页 &raquo;</a>
         </nav>
     
 
