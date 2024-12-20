@@ -6,7 +6,7 @@
   <link href="https://www.esearch.top/atom.xml" rel="self"/>
   
   <link href="https://www.esearch.top/"/>
-  <updated>2024-11-19T03:48:08.003Z</updated>
+  <updated>2024-12-20T09:39:03.644Z</updated>
   <id>https://www.esearch.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mysql命令d的执行流程</title>
+    <link href="https://www.esearch.top/posts/1d5c34b0/"/>
+    <id>https://www.esearch.top/posts/1d5c34b0/</id>
+    <published>2024-12-20T09:29:35.000Z</published>
+    <updated>2024-12-20T09:39:03.644Z</updated>
+    
+    <content type="html"><![CDATA[<p>大体来说，MySQL可以分为Server层和存储引擎层两部分。</p><p>Server层包括连接器、查询缓存、分析器、优化器、执行器等，涵盖MySQL的大多数核心服务功能，以及所有的内置函数（如日期、时间、数学和加密函数等），所有跨存储引擎的功能都在这一层实现，比如存储过程、触发器、视图等。</p><p>而存储引擎层负责数据的存储和提取。其架构模式是插件式的，支持InnoDB、MyISAM、Memory等多个存储引擎。现在最常用的存储引擎是InnoDB，它从MySQL 5.5.5版本开始成为了默认存储引擎。</p><h1>一、Server层执行流程</h1><h2 id="步骤1-连接器">步骤1 连接器</h2><p>客户端连接到数据库上，连接器负责跟客户端建立连接、获取权限、维持和管理连接。连接命令中的mysql是客户端工具，用来跟服务端建立连接。在完成经典的TCP握手后，连接器就要开始认证你的身份，这个时候用的就是你输入的用户名和密码。</p><ul class="lvl-0"><li class="lvl-2"><p>如果用户名或密码不对，你就会收到一个&quot;Access denied for user&quot;的错误，然后客户端程序结束执行。</p></li><li class="lvl-2"><p>如果用户名密码认证通过，连接器会到权限表里面查出你拥有的权限。之后，这个连接里面的权限判断逻辑，都将依赖于此时读到的权限。这就意味着，一个用户成功建立连接后，即使你用管理员账号对这个用户的权限做了修改，也不会影响已经存在连接的权限。修改完成后，<strong>只有再新建的连接才会使用新的权限设置</strong>。</p></li></ul><p>客户端如果太长时间没动静，连接器就会自动将它断开。这个时间是由参数wait_timeout控制的，默认值是8小时。</p><p>数据库里面，长连接是指连接成功后，如果客户端持续有请求，则一直使用同一个连接。短连接则是指每次执行完很少的几次查询就断开连接，下次查询再重新建立一个。</p><p>建立连接的过程通常是比较复杂的，所以我建议你在使用中要尽量减少建立连接的动作，也就是尽量使用长连接。</p><p>但是全部使用长连接后，你可能会发现，有些时候MySQL占用内存涨得特别快，这是因为MySQL在执行过程中临时使用的内存是管理在连接对象里面的。这些资源会在连接断开的时候才释放。所以如果长连接累积下来，可能导致内存占用太大，被系统强行杀掉（OOM），从现象看就是MySQL异常重启了。</p><p>怎么解决这个问题呢？你可以考虑以下两种方案。</p><p>1、定期断开长连接。使用一段时间，或者程序里面判断执行过一个占用内存的大查询后，断开连接，之后要查询再重连。</p><p>2、如果你用的是MySQL 5.7或更新版本，可以在每次执行一个比较大的操作后，通过执行 mysql_reset_connection来重新初始化连接资源。这个过程不需要重连和重新做权限验证，但是会将连接恢复到刚刚创建完时的状态。</p><h2 id="步骤2-查询缓存">步骤2 查询缓存</h2><p>MySQL 8.0已经将这块功能删掉了。查询缓存中，是不是执行过这条语句，如果有则直接返回结果。</p><h2 id="步骤3-分析器">步骤3 分析器</h2><p>解析Sql语句，做语法分析等，如果你的语句不对，就会收到“You have an error in your SQL syntax”的错误提醒，一般语法错误会提示第一个出现错误的位置，所以你要关注的是紧接“use near”的内容。</p><h2 id="步骤4-优化器">步骤4 优化器</h2><p>优化器是在表里面有多个索引的时候，决定使用哪个索引；或者在一个语句有多表关联（join）的时候，决定各个表的连接顺序。</p><h2 id="步骤5-执行器">步骤5 执行器</h2><p>MySQL通过分析器知道了你要做什么，通过优化器知道了该怎么做，于是就进入了执行器阶段，开始执行语句。</p><p>开始执行的时候，要先判断一下你对这个表T有没有执行查询的权限，如果没有，就会返回没有权限的错误，如下所示(在工程实现上，如果命中查询缓存，会在查询缓存返回结果的时候，做权限验证。查询也会在优化器之前调用precheck验证权限)。</p><p>如果有权限，就打开表继续执行。打开表的时候，执行器就会根据表的引擎定义，去使用这个引擎提供的接口。<strong>注意，这里的权限是在建立客户端连接的时候就确定好了</strong></p><p>比如我们这个例子中的表T中，ID字段没有索引，那么执行器的执行流程是这样的：</p><p>1、调用InnoDB引擎接口取这个表的第一行，判断ID值是不是10，如果不是则跳过，如果是则将这行存在结果集中；</p><p>2、调用引擎接口取“下一行”，重复相同的判断逻辑，直到取到这个表的最后一行。</p><p>3、执行器将上述遍历过程中所有满足条件的行组成的记录集作为结果集返回给客户端。</p><p>至此，这个语句就执行完成了。</p><h2 id="参考资料">参考资料</h2><blockquote><ul class="lvl-1"><li class="lvl-2"><p><a href=""></a></p></li><li class="lvl-2"><p><a href=""></a></p></li></ul></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;大体来说，MySQL可以分为Server层和存储引擎层两部分。&lt;/p&gt;
+&lt;p&gt;Server层包括连接器、查询缓存、分析器、优化器、执行器等，涵盖MySQL的大多数核心服务功能，以及所有的内置函数（如日期、时间、数学和加密函数等），所有跨存储引擎的功能都在这一层实现，比如存储</summary>
+      
+    
+    
+    
+    <category term="MySql" scheme="https://www.esearch.top/categories/MySql/"/>
+    
+    
+    <category term="MySql基础" scheme="https://www.esearch.top/tags/MySql%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
   
   <entry>
     <title>安装Pycharm</title>
@@ -553,32 +578,6 @@
     
     
     <category term="Linux" scheme="https://www.esearch.top/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Jquery禁用按钮，防止重复提交</title>
-    <link href="https://www.esearch.top/posts/17c655b1/"/>
-    <id>https://www.esearch.top/posts/17c655b1/</id>
-    <published>2024-06-21T07:58:07.000Z</published>
-    <updated>2024-06-21T08:08:06.651Z</updated>
-    
-    <content type="html"><![CDATA[<p>使用<code>对象.prop(&quot;disabled&quot;,true)</code>可以进行禁用，<code>对象.prop(&quot;disabled&quot;,false)</code>取消禁用。</p><ul class="lvl-0"><li class="lvl-2">html代码如下</li></ul><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">id</span>=<span class="string">&quot;editEventForm&quot;</span> <span class="attr">novalidate</span>=<span class="string">&quot;novalidate&quot;</span>&gt;</span></span><br><span class="line">.....</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card-footer&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;javascript:history.go(-1);&quot;</span> <span class="attr">class</span>=<span class="string">&quot;btn btn-success float-right&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span> 返回<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">class</span>=<span class="string">&quot;btn btn-primary float-right&quot;</span> <span class="attr">style</span>=<span class="string">&quot;margin-right:5px;&quot;</span>&gt;</span>提交<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure><ul class="lvl-0"><li class="lvl-2">js代码</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    $(<span class="string">&quot;#editEventForm button[type=&#x27;submit&#x27;]&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params">e</span>)&#123;</span><br><span class="line">            $(<span class="string">&quot;#editEventForm button[type=&#x27;submit&#x27;]&quot;</span>).<span class="title function_">prop</span>(<span class="string">&quot;disabled&quot;</span>,<span class="literal">true</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure><blockquote><p>注意：如果您的提交按钮设置了ID，可以使用$(“#ID名称”).prop(“disabled”,true)来操作，这样就不用写这么长了。</p></blockquote><ul class="lvl-0"><li class="lvl-2"><p>可以在提交成功或失败后，执行取消禁用</p></li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;#editEventForm button[type=&#x27;submit&#x27;]&quot;</span>).<span class="title function_">prop</span>(<span class="string">&quot;disabled&quot;</span>,<span class="literal">false</span>)</span><br></pre></td></tr></table></figure><h2 id="参考资料">参考资料</h2><blockquote><ul class="lvl-1"><li class="lvl-2"><p><a href=""></a></p></li><li class="lvl-2"><p><a href=""></a></p></li></ul></blockquote>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;使用&lt;code&gt;对象.prop(&amp;quot;disabled&amp;quot;,true)&lt;/code&gt;可以进行禁用，&lt;code&gt;对象.prop(&amp;quot;disabled&amp;quot;,false)&lt;/code&gt;取消禁用。&lt;/p&gt;
-&lt;ul class=&quot;lvl-0&quot;&gt;
-&lt;li </summary>
-      
-    
-    
-    
-    <category term="前端学习" scheme="https://www.esearch.top/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="Jquery" scheme="https://www.esearch.top/tags/Jquery/"/>
     
   </entry>
   
