@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     
-    <title>mysql命令d的执行流程 | 运维少年</title>
+    <title>mysql命令的执行流程 | 运维少年</title>
     
     
         <meta name="keywords" content="MySql基础">
@@ -11,13 +11,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="大体来说，MySQL可以分为Server层和存储引擎层两部分。 Server层包括连接器、查询缓存、分析器、优化器、执行器等，涵盖MySQL的大多数核心服务功能，以及所有的内置函数（如日期、时间、数学和加密函数等），所有跨存储引擎的功能都在这一层实现，比如存储过程、触发器、视图等。 而存储引擎层负责数据的存储和提取。其架构模式是插件式的，支持InnoDB、MyISAM、Memory等多个存储引擎。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mysql命令d的执行流程">
+<meta property="og:title" content="mysql命令的执行流程">
 <meta property="og:url" content="https://www.esearch.top/posts/1d5c34b0/index.html">
 <meta property="og:site_name" content="运维少年">
 <meta property="og:description" content="大体来说，MySQL可以分为Server层和存储引擎层两部分。 Server层包括连接器、查询缓存、分析器、优化器、执行器等，涵盖MySQL的大多数核心服务功能，以及所有的内置函数（如日期、时间、数学和加密函数等），所有跨存储引擎的功能都在这一层实现，比如存储过程、触发器、视图等。 而存储引擎层负责数据的存储和提取。其架构模式是插件式的，支持InnoDB、MyISAM、Memory等多个存储引擎。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-12-20T09:29:35.000Z">
-<meta property="article:modified_time" content="2024-12-20T09:39:08.288Z">
+<meta property="article:modified_time" content="2024-12-23T03:11:49.703Z">
 <meta property="article:author" content="运维少年">
 <meta property="article:tag" content="MySql基础">
 <meta name="twitter:card" content="summary">
@@ -188,7 +188,7 @@
                             &nbsp;
                             MySql
                         </a>
-                         <ul class="unstyled" id="tree">  <li class="file active"><a href="/posts/1d5c34b0/">mysql命令d的执行流程</a></li>  </ul> 
+                         <ul class="unstyled" id="tree">  <li class="file active"><a href="/posts/1d5c34b0/">mysql命令的执行流程</a></li>  </ul> 
                     </li> 
                     
                     <li class="directory">
@@ -382,7 +382,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            mysql命令d的执行流程
+            mysql命令的执行流程
         </h1>
     
 
@@ -411,7 +411,7 @@
 <p>如果用户名或密码不对，你就会收到一个&quot;Access denied for user&quot;的错误，然后客户端程序结束执行。</p>
 </li>
 <li class="lvl-2">
-<p>如果用户名密码认证通过，连接器会到权限表里面查出你拥有的权限。之后，这个连接里面的权限判断逻辑，都将依赖于此时读到的权限。这就意味着，一个用户成功建立连接后，即使你用管理员账号对这个用户的权限做了修改，也不会影响已经存在连接的权限。修改完成后，<strong>只有再新建的连接才会使用新的权限设置</strong>。</p>
+<p>如果用户名密码认证通过，连接器会到权限表里面查出你拥有的权限。之后，这个连接里面的权限判断逻辑，都将依赖于此时读到的权限。这就意味着，一个用户成功建立连接后，即使你用管理员账号对这个用户的权限做了修改，也不会影响已经存在连接的权限。修改完成后，<strong>只有再新建的连接才会使用新的全局权限设置，db权限、表权限、列权限可以在已有连接中生效</strong>。</p>
 </li>
 </ul>
 <p>客户端如果太长时间没动静，连接器就会自动将它断开。这个时间是由参数wait_timeout控制的，默认值是8小时。</p>
