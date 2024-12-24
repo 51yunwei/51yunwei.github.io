@@ -185,7 +185,7 @@
                             &nbsp;
                             MySql
                         </a>
-                         <ul class="unstyled" id="tree">  <li class="file"><a href="/posts/1d5c34b0/">mysql命令的执行流程</a></li>  </ul> 
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/posts/1d5c34b0/">mysql查询命令的执行流程</a></li>  <li class="file"><a href="/posts/8d1f6979/">mysql一条更新命令的执行流程</a></li>  </ul> 
                     </li> 
                     
                     <li class="directory">
@@ -332,6 +332,110 @@
             
             <section id="main">
             
+        <article id="post-mysql一条更新命令的执行流程" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/MySql/">MySql</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/MySql%E5%9F%BA%E7%A1%80/" rel="tag">MySql基础</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/posts/8d1f6979/">
+            <time datetime="2024-12-24T02:32:04.000Z" itemprop="datePublished">2024-12-24</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/raw/writing/source/_posts/mysql一条更新命令的执行流程.md"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/edit/writing/source/_posts/mysql一条更新命令的执行流程.md"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/commits/writing/source/_posts/mysql一条更新命令的执行流程.md"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/posts/8d1f6979/">mysql一条更新命令的执行流程</a>
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                
+                    
+                    <p></p><h1>流程</h1>
+<p>执行语句前要先连接数据库，这是连接器的工作。</p>
+<p>前面我们说过，在一个表上有更新的时候，跟这个表有关的查询缓存会失效，所以这条语句就会把表T上所有缓存结果都清空。这也就是我们一般不建议使用查询缓存的原因。</p>
+<p>接下来，分析器会通过词法和语法解析知道这是一条更新语句。优化器决定要使用ID这个索引。然后，执行器负责具体执行，找到这一行，然后更新。</p>
+<p>与查询流程不一样的是，更新流程还涉及两个重要的日志模块，它们正是我们今天要讨论的主角：redo log（重做日志）和 binlog（归档日志）。</p>
+<p>
+                
+            
+        
+        
+            </p></div>   
+            <div class="article-more-link">
+                <a href="/posts/8d1f6979/#more">查看更多</a>
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+
+
+
+
+    
         <article id="post-mysql命令d的执行流程" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -380,7 +484,7 @@
                 
     
         <h1 itemprop="name">
-            <a class="article-title" href="/posts/1d5c34b0/">mysql命令的执行流程</a>
+            <a class="article-title" href="/posts/1d5c34b0/">mysql查询命令的执行流程</a>
         </h1>
     
 
@@ -1255,110 +1359,6 @@
             </p></div>   
             <div class="article-more-link">
                 <a href="/posts/6bafdf3f/#more">查看更多</a>
-            </div>
-        
-        <footer class="article-footer">
-        </footer>
-    </div>
-</article>
-
-
-
-
-
-
-    
-        <article id="post-Prometheus基于文件的自动发现" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-                    <div class="article-meta">
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Prometheus/">Prometheus</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link-link" href="/tags/Linux/" rel="tag">Linux</a>, <a class="tag-link-link" href="/tags/Prometheus/" rel="tag">Prometheus</a>
-    </div>
-
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/posts/13b4287e/">
-            <time datetime="2024-10-05T09:05:05.000Z" itemprop="datePublished">2024-10-05</time>
-        </a>
-    </div>
-
-
-                        
-                            <i class="fa fa-bar-chart"></i>
-                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
-                        
-                        
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/raw/writing/source/_posts/Prometheus基于文件的自动发现.md"> Source </a>
-                            </div>
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/edit/writing/source/_posts/Prometheus基于文件的自动发现.md"> Edit </a>
-                            </div>
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/commits/writing/source/_posts/Prometheus基于文件的自动发现.md"> History </a>
-                            </div>
-                        
-                    </div>
-                
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/posts/13b4287e/">Prometheus基于文件的自动发现</a>
-        </h1>
-    
-
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-        
-            
-                
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                
-                    
-                    <p></p><h1>一、自动发现服务</h1>
-<p>每次修改<code>Prometheus</code>配置文件都需要重载服务，未免有些麻烦，而自动发现服务就是为了解决这种麻烦事儿的，自动发现服务又分为好几种，其中基于文件的服务发现是最通用的方式。这种方式不需要依赖于任何的平台或者第三方服务。<code>Prometheus</code>会定时从文件中读取最新的<code>Target</code>信息，因此，我们可以通过任意的方式将监控<code>Target</code>的信息写入即可。</p>
-<h1>二、配置</h1>
-<h2 id="步骤1-修改prometheus-yml文件">步骤1 修改<code>prometheus.yml</code>文件</h2>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="attr">job_name:</span> <span class="string">&#x27;file_sd_default&#x27;</span></span><br><span class="line">  <span class="attr">file_sd_configs:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">files:</span> [<span class="string">&#x27;/etc/prometheus/config/sd_config/*.yml&#x27;</span>]</span><br><span class="line">    <span class="attr">refresh_interval:</span> <span class="string">5s</span></span><br></pre></td></tr></table></figure>
-<p>
-                
-            
-        
-        
-            </p></div>   
-            <div class="article-more-link">
-                <a href="/posts/13b4287e/#more">查看更多</a>
             </div>
         
         <footer class="article-footer">

@@ -185,7 +185,7 @@
                             &nbsp;
                             MySql
                         </a>
-                         <ul class="unstyled" id="tree">  <li class="file"><a href="/posts/1d5c34b0/">mysql命令的执行流程</a></li>  </ul> 
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/posts/1d5c34b0/">mysql查询命令的执行流程</a></li>  <li class="file"><a href="/posts/8d1f6979/">mysql一条更新命令的执行流程</a></li>  </ul> 
                     </li> 
                     
                     <li class="directory">
@@ -332,6 +332,110 @@
             
             <section id="main">
             
+        <article id="post-Prometheus基于文件的自动发现" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Prometheus/">Prometheus</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/Linux/" rel="tag">Linux</a>, <a class="tag-link-link" href="/tags/Prometheus/" rel="tag">Prometheus</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/posts/13b4287e/">
+            <time datetime="2024-10-05T09:05:05.000Z" itemprop="datePublished">2024-10-05</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/raw/writing/source/_posts/Prometheus基于文件的自动发现.md"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/edit/writing/source/_posts/Prometheus基于文件的自动发现.md"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/commits/writing/source/_posts/Prometheus基于文件的自动发现.md"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/posts/13b4287e/">Prometheus基于文件的自动发现</a>
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                
+                    
+                    <p></p><h1>一、自动发现服务</h1>
+<p>每次修改<code>Prometheus</code>配置文件都需要重载服务，未免有些麻烦，而自动发现服务就是为了解决这种麻烦事儿的，自动发现服务又分为好几种，其中基于文件的服务发现是最通用的方式。这种方式不需要依赖于任何的平台或者第三方服务。<code>Prometheus</code>会定时从文件中读取最新的<code>Target</code>信息，因此，我们可以通过任意的方式将监控<code>Target</code>的信息写入即可。</p>
+<h1>二、配置</h1>
+<h2 id="步骤1-修改prometheus-yml文件">步骤1 修改<code>prometheus.yml</code>文件</h2>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="attr">job_name:</span> <span class="string">&#x27;file_sd_default&#x27;</span></span><br><span class="line">  <span class="attr">file_sd_configs:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">files:</span> [<span class="string">&#x27;/etc/prometheus/config/sd_config/*.yml&#x27;</span>]</span><br><span class="line">    <span class="attr">refresh_interval:</span> <span class="string">5s</span></span><br></pre></td></tr></table></figure>
+<p>
+                
+            
+        
+        
+            </p></div>   
+            <div class="article-more-link">
+                <a href="/posts/13b4287e/#more">查看更多</a>
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+
+
+
+
+    
         <article id="post-阿里云-使用Prometheus配置报警规则的最佳实践" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -1248,110 +1352,6 @@
             </p></div>   
             <div class="article-more-link">
                 <a href="/posts/1208ed6f/#more">查看更多</a>
-            </div>
-        
-        <footer class="article-footer">
-        </footer>
-    </div>
-</article>
-
-
-
-
-
-
-    
-        <article id="post-Linux中sysrq-trigger的妙用" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-                    <div class="article-meta">
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Linux/">Linux</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link-link" href="/tags/Linux/" rel="tag">Linux</a>
-    </div>
-
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/posts/c0f21a4/">
-            <time datetime="2024-06-21T08:13:01.000Z" itemprop="datePublished">2024-06-21</time>
-        </a>
-    </div>
-
-
-                        
-                            <i class="fa fa-bar-chart"></i>
-                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
-                        
-                        
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/raw/writing/source/_posts/Linux中sysrq-trigger的妙用.md"> Source </a>
-                            </div>
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/edit/writing/source/_posts/Linux中sysrq-trigger的妙用.md"> Edit </a>
-                            </div>
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/commits/writing/source/_posts/Linux中sysrq-trigger的妙用.md"> History </a>
-                            </div>
-                        
-                    </div>
-                
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/posts/c0f21a4/">Linux中sysrq-trigger的妙用</a>
-        </h1>
-    
-
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-        
-            
-                
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                
-                    
-                    <p><blockquote>
-<p>sysrq被称为魔术组合键，只要内核没有完全锁住，不管内核在做什么事情，使用这些组合键都可以搜集包括系统内存使用、CPU任务处理、进程运行状态等系统运行信息。 注意：信息的输出都在/var/log/message下</p>
-</blockquote>
-</p><p>Linux如何模拟崩溃？如何强制关机？这时候就可以使用到本文提到的<code>/proc/sysrq-trigger</code>文件了。</p>
-<ul class="lvl-0">
-<p>
-                
-            
-        
-        
-            </p></ul></div>   
-            <div class="article-more-link">
-                <a href="/posts/c0f21a4/#more">查看更多</a>
             </div>
         
         <footer class="article-footer">
