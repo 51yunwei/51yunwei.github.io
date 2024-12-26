@@ -185,7 +185,7 @@
                             &nbsp;
                             MySql
                         </a>
-                         <ul class="unstyled" id="tree">  <li class="file"><a href="/posts/1d5c34b0/">mysql查询命令的执行流程</a></li>  <li class="file"><a href="/posts/8d1f6979/">mysql一条更新命令的执行流程</a></li>  </ul> 
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/posts/1d5c34b0/">mysql查询命令的执行流程</a></li>  <li class="file"><a href="/posts/8d1f6979/">mysql一条更新命令的执行流程</a></li>  <li class="file"><a href="/posts/7f3f1367/">MySql中的表级锁-DML</a></li>  </ul> 
                     </li> 
                     
                     <li class="directory">
@@ -332,6 +332,110 @@
             
             <section id="main">
             
+        <article id="post-MySql中的表级锁-DML" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/MySql/">MySql</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/MySql%E5%9F%BA%E7%A1%80/" rel="tag">MySql基础</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/posts/7f3f1367/">
+            <time datetime="2024-12-26T07:55:17.000Z" itemprop="datePublished">2024-12-26</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/raw/writing/source/_posts/MySql中的表级锁-DML.md"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/edit/writing/source/_posts/MySql中的表级锁-DML.md"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/commits/writing/source/_posts/MySql中的表级锁-DML.md"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/posts/7f3f1367/">MySql中的表级锁-DML</a>
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                
+                    
+                    <p></p><p>MDL不需要显式使用，在访问一个表的时候会被自动加上。MDL的作用是，保证读写的正确性。你可以想象一下，如果一个查询正在遍历一个表中的数据，而执行期间另一个线程对这个表结构做变更，删了一列，那么查询线程拿到的结果跟表结构对不上，肯定是不行的。</p>
+<p>因此，在MySQL 5.5版本中引入了MDL，当对一个表做增删改查操作的时候，加MDL读锁；当要对表做结构变更操作的时候，加MDL写锁。</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>读锁之间不互斥，因此你可以有多个线程同时对一张表增删改查。</p>
+<p>
+                
+            
+        
+        
+            </p></li></ul></div>   
+            <div class="article-more-link">
+                <a href="/posts/7f3f1367/#more">查看更多</a>
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+
+
+
+
+    
         <article id="post-mysql一条更新命令的执行流程" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -1255,110 +1359,6 @@
             </p></div>   
             <div class="article-more-link">
                 <a href="/posts/ed0140b7/#more">查看更多</a>
-            </div>
-        
-        <footer class="article-footer">
-        </footer>
-    </div>
-</article>
-
-
-
-
-
-
-    
-        <article id="post-Prometheus-AlertManager设置邮件发送告警信息" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-                    <div class="article-meta">
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Prometheus/">Prometheus</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link-link" href="/tags/AlertManager/" rel="tag">AlertManager</a>, <a class="tag-link-link" href="/tags/Linux/" rel="tag">Linux</a>, <a class="tag-link-link" href="/tags/Prometheus/" rel="tag">Prometheus</a>
-    </div>
-
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/posts/6bafdf3f/">
-            <time datetime="2024-10-05T09:36:08.000Z" itemprop="datePublished">2024-10-05</time>
-        </a>
-    </div>
-
-
-                        
-                            <i class="fa fa-bar-chart"></i>
-                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
-                        
-                        
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/raw/writing/source/_posts/Prometheus-AlertManager设置邮件发送告警信息.md"> Source </a>
-                            </div>
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/edit/writing/source/_posts/Prometheus-AlertManager设置邮件发送告警信息.md"> Edit </a>
-                            </div>
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/commits/writing/source/_posts/Prometheus-AlertManager设置邮件发送告警信息.md"> History </a>
-                            </div>
-                        
-                    </div>
-                
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/posts/6bafdf3f/">Prometheus-AlertManager设置邮件发送告警信息</a>
-        </h1>
-    
-
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-        
-            
-                
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                
-                    
-                    <p><blockquote>
-<p>以网易163邮箱为例</p>
-</blockquote>
-</p><p>修改<code>alertmanager.yml</code>文件</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">global:</span></span><br><span class="line">  <span class="attr">resolve_timeout:</span> <span class="string">5m</span> <span class="comment"># 当警报恢复后，等待这个时长才认为警报真正解决</span></span><br><span class="line">  <span class="attr">smtp_from:</span> <span class="string">&#x27;xxxx@163.com&#x27;</span> <span class="comment"># 发送警报邮件的发件人邮箱地址</span></span><br><span class="line">  <span class="attr">smtp_smarthost:</span> <span class="string">&#x27;smtp.163.com:465&#x27;</span> <span class="comment"># 邮件发送使用的SMTP服务器地址和端口</span></span><br><span class="line">  <span class="attr">smtp_auth_username:</span> <span class="string">&#x27;xxx@163.com&#x27;</span> <span class="comment"># 用于SMTP认证的用户名，通常是发件人的邮箱地址</span></span><br><span class="line">  <span class="attr">smtp_auth_password:</span> <span class="string">&#x27;xxxxxxx&#x27;</span> <span class="comment"># 用于SMTP认证的密码，这里应该是邮箱的授权码（token），而非登录密码</span></span><br><span class="line">  <span class="attr">smtp_require_tls:</span> <span class="literal">false</span> <span class="comment"># 是否要求使用TLS加密邮件传输，这里设置为false表示不强制要求</span></span><br><span class="line">  <span class="attr">smtp_hello:</span> <span class="string">&#x27;163.com&#x27;</span> <span class="comment"># SMTP连接时的HELO/EHLO标识，通常使用邮件服务商的域名</span></span><br><span class="line"></span><br><span class="line"><span class="attr">route:</span></span><br><span class="line">  <span class="attr">group_by:</span> [<span class="string">&#x27;alertname&#x27;</span>] <span class="comment"># 按照警报名称对警报进行分组</span></span><br><span class="line">  <span class="attr">group_wait:</span> <span class="string">30s</span> <span class="comment"># 在将警报发送给接收者之前等待的时间，以便收集更多相关警报</span></span><br><span class="line">  <span class="attr">group_interval:</span> <span class="string">5m</span> <span class="comment"># 分组后，每隔这个时长检查一次是否有新警报加入同一分组</span></span><br><span class="line">  <span class="attr">repeat_interval:</span> <span class="string">1h</span> <span class="comment"># 对于同一个分组的警报，每隔这个时长重复发送一次通知</span></span><br><span class="line">  <span class="attr">receiver:</span> <span class="string">&#x27;163email&#x27;</span> <span class="comment"># 默认的警报通知接收者，这里引用了下面定义的receivers中的一个</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># receivers中定义了警报通知的接收者，包括他们的联系方式</span></span><br><span class="line"><span class="attr">receivers:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">&#x27;163email&#x27;</span> <span class="comment"># 接收者的名称，用于在route中引用</span></span><br><span class="line">    <span class="attr">email_configs:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">to:</span> <span class="string">&#x27;xxx@yeah.net&#x27;</span> <span class="comment"># 接收警报邮件的邮箱地址</span></span><br><span class="line">        <span class="attr">send_resolved:</span> <span class="literal">true</span> <span class="comment"># 当警报恢复时，是否发送恢复通知邮件</span></span><br></pre></td></tr></table></figure>
-<p>
-                
-            
-        
-        
-            </p></div>   
-            <div class="article-more-link">
-                <a href="/posts/6bafdf3f/#more">查看更多</a>
             </div>
         
         <footer class="article-footer">

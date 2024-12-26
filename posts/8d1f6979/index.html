@@ -17,7 +17,7 @@
 <meta property="og:description" content="流程 执行语句前要先连接数据库，这是连接器的工作。 前面我们说过，在一个表上有更新的时候，跟这个表有关的查询缓存会失效，所以这条语句就会把表T上所有缓存结果都清空。这也就是我们一般不建议使用查询缓存的原因。 接下来，分析器会通过词法和语法解析知道这是一条更新语句。优化器决定要使用ID这个索引。然后，执行器负责具体执行，找到这一行，然后更新。 与查询流程不一样的是，更新流程还涉及两个重要的日志模块，">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-12-24T02:32:04.000Z">
-<meta property="article:modified_time" content="2024-12-24T02:40:26.456Z">
+<meta property="article:modified_time" content="2024-12-24T02:40:34.516Z">
 <meta property="article:author" content="运维少年">
 <meta property="article:tag" content="MySql基础">
 <meta name="twitter:card" content="summary">
@@ -188,7 +188,7 @@
                             &nbsp;
                             MySql
                         </a>
-                         <ul class="unstyled" id="tree">  <li class="file"><a href="/posts/1d5c34b0/">mysql查询命令的执行流程</a></li>  <li class="file active"><a href="/posts/8d1f6979/">mysql一条更新命令的执行流程</a></li>  </ul> 
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/posts/1d5c34b0/">mysql查询命令的执行流程</a></li>  <li class="file active"><a href="/posts/8d1f6979/">mysql一条更新命令的执行流程</a></li>  <li class="file"><a href="/posts/7f3f1367/">MySql中的表级锁-DML</a></li>  </ul> 
                     </li> 
                     
                     <li class="directory">
@@ -466,6 +466,15 @@
 
     
 <nav id="article-nav">
+    
+        <a href="/posts/7f3f1367/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    MySql中的表级锁-DML
+                
+            </div>
+        </a>
     
     
         <a href="/posts/1d5c34b0/" id="article-nav-older" class="article-nav-link-wrap">

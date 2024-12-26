@@ -3,20 +3,23 @@
 <head>
     <meta charset="utf-8">
     
-    <title>归档: 2023 | 运维少年</title>
+    <title>MySql中的表级锁-DML | 运维少年</title>
     
     
-        <meta name="keywords" content="运维少年">
+        <meta name="keywords" content="MySql基础">
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="感谢浏览我的博客，欢迎关注微信公众号“运维少年” 获取最新资讯哦~">
-<meta property="og:type" content="website">
-<meta property="og:title" content="运维少年">
-<meta property="og:url" content="https://www.esearch.top/archives/2023/index.html">
+    <meta name="description" content="MDL不需要显式使用，在访问一个表的时候会被自动加上。MDL的作用是，保证读写的正确性。你可以想象一下，如果一个查询正在遍历一个表中的数据，而执行期间另一个线程对这个表结构做变更，删了一列，那么查询线程拿到的结果跟表结构对不上，肯定是不行的。 因此，在MySQL 5.5版本中引入了MDL，当对一个表做增删改查操作的时候，加MDL读锁；当要对表做结构变更操作的时候，加MDL写锁。   读锁之间不互斥">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySql中的表级锁-DML">
+<meta property="og:url" content="https://www.esearch.top/posts/7f3f1367/index.html">
 <meta property="og:site_name" content="运维少年">
-<meta property="og:description" content="感谢浏览我的博客，欢迎关注微信公众号“运维少年” 获取最新资讯哦~">
+<meta property="og:description" content="MDL不需要显式使用，在访问一个表的时候会被自动加上。MDL的作用是，保证读写的正确性。你可以想象一下，如果一个查询正在遍历一个表中的数据，而执行期间另一个线程对这个表结构做变更，删了一列，那么查询线程拿到的结果跟表结构对不上，肯定是不行的。 因此，在MySQL 5.5版本中引入了MDL，当对一个表做增删改查操作的时候，加MDL读锁；当要对表做结构变更操作的时候，加MDL写锁。   读锁之间不互斥">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-12-26T07:55:17.000Z">
+<meta property="article:modified_time" content="2024-12-26T08:57:50.698Z">
 <meta property="article:author" content="运维少年">
+<meta property="article:tag" content="MySql基础">
 <meta name="twitter:card" content="summary">
     
 
@@ -179,13 +182,13 @@
                          <ul class="unstyled" id="tree">  <li class="file"><a href="/posts/6646b637/">Linux创建证书</a></li>  <li class="file"><a href="/posts/4cf37030/">openEuler中奇怪的网络管理服务</a></li>  <li class="file"><a href="/posts/83a68e5f/">Linux中的软链接和硬链接</a></li>  <li class="file"><a href="/posts/b6ae4c2c/">怎么判断多台虚拟机上的磁盘是不是同一块磁盘呢？</a></li>  <li class="file"><a href="/posts/a0e0543a/">Linux中的用户ID会不会重复？</a></li>  <li class="file"><a href="/posts/de677c90/">Linux文件的ACL</a></li>  <li class="file"><a href="/posts/614dd6d8/">systemd怎么查看开机自启动服务</a></li>  <li class="file"><a href="/posts/c0f21a4/">Linux中sysrq-trigger的妙用</a></li>  <li class="file"><a href="/posts/1208ed6f/">Linux重装系统后恢复LVM</a></li>  <li class="file"><a href="/posts/1c033694/">openEuler开启kdump失败</a></li>  <li class="file"><a href="/posts/b5a91e2c/">OpenEuler 安装MySql</a></li>  <li class="file"><a href="/posts/78eb14d2/">Debian脚本中使用了&>/dev/null，$?总是返回0</a></li>  <li class="file"><a href="/posts/f2baa4c/">nginx 代理设置访问密码（不依赖htpasswd工具）</a></li>  </ul> 
                     </li> 
                     
-                    <li class="directory">
+                    <li class="directory open">
                         <a href="#" data-role="directory">
-                            <i class="fa fa-folder"></i>
+                            <i class="fa fa-folder-open"></i>
                             &nbsp;
                             MySql
                         </a>
-                         <ul class="unstyled" id="tree">  <li class="file"><a href="/posts/1d5c34b0/">mysql查询命令的执行流程</a></li>  <li class="file"><a href="/posts/8d1f6979/">mysql一条更新命令的执行流程</a></li>  <li class="file"><a href="/posts/7f3f1367/">MySql中的表级锁-DML</a></li>  </ul> 
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/posts/1d5c34b0/">mysql查询命令的执行流程</a></li>  <li class="file"><a href="/posts/8d1f6979/">mysql一条更新命令的执行流程</a></li>  <li class="file active"><a href="/posts/7f3f1367/">MySql中的表级锁-DML</a></li>  </ul> 
                     </li> 
                     
                     <li class="directory">
@@ -331,156 +334,139 @@
 </aside>
             
             <section id="main">
-            <div class="timeline timeline-wrap">
-    
-            <div class="timeline-row timeline-row-major">
-                <span class="node"><i class="fa fa-calendar-o"></i></span>
-                <h1 class="title"><a href="/archives/2023/">2023</a></h1>
-            </div>
-    
-            <div class="timeline-row timeline-row-major">
-                <span class="node"><i class="fa fa-calendar"></i></span>
-                <h1 class="title"><a href="/archives/2023/12/">2023-12</a><span class="archive-list-count">4</span></h1>
-            </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+            <article id="post-MySql中的表级锁-DML" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
                 
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/posts/6646bad0/">测试图片</a>
-        </h1>
-    
-
-                
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/posts/6646bad0/">
-            <time datetime="2023-12-30T04:42:20.000Z" itemprop="datePublished">2023-12-30</time>
-        </a>
-    </div>
-
-
-                    
+                    <div class="article-meta">
+                        
     <div class="article-category">
     	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/%E5%8D%9A%E5%AE%A2%E6%B5%8B%E8%AF%95/">博客测试</a>
+        <a class="article-category-link" href="/categories/MySql/">MySql</a>
     </div>
 
-                    
-                </div>
-                
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/posts/undefined/">Hello World</a>
-        </h1>
-    
-
-                
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/posts/undefined/">
-            <time datetime="2023-12-30T03:31:33.884Z" itemprop="datePublished">2023-12-30</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/%E5%8D%9A%E5%AE%A2%E6%B5%8B%E8%AF%95/">博客测试</a>
-    </div>
-
-                    
-                </div>
-                
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/posts/6646bac1/">Github Page + Hexo 搭建个人博客问题小记</a>
-        </h1>
-    
-
-                
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/posts/6646bac1/">
-            <time datetime="2023-12-28T01:08:08.000Z" itemprop="datePublished">2023-12-28</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建</a>
-    </div>
-
-                    
+                        
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link-link" href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" rel="tag">博客搭建</a>
+        <a class="tag-link-link" href="/tags/MySql%E5%9F%BA%E7%A1%80/" rel="tag">MySql基础</a>
     </div>
 
-                </div>
-                
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/posts/6646baca/">测试文章</a>
-        </h1>
-    
-
-                
-                <div class="article-meta">
-                    
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/posts/6646baca/">
-            <time datetime="2023-12-27T08:58:43.000Z" itemprop="datePublished">2023-12-27</time>
+        <a href="/posts/7f3f1367/">
+            <time datetime="2024-12-26T07:55:17.000Z" itemprop="datePublished">2024-12-26</time>
         </a>
     </div>
 
 
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/%E5%8D%9A%E5%AE%A2%E6%B5%8B%E8%AF%95/">博客测试</a>
-    </div>
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/raw/writing/source/_posts/MySql中的表级锁-DML.md"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/edit/writing/source/_posts/MySql中的表级锁-DML.md"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/51yunwei/51yunwei.top/commits/writing/source/_posts/MySql中的表级锁-DML.md"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            MySql中的表级锁-DML
+        </h1>
+    
 
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">文章目录</strong>
                     
                 </div>
-                
+            
+        
+        
+            <p>MDL不需要显式使用，在访问一个表的时候会被自动加上。MDL的作用是，保证读写的正确性。你可以想象一下，如果一个查询正在遍历一个表中的数据，而执行期间另一个线程对这个表结构做变更，删了一列，那么查询线程拿到的结果跟表结构对不上，肯定是不行的。</p>
+<p>因此，在MySQL 5.5版本中引入了MDL，当对一个表做增删改查操作的时候，加MDL读锁；当要对表做结构变更操作的时候，加MDL写锁。</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>读锁之间不互斥，因此你可以有多个线程同时对一张表增删改查。</p>
+</li>
+<li class="lvl-2">
+<p>读写锁之间、写锁之间是互斥的，用来保证变更表结构操作的安全性。因此，如果有两个线程要同时给一个表加字段，其中一个要等另一个执行完才能开始执行。</p>
+</li>
+</ul>
+<p>虽然MDL锁是系统默认会加的，但却是你不能忽略的一个机制。比如下面这个例子，我经常看到有人掉到这个坑里：给一个小表加个字段，导致整个库挂了。</p>
+<p>你肯定知道，给一个表加字段，或者修改字段，或者加索引，需要扫描全表的数据。在对大表操作的时候，你肯定会特别小心，以免对线上服务造成影响。而实际上，即使是小表，操作不慎也会出问题。我们来看一下下面的操作序列，假设表t是一个小表。</p>
+<p>备注：这里的实验环境是MySQL 5.6。</p>
+<p>Session A</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">begin</span>;</span><br><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> T limit <span class="number">1</span>;</span><br><span class="line"><span class="operator">+</span><span class="comment">-----+---+------+</span></span><br><span class="line"><span class="operator">|</span> id  <span class="operator">|</span> k <span class="operator">|</span> name <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">-----+---+------+</span></span><br><span class="line"><span class="operator">|</span> <span class="number">100</span> <span class="operator">|</span> <span class="number">1</span> <span class="operator">|</span> <span class="keyword">NULL</span> <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">-----+---+------+</span></span><br><span class="line"><span class="number">1</span> <span class="type">row</span> <span class="keyword">in</span> <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure>
+<p>Session B – 返回正常，查询需要读锁，读锁之间不互斥，所以即使Session A的读锁还没释放也没关系</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> T limit <span class="number">1</span>;</span><br><span class="line"><span class="operator">+</span><span class="comment">-----+---+------+</span></span><br><span class="line"><span class="operator">|</span> id  <span class="operator">|</span> k <span class="operator">|</span> name <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">-----+---+------+</span></span><br><span class="line"><span class="operator">|</span> <span class="number">100</span> <span class="operator">|</span> <span class="number">1</span> <span class="operator">|</span> <span class="keyword">NULL</span> <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">-----+---+------+</span></span><br><span class="line"><span class="number">1</span> <span class="type">row</span> <span class="keyword">in</span> <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure>
+<p>Session C 卡住 – 因为有读的DML锁，修改表需要有DML写锁，读写冲突，所以需要等Session A 的读锁释放，Seesion C才能执行。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">alter</span> <span class="keyword">table</span> T <span class="keyword">add</span> f <span class="type">int</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>Session D 卡住 – 因为Session C有写锁，读写冲突，要等Seesion C执行完才能执行完成。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> T;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>查看Proecesslist</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">show</span> processlist;</span><br><span class="line"><span class="operator">+</span><span class="comment">----+------+-----------+--------+---------+------+---------------------------------+---------------------------+</span></span><br><span class="line"><span class="operator">|</span> Id <span class="operator">|</span> <span class="keyword">User</span> <span class="operator">|</span> Host      <span class="operator">|</span> db     <span class="operator">|</span> Command <span class="operator">|</span> <span class="type">Time</span> <span class="operator">|</span> State                           <span class="operator">|</span> Info                      <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">----+------+-----------+--------+---------+------+---------------------------------+---------------------------+</span></span><br><span class="line"><span class="operator">|</span>  <span class="number">7</span> <span class="operator">|</span> root <span class="operator">|</span> localhost <span class="operator">|</span> testdb <span class="operator">|</span> Query   <span class="operator">|</span>    <span class="number">0</span> <span class="operator">|</span> init                            <span class="operator">|</span> <span class="keyword">show</span> processlist          <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>  <span class="number">8</span> <span class="operator">|</span> root <span class="operator">|</span> localhost <span class="operator">|</span> testdb <span class="operator">|</span> Sleep   <span class="operator">|</span>   <span class="number">69</span> <span class="operator">|</span>                                 <span class="operator">|</span> <span class="keyword">NULL</span>                      <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>  <span class="number">9</span> <span class="operator">|</span> root <span class="operator">|</span> localhost <span class="operator">|</span> testdb <span class="operator">|</span> Query   <span class="operator">|</span>   <span class="number">33</span> <span class="operator">|</span> Waiting <span class="keyword">for</span> <span class="keyword">table</span> metadata lock <span class="operator">|</span> <span class="keyword">alter</span> <span class="keyword">table</span> T <span class="keyword">add</span> f <span class="type">int</span>   <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span> <span class="number">10</span> <span class="operator">|</span> root <span class="operator">|</span> localhost <span class="operator">|</span> testdb <span class="operator">|</span> Query   <span class="operator">|</span>   <span class="number">21</span> <span class="operator">|</span> Waiting <span class="keyword">for</span> <span class="keyword">table</span> metadata lock <span class="operator">|</span> <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> `T` LIMIT <span class="number">0</span> <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">----+------+-----------+--------+---------+------+---------------------------------+---------------------------+</span></span><br><span class="line"><span class="number">4</span> <span class="keyword">rows</span> <span class="keyword">in</span> <span class="keyword">set</span>, <span class="number">1</span> warning (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>我们可以看到session A先启动，这时候会对表t加一个MDL读锁。由于session B需要的也是MDL读锁，因此可以正常执行。</p>
+<p>之后session C会被blocked，是因为session A的MDL读锁还没有释放，而session C需要MDL写锁，因此只能被阻塞。</p>
+<p>如果只有session C自己被阻塞还没什么关系，但是之后所有要在表t上新申请MDL读锁的请求也会被session C阻塞。前面我们说了，所有对表的增删改查操作都需要先申请MDL读锁，就都被锁住，等于这个表现在完全不可读写了。</p>
+<p>如果某个表上的查询语句频繁，而且客户端有重试机制，也就是说超时后会再起一个新session再请求的话，这个库的线程很快就会爆满。</p>
+<p>你现在应该知道了，事务中的MDL锁，在语句执行开始时申请，但是语句结束后并不会马上释放，而会等到整个事务提交后再释放。</p>
+
             </div>
-        </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
     
-</div>
+<nav id="article-nav">
+    
+    
+        <a href="/posts/8d1f6979/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">mysql一条更新命令的执行流程</div>
+        </a>
+    
+</nav>
+<div class="article-end-text-wrap" style="text-align:center">
+      <div class="article-end-text">
+          <img src="/images/51yunwei-soso-2.png" style="height:100%,weight:100%">
+      </div>
+    </div>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
 
            </section>
         </div>
